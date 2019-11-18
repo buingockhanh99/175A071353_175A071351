@@ -1,0 +1,101 @@
+/* -------------------------------------------------------- css Bài 1.03--------------------------------*/
+#body-bai3{
+background-position: center;
+background-repeat: no-repeat;
+background-image: url('../images/vltt.jpg'); 
+background-size: 50%;
+background-color:#A06D21;
+background-attachment: fixed;
+width: 100%
+}
+#title3{
+	text-align: center; 
+	color: #FFCC00; 
+	font-weight: bold; 
+	font-size: 30px;
+}
+#text3{
+	color: #fff;
+	margin: 60px 10px 0px 10px;
+	font-size: 25px;
+}
+/* -------------------------------------------------------- css Bài 1.04--------------------------------*/
+#body-bai4{
+	background: url('../images/imghoa.jpg') no-repeat fixed ;
+    background-size: cover;
+    color: #008888;
+}
+#h1-bai4{
+	text-align: center;
+}
+ #p4{
+ 	color: #fff;
+}
+#div-4{
+	font-weight:bold ;
+	font-style: italic;
+	background-color: #339999;
+}
+
+/* -------------------------------------------------------- css Bài 1.06--------------------------------*/
+#body-b6{
+	width: 75%; 
+	margin-left: 12.5%
+}
+#div-b6{
+	color: #FFCC00;
+	font-size: 20px;
+	border-style: double;
+}
+#div-b6 h2{
+	text-align: center
+}
+#div-b6-2{
+	background:orange; 
+	color: white;
+}
+#div-b6-2 h2{
+	margin-left:85%
+}
+/* -------------------------------------------------------- css Bài 1.08--------------------------------*/
+table, th, td {
+border: 1px solid black;
+}
+table{
+width: 50%;
+}
+#main{
+padding-left: 10%;
+}
+.tieude{
+background: red;
+text-align: center;
+}
+.le{
+background: #fff;
+}
+/* -------------------------------------------------------- css Bài 1.09--------------------------------*/
+#body-b9{
+font-family: Tahoma;
+font-size: 12px;
+}
+#h-b9{
+color: red;
+text-align: center;
+}
+#table-b9
+{
+	padding-left: 33%;
+	height: 50%;
+}
+.table-td{
+	background: red;
+	text-align: center;
+}
+.td1{
+	text-align: center;
+	color: #CC0033;
+}
+.td2{
+	text-align: center;
+}
