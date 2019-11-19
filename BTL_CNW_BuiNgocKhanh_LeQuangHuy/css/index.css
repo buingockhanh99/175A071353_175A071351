@@ -1,0 +1,302 @@
+/*-----------------------------------------------top---------------------------------------------*/
+.sub-top{
+  background: #132685;
+  height: 12px;
+  
+}
+
+.top{
+  background: #ffffff; 
+  height: 128px;
+}
+/*logo trường */
+#logo{
+    margin-left: 12%;
+    margin-top: 0%;
+    height: 95%;
+}
+/* logo cờ viện nam */
+#covi{
+  position: absolute;
+  top :5.5%;
+  right: 15%;
+  height: 2%;
+}
+/* logo cờ mỹ */
+#cous{
+  position: absolute;
+  top:5.5%;
+  right: 13%;
+  height: 2%;
+}
+/* textbox tìm kiếm*/
+.top input {
+  position: absolute;
+  right: 17%;
+  top: 11%;
+  height: 22px;
+  width: 245px;
+}
+/* nút tìm kiếm */
+.top button{
+  position: absolute;
+  right: 14.3%;
+  top: 11%;
+  height: 22px;
+    
+}
+#adv{
+  position: absolute;
+  right: 26.5%;
+  top: 5%;
+  color: black;
+}
+#Login{
+  position: absolute;
+  right: 23%;
+  top: 5%;
+  color: black;
+}
+#Register{
+  position: absolute;
+  right: 18%;
+  top: 5%;
+  color: black;
+}
+
+
+
+.box{
+  background: #132685;
+  height: 421px;
+}
+
+#menu{
+  background: #0566f7;
+  height: 10%;
+  width: 75%;
+  margin: 0px auto;
+
+}
+#menu ul{
+  margin : 0px;
+  padding: 0px;
+}
+
+#menu ul li{
+  list-style: none; 
+  float : left; /* để cho thành hàng ngang*/
+}
+
+#menu ul li a{
+  text-decoration: none; /* xóa gạch chân*/
+  display: block;
+  height:  40px;
+  line-height: 40px;
+  color: #ffffff;
+  padding: 0px 20px;
+   border-left : 1px solid #ccc;  /*Viền */
+
+}
+
+#menu ul li a:hover{
+	background: #132563;
+}
+
+.sub-menu li {
+  display: none;
+}
+#menu li {
+ position: relative;
+}
+.sub-menu {
+ display: none;
+ position: absolute;
+}
+#menu li:hover > .sub-menu {
+ display: block;
+}
+
+#anh60nam
+{
+  margin-left: 12.5%;
+    margin-top: -0.2%;
+    height: 90.6%;
+    width: 75%;
+}
+/*-------------------------------------------------main----------------------------------------------*/
+
+
+.image{
+  height: 69px;
+}
+#image1{
+  position: absolute;
+  height: 10%;
+  left: 14%;
+}
+#image2{
+  position: absolute;
+  height: 10%;
+  left: 23%;
+}
+#image3{
+  position: absolute;
+  height: 10%;
+  left: 33%;
+}
+#image4{
+  position: absolute;
+  height: 10%;
+  left: 43%;
+}
+#image5{
+  position: absolute;
+  height: 10%;
+  left: 52%;
+}
+#image6{
+  position: absolute;
+  height: 10%;
+  left: 61%;
+}
+#image7{
+  position: absolute;
+  height: 10%;
+  left: 70%;
+}
+#image8{
+  position: absolute;
+  height: 10%;
+  left: 79%;
+}
+
+.menu-main{
+
+  height: 30px;
+  width: 75%;
+  margin: 0px auto;
+}
+
+.menu-main ul{
+  margin : 0px;
+  padding: 0px;
+}
+
+.menu-main ul li{
+  list-style: none; 
+  float : left; /* để cho thành hàng ngang*/
+}
+
+.menu-main ul li a{
+  text-decoration: none; /* xóa gạch chân*/
+  color: black;
+  border-bottom: 1px solid #ccc;  /*Viền */
+} 
+.information{
+/*   background: black; */ 
+  height:450px;
+  width: 75%;
+  margin: 0px auto;
+  }
+
+.information ul li{
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+.information ul li a{
+  text-decoration: none;
+  color: black;
+}
+.information ul li a:hover{
+   color: blue;
+}
+
+.tuyensinh{
+  background: #efefef;
+  height: 315px;
+}
+
+#subb-tuyensinh
+{
+  height: 65px;
+}
+#subb-tuyensinh h4{
+  line-height: 65px;
+  margin-left: 12.5%;
+}
+
+#sub-tuyensinh
+{
+/*   background: red */;
+  width: 75%;
+  height: 250px;
+  margin: 0px auto;
+  
+}
+
+#sub-tuyensinh a{
+  text-decoration: none; /* xóa gạch chân*/
+  color: black;
+}
+#sub-tuyensinh a:hover{
+  color: blue;
+}
+#sub-tuyensinh li{
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+
+.daotao{
+  height: 315px;
+}
+
+#subb-daotao
+{
+  height: 65px;
+}
+#subb-daotao h4{
+  line-height: 65px;
+  margin-left: 12.5%;
+}
+
+#sub-daotao
+{
+/*   background: red */;
+  width: 75%;
+  height: 250px;
+  margin: 0px auto;
+  
+}
+
+#sub-daotao a{
+  text-decoration: none; /* xóa gạch chân*/
+  color: black;
+}
+#sub-daotao a:hover{
+  color: blue;
+}
+#sub-daotao li{
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+/*-------------------------------------------------------footer----------------------------------------------- */
+.container-fluid {
+  background-color: #081487;
+  color: #d5d5d5;
+  border-top:10px;
+  font-size: 13px;
+}
+hr.light {
+  border-top: 1px solid #d5d5d5;
+  width: 75%;
+}
+.light-100 {
+  border-top: 1px solid #d5d5d5;
+  width: 100%;
+}
+
+/*--------------------------------------------------login--------------------------------------------------*/
+

@@ -1,0 +1,40 @@
+.menu-login{
+	background: #57a4fe;
+	height: 25px;	
+	width: 24.5%; 
+	margin-left: 75%;
+	margin-top: -1.7%;
+}
+.menu-login ul{
+  margin : 0px;
+  padding: 0px;
+}
+
+.menu-login ul li{
+  list-style: none; 
+  float : left; /* để cho thành hàng ngang*/
+}
+
+.menu-login ul li a{
+  text-decoration: none; /* xóa gạch chân*/
+  display: block;
+  height:  25px;
+  line-height: 25px;
+  color: #ffffff;
+  padding: 0px 10px;
+  border-left : 1px solid #ccc;  /*Viền */
+
+}
+
+.main-login
+{
+  height: 100px;
+  background: blueviolet;
+  
+}
+
+
+#anhlogin{
+  margin-top: 10%;
+  margin-left: 28%;
+}
