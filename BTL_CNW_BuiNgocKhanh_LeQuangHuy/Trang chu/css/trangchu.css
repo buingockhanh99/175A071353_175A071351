@@ -1,0 +1,387 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather&display=swap');
+.article {
+	backgroud: ;
+	}======RESET CSS=========
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+html, body{
+	color: #fff;
+	font-family: 'Merriweather', serif;
+	font-size: 13px;
+	line-height: 1.5;
+}
+main {
+	margin-top: 20px;
+}
+.wrapper{
+	width: 1300px;
+	height: 100%;
+}
+
+/*========= HEADER =========*/
+
+.page-header{
+	display: flex;
+	height: 66px;
+	background: #32bcf2;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.page-header .logo{
+	float: left;
+	padding-top: 23px;
+	box-sizing: border-box;
+}
+.page-header .main-nav{
+	float: right;
+}
+
+.main-nav li{
+	float: left;
+	margin-left: 50px;
+}
+.main-nav li a{
+	color: #fff;
+	text-transform: uppercase;
+	text-decoration: none;
+	line-height: 66px;
+}
+.main-nav li a:hover {
+	color: #000;
+}
+/*========= MAIN =========*/
+/*========= Banner =========*/
+/* .banner{
+	height: 550px;
+	background: url('../images/7.jpg');
+	background-size: cover;
+	padding-top: 170px;
+	box-sizing: border-box;
+}
+ */
+/* .banner-block{
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 60px;
+	font-weight: bold;
+	text-align: center;
+} */
+/* .banner h1{
+	font-size: 70px;
+	text-transform: uppercase;
+	color: white;
+}
+.banner h2 {
+	font-size: 35px;
+} */
+
+.subtitle{
+	font-size: 21px;
+	font-weight: 300;
+	margin: 25px 0;
+}
+/* .button_dn {
+	display: block;
+	padding: 20px 30px;
+	color: inherit;
+	text-transform: uppercase;
+	background: #ca0500;
+	font-size: 14px;
+	text-decoration: none;
+	width: 200px;
+	border-radius: 5px;
+	box-sizing: border-box;
+	margin: 0 auto;
+}
+.button_dn:hover {
+	box-shadow: inset 0 0 50px black;
+	border: 1px solid #ff0000;
+	color: white;
+} */
+
+
+
+/* .articles{
+	background: #ffffff;
+	background: -moz-linear-gradient(-5deg, #898686 0%, #ffffff 20%, #1b1b1b 80%, #1b1b1b 100%);
+	background: -webkit-linear-gradient(-5deg, #898686 0%,#ffffff 20%,#1b1b1b 80%,#1b1b1b 100%);
+	background: linear-gradient(95deg, #898686 0%,#ffffff 20%,#1b1b1b 80%,#1b1b1b 100%);
+} */
+ .article {
+
+}
+.articles>.wrapper::after, .page-footer>.wrapper::after{
+	content: '.';
+	font-size: 0;
+	height: 1px;
+	width: 100%;
+	display: block;
+	clear: both;
+}
+#ar_1{
+	width: 25%;
+	float: left;
+	box-sizing: border-box;
+	padding-top: 60px;
+	color: blue;
+}
+#ar_2{
+	width: 75%;
+	float: left;
+	box-sizing: border-box;
+	padding-top: 60px;
+	color: blue;
+}
+#ar_3{
+	width: 100%;
+	float: left;
+	box-sizing: border-box;
+	padding-top: 60px;
+	color: blue;
+}
+#img_2 {
+	width: 300px;
+	height: 300px;
+}
+#tk_2 {
+	margin-left: 20px;
+	width: 270px;
+}
+article:first-of-type{
+	padding-right: 10px;
+	color: white;
+}
+article:last-of-type{
+	padding-left: 30px;
+}
+h2{
+	padding: 0 10px;
+	border-radius: 5px;
+	background-color: #32bcf2;
+	font-size: 30px;
+	font-weight: 300;
+	margin-top: 50px;
+}
+/* h2::after{
+	font-size: 0;
+	display: block;
+	height: 2px;
+	width: 38px;
+	background: #ca0500;
+	margin: 20px 0 28px;
+} */
+.quote{
+	text-align: center;
+	font-size: 15px;
+	font-weight: 300;
+	margin-bottom: 10px;
+}
+.text{
+	font-weight: 300;
+	margin-bottom: 60px;
+}
+
+/*========= Footer =========*/
+.page-footer {
+	background: #32bcf2;
+	padding-top: 25px;
+	text-align: left;
+}
+.footer-col {
+	width: 25%;
+	float: left;
+}
+.page-footer h3 {
+	font-size: 13px;
+	text-transform: uppercase;
+	color: white;
+}
+.page-footer h3::after {
+	content: '.';
+	font-size: 0;
+	width: 90%;
+	height: 1px;
+	background: #292929;
+	display: block;
+	margin: 15px 0;
+}
+.page-footer li {
+	font-size: 13px;
+	color: #999;
+	line-height: 1.6;
+}
+.page-footer li:hover {
+	color: #fff;
+	cursor: pointer;
+}
+
+#search {
+	height: 25px;
+	margin-top: 17px;
+	margin-left: 100px;
+}
+img {
+	width: 270px;
+	height: 60px;
+	text-align: left;
+	margin-top: -18px;
+}
+#logo_footer {
+	margin-top: 10px;
+	width: 250px;
+	height: 80px;
+}
+#lh {
+	font-size: 30px;
+	margin-left: 66px;
+	margin-bottom: 10px;
+}
+#ch {
+	margin-top: 150px;
+}
+#dhcq {
+	margin-top: 150px;
+	margin-bottom: 50px;
+}
+#lkhi {
+	height: 150px;
+	border-radius: 5px;
+	border: 1px solid black;
+	margin-bottom: 10px;
+}
+#tdyk {
+	height: 120px;
+	border-radius: 5px;
+	border: 1px solid black;
+	margin-bottom: 10px;
+}
+#dtvl{
+	height: 160px;
+	border-radius: 5px;
+	border: 1px solid black;
+	margin-bottom: 10px;
+}
+#hd {
+	height: 250px;
+	border-radius: 5px;
+	border: 1px solid black;
+	margin-bottom: 10px;
+}
+#dmc ul {
+	background: #8e8e8e;
+	width: 315px;
+	padding: 0;
+	list-style-type: none;
+}
+#dmc ul li {
+	background: #16f2f9;
+	position: relative;
+	width: auto;
+	height: 35px;
+	line-height: 35px;
+	border-bottom: 1px solid black;
+	padding: 0 2em;
+}
+#dmc ul li a {
+	text-decoration: none;
+	color: #000;
+	font-weight: bold;
+	display: block;
+}
+#dmc ul li:hover{
+	background: #edeaea;
+}
+#dmc .sub-menu{
+	position: absolute;
+	left: 315px;
+	top: 0;
+	display: none;
+	border-left: 1px solid black;
+}
+#dmc ul li:hover .sub-menu{
+	display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
