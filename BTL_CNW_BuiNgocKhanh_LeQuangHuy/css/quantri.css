@@ -46,18 +46,20 @@ table {
 /*--------------------------------header---------------------------------------------*/
 .page-header{
 	background-color: #141214;
-	height: 101px;
+	height: 100px;
 }
 
 .logo{
 	float: left;
-	box-sizing: border-box;
-	padding-left: 100px;
+	height: 100px;
+	padding-left: 15px;
 }
+
 .sub-header{
-padding-top: 30px;
-color: #fff;
-text-align: center;
+	float: right;
+	color: #fff;
+
+
 }
 
 /*----------------------------------main---------------------------------------------*/

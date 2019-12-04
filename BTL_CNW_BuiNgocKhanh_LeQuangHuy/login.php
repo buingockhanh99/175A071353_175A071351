@@ -109,7 +109,7 @@
                     else
                     {
                         $_SESSION['TENTK'] = $username;
-                        header("location: index.php");
+                        header("location: giangvien.php");
                         ob_enf_fluck();
                     }       
             }

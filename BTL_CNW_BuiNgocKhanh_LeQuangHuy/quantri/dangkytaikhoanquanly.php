@@ -4,10 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/dangky.css">
-    <link rel="stylesheet" href="css/quantri1.css">
-    <title>Đăng ký tài khoản giảng viên</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/dangky.css">
+    <link rel="stylesheet" href="../css/quantri1.css">
 </head>
 
 <body>
@@ -28,8 +27,8 @@
             </form>
         </div>
     </div>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
 <?php
  
     // Nếu không phải là sự kiện đăng ký thì không xử lý
@@ -38,7 +37,7 @@
     }
      
     //Nhúng file kết nối với database
-    include('connect.php');
+    include('../connect.php');
           
     //Khai báo utf-8 để hiển thị được tiếng việt
     header('Content-Type: text/html; charset=UTF-8');
