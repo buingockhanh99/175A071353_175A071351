@@ -13,31 +13,50 @@
 
         <!-- khi mở tap ra có ở phần tiêu đề -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/quantri.css">
 
-        <link rel="stylesheet" media="screen" type="text/css" href="css/quantri1.css">
 
-       
-        <link rel="shortcut icon" href="images/fire.jpg">
         <title>Giảng viên</title>
 
     </head>
 <body>
-	<header class="page-header">
-		<div class="logo">
-			<img style="height: 100px;" src="images/logoHK.png" alt="Logo">
+	<header>
+		<div class="head-top">
+			<div class="head-top-left"><h1>HỆ THÔNG ĐĂNG KÝ HỌC - ĐẠI HỌC THỦY LỢI</h1></div>
+			<div class="head-top-right">
+				<?php 
+					$tentk = $_SESSION['TENTK'];
+					$sql1 = mysqli_query($conn,"SELECT * from login where TENTK = '$tentk'");
+					$row1=mysqli_fetch_assoc($sql1);   
+					$id = $row1['ID'];
+					$sql = mysqli_query($conn,"SELECT * from giangvien where MAGV = '$id'");
+		        	$row=mysqli_fetch_assoc($sql);    
+				?> 
+				<?php 
+				echo "<div style='color:blue; padding:5px 30px;'>" .$row['HODEM']." ".$row['TEN']. "(".$id. ") <span style='color:#000'>Vai trò:</span> Giảng viên</div>";
+				?>
+			</div>
 		</div>
-		<div class = "sub-header" style="float: right; padding-top:0">
-		 <?php 
-			$tentk = $_SESSION['TENTK'];
-			$sql1 = mysqli_query($conn,"SELECT * from login where TENTK = '$tentk'");
-			$row1=mysqli_fetch_assoc($sql1);   
-			$id = $row1['ID'];
-			$sql = mysqli_query($conn,"SELECT * from giangvien where MAGV = '$id'");
-        	$row=mysqli_fetch_assoc($sql);    
-		?> 
-			<p style="padding-bottom: 10px;">Xin chào <span style="color: red"> <?php echo"" .$row['HODEM']. " " .$row['TEN']. ""   ?></span></p>
-			<a href="logout.php" style="padding-left: 75px;">Thoát</a>
+		<div class="main-top">
+			<div class="left-top"></div>
+			<div class="right-top">
+				<div id="menu1">
+					<ul>
+						<li><a href="index1.php" style="border-left: none">Trang chủ</a></li>
+						<li><a href="">Hỏi đáp</a></li>
+						<li><a href="#">Trợ giúp</a></li>
+						<li><a href="logout.php">Thoát</a></li>
+						<li style="line-height: 30px;">
+							<select name="">
+								<option value="">VN</option>
+							</select> 
+						</li>
+					</ul>
+				</div>
+				
+			</div>
 		</div>
+
 	</header>
 
 	<main>
@@ -51,35 +70,33 @@
 							</ul>
 						</div>
 					</form>
-	
 				<iframe class="col-9" src="" name = "iframe">
-	
 				</iframe>
-
-				
 			</div>
 		</div>
 	</main>
 
-	<footer>
-		<div class="container">
-			<div class="row">
-				<div class="col-4">
-					<img style="height: 90px;" src="images/fire.jpg" alt="">
-				</div>
-				<div class="col-4">
-					<p style="margin-bottom: 5px; padding-top: 15px">Bùi Ngọc Khánh</p>	
-					<p style="margin-bottom: 5px;">Email: khanhbn72@wru.vn</p>	
-					<p>SDT: 0368699895</p>		 	
-				</div>
-				<div class="col-4">
-					<p style="margin-bottom: 5px; padding-top: 15px">Lê Quang Huy</p>	
-					<p style="margin-bottom: 5px;">Email: huylq720@wru.vn</p>	
-					<p>SDT: 0969608810</p>		 	
+<footer>
+	<div class="container-fluid">
+		<div class="row footer">
+			<div class="col-6 footer-left">
+				<p>Đường dây nóng</p>
+				<p>0705.927.709</p>
+			</div>
+			<div class="col-6 footer-right">
+				<div id="menu1">
+					<ul>
+						<li><a href="index1.php" style="border-left: none">Trang chủ</a></li>
+						<li><a href="">Hỏi đáp</a></li>
+						<li><a href="#">Trợ giúp</a></li>
+						<li><a href="logout.php">Thoát</a></li>
+					</ul>
 				</div>
 			</div>
 		</div>
-	</footer>
+		
+	</div>
+</footer>
 	
 </body>
 </html>

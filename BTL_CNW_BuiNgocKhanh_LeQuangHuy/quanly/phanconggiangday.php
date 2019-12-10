@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/dangky2.css">
+    <link rel="stylesheet" href="../css/dangky.css">
 
 </head>
 
@@ -22,7 +22,7 @@
         <div class="form-container">
             <form method="post">
                 <h4 class="text-center">Phân công giảng dạy</h4>
-                <div class="form-group" style="padding-top: 20px">
+                <div class="form-group" style="padding-bottom: 40px;">
                         <div style="float: left;width: 20%">
                             <p>Mã giảng viên</p>
                         </div>
@@ -40,7 +40,7 @@
                             </select>
                         </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group" style="padding-bottom: 40px;">
                         <div style="float: left;width: 20%">
                             <p>Môn học</p>
                         </div>
@@ -58,7 +58,7 @@
                         </select>
                         </div>
                 </div>              
-                <div class="form-group">
+                <div class="form-group" style="padding-bottom: 40px;">
                         <div style="float: left;width: 20%">
                             <p>Giai đoạn bắt đầu</p>
                         </div>
@@ -76,7 +76,7 @@
                         </select>                 
                         </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group" style="padding-bottom: 40px;">
                      <div style="float: left;width: 20%">
                         <p>Giai đoạn kết thúc</p>
                     </div>
@@ -95,7 +95,7 @@
                      </div>
                     
                 </div>
-                <div class="form-group">
+                <div class="form-group" style="padding-bottom: 40px;">
                    <div style="float: left;width: 20%">
                         <p>Địa điểm giảng dạy</p>
                     </div>
@@ -103,7 +103,7 @@
                         <input class="form-control" type="text" name="txtDiadiem" placeholder="Địa điểm giảng dạy">
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group" style="padding-bottom: 40px;">
                    <div style="float: left;width: 20%">
                         <p>Lớp dạy</p>
                     </div>

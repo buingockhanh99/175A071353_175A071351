@@ -44,35 +44,85 @@ table {
 } 
 
 /*--------------------------------header---------------------------------------------*/
-.page-header{
-	background-color: #141214;
-	height: 100px;
+.head-top{
+	background: #56a4fe;
+	width: 100%;
+	height: 90px;
 }
-
-.logo{
+.head-top-left{
 	float: left;
-	height: 100px;
-	padding-left: 15px;
 }
-
-.sub-header{
+.head-top-right{
 	float: right;
-	color: #fff;
-
+	height: 27px;
+	width: 369px;	
+	background: white;
+	border-bottom-left-radius: 20px;
+}
+.head-top h1{
+	font-size: 18px;
+	color: white;
+	font-weight: bold;
+	padding-left: 10px;
+	padding-top: 35px;
+}
+.main-top{
+	width: 100%;
+	height: 30px;
+	padding-top: 2px;
+}
+.left-top{
+	width: 50%;
+	height: 30px;
+	float: left;
 
 }
 
+.right-top{
+	float: right;
+	width: 50%;
+	height: 30px;
+}
+#menu1{
+  background: #56a4fe;
+  height: 30px;
+  width: 310px;
+  border-radius: 5px;
+  float: right;
+  
+}
+#menu1 ul{
+  margin : 0px;
+  padding: 0px;
+}
+#menu1 ul li{
+  list-style: none; 
+  float : left; /* để cho thành hàng ngang*/
+}
+#menu1 ul li a{
+  text-decoration: none; /* xóa gạch chân*/
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 30px;
+  color: #ffffff;
+  padding: 0px 5px;
+  border-left : 1px solid #ccc;  /*Viền */
+}
+#menu1 ul li a:hover{
+	color: blue;
+}
 /*----------------------------------main---------------------------------------------*/
 main{
-	height: 1000px;
+/* 	height: 1050px; */
 
 }
 #menu{
 	padding-top: 50px;
 }
 #menu ul{
-  background: #8AD385;
+  background: #56a4fe;
   width: 250px;
+  border-radius: 15px;
 }
 #menu ul li{
   width: auto;
@@ -83,13 +133,11 @@ main{
 }
 #menu ul li a{
 	text-decoration: none;
-	color: #333;
-	
 	display: block;
-	color: black;
+	color: #fff;
 }
 #menu ul li a:hover{
-	color: red;
+	color: blue;
 }
 .input{
 	width: 200px;
@@ -102,11 +150,21 @@ main{
 }
 
 /*--------------------------------footer---------------------------------------------*/
-
-footer{
-	background-color: #141214;
-	color: #fff;
-	}
+.footer{
+	height: 72px;
+	background-color: #56a4fe;
+}
+.footer-left{
+	color: #ffffff;
+	align-items: center;
+	padding-top: 20px;
+}
+.footer-right{
+	color: #ffffff;
+	align-items: center;
+	padding-top: 20px;
+	padding-right: 0px;
+}
 /*-------------------------------iframe---------------------------------------------*/
 iframe:focus {
   outline: none;
@@ -117,7 +175,7 @@ iframe[seamless] {
 }
 
 iframe{
-	width: 1100px;
+	width: 100%;
 	padding-top: 50px;
 	height: 1000px;
 }

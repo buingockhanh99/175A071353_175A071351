@@ -9,6 +9,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Đăng nhập</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/index1.css">
 </head>
@@ -24,15 +26,17 @@
               <img src="images/login1-t.gif" alt=""><br>
               <form method="post" class="form">
                 <div class="main-login">
-                  <div>
+                  <div style="padding-bottom: 3px">
                     <label>Tài khoản: </label>
-                    <input type="text" name="txtUsername">
+                    <input type="text" name="txtUsername" style="width: 140px">
                   </div>
-                  <div>
-                  <label>Mật khẩu : </label>
-                  <input type="password" name="txtPassword">
+
+                  <div style="padding-bottom: 5px">
+                    <label>Mật khẩu : </label>
+                    <input type="password" name="txtPassword" style="width: 139px">
                   </div>
-                  <div>
+
+                  <div style="padding-bottom: 5px;">
                     <button name="dangnhap" type="submit">Đăng nhập</button>
                     <button name="trangchu" type="submit">Về trang chủ</button>
                   </div>
@@ -41,13 +45,15 @@
                         header("location: index.php");
                     }
                   ?>
+                  <div>
+                    <?php
+                      include 'php/phpxulydangnhap.php';
+                    ?>
+                  </div>
                 </div>
               </form>
               <img id="img-bottom" src="images/login-b.gif" alt="">
         </div>
-                <?php
-                include 'php/phpxulydangnhap.php'; 
-                ?>
         </div>
 
     </main>
