@@ -4,57 +4,75 @@
   
   include'connect.php';
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="description" content="Đại học Thủy Lợi">
-  <meta name="keywords" content="TLU,WRU, Đại học Thủy Lợi">
-  <meta name="author" content="Ngọc Khánh Quang Huy">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Đăng nhập vào hệ thống</title>
-
-  <!-- khi mở tap ra có ở phần tiêu đề -->
-  <link rel="shortcut icon" href="images/Logo-Thuy_loi.png">
-
-  <!-- Import Boostrap css, js, font awesome here -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> 
-  <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">    
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-  <link href="css/css-login1.css" rel="stylesheet">
+	<title>
+		Đăng nhập vào hệ thống
+	</title>
+  <link REL="SHORTCUT ICON" HREF="./images/2.jpg">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Import Boostrap css, js, font awesome here -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> 
+    <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gelasio&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	<link href="./css/dangnhap.css" rel="stylesheet">
 </head>
 <body>
-  
-  <div id="login">
-    <div id="login_left">
-      <form id="form" method="POST" name = "login">
-    
-        <div id="h_1">
-           <h1>Đăng Nhập</h1>
-        </div> 
-          <span id="title">Tài Khoản <i class="fas fa-users"></i></span>
-            <div id="textbox">
-              <input type="text" name="txtUsername" placeholder="Tên tài khoản">
-            </div>          
-          <span id="title">Mật khẩu <i class="fas fa-lock"></i></span>
-            <div id="textbox">
-              <input type="password" name="txtPassword" placeholder="password" id="myInput">
-                <span id="eye" onclick="myFunction()">
-                  <i id="a1" class="fas fa-eye"></i>
-                  <i id="a2" class="fas fa-eye-slash"></i>
-                </span>
-            </div>
-          <br/>
-          <button style="text-align: " name="dangnhap" id="button" type="submit">Đăng Nhập</button><br/>
-          <a href="index.php">Về trang chủ!!</a>
-         </form> 
-    </div>
-  </div>
-
-<?php
+	<header id="header" class="">
+		<div class="top-hd"></div>
+		<h4>HỆ THỐNG ĐĂNG KÝ HỌC - ĐẠI HỌC THỦY LỢI</h4>	
+	</header>
+	<div class="nav-bar">
+		<a href="#">Trang chủ </a> |
+		<a href="#">Đăng nhập </a> |
+		<a href="#">Hỏi đáp </a> |
+		<a href="#">Trợ giúp </a>
+		<select name="" multiple>
+			<option value="">VN</option>
+		</select>
+	</div>
+	  <div id="login">
+	  	<div class="container">
+			<img src="images/login1-t.gif" alt=""><br>
+			<form method="post">
+				<div class="hi">
+					<label>Tài khoản: </label>
+					<input type="text" name="txtUsername"><br>
+					<label>Mật khẩu : </label>
+					<input type="password" name="txtPassword"><br>
+					<button name="dangnhap" type="submit">Đăng nhập</button>
+					<button name="trangchu">Về trang chủ</button><br>
+				</div>
+			</form>
+			<img id="img-bottom" src="images/login-b.gif" alt="">
+		</div>
+	  </div>
+	<footer>
+		<h4>
+			Đường dây nóng
+			<br>
+			<span>024.38521441</span>
+		</h4>
+		<ul>
+			<li><a href="#">Trợ giúp </a></li>
+			<li><a href="#">Hỏi đáp </a>|</li>
+			<li><a href="#">Đăng nhập </a>|</li>
+			<li><a href="#">Trang chủ </a>|</li>
+		</ul>
+	</footer>
+    <?php 
+        if (isset($_POST['trangchu'])) {
+            include"index.php";
+        }
+     ?>
+	<?php
     //Khai báo sử dụng session
     // session_start();
      
@@ -124,26 +142,5 @@
         // die();       
 }
 ?>
-     <script>
-      function myFunction() {
-        var x = document.getElementById("myInput");
-        var y = document.getElementById("a1");
-        var z = document.getElementById("a2");
-
-        if(x.type === 'password'){
-          x.type = "text";
-          y.type.display = "block";
-          z.type.display = "none";
-        }
-        else {
-          x.type = "password";
-          y.type.display = "none";
-          z.type.display = "block";
-
-        }
-      }
-
-    </script> 
-
 </body>
 </html>
