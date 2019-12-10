@@ -1,5 +1,5 @@
 <?php
-   
+   session_start();	
    include'connect.php';
 ?>
 <!DOCTYPE html>
@@ -14,7 +14,7 @@
         <!-- khi mở tap ra có ở phần tiêu đề -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
 
-        <link rel="stylesheet" media="screen" type="text/css" href="css/quantri.css">
+        <link rel="stylesheet" media="screen" type="text/css" href="css/quantri1.css">
 
        
         <link rel="shortcut icon" href="images/fire.jpg">
@@ -23,15 +23,21 @@
     </head>
 <body>
 	<header class="page-header">
-			
-			<div class="logo">
-				<img style="height: 100px;" src="images/logoHK.png" alt="Logo">
-			</div>
-			<div class = "sub-header">
-				<p style="padding-bottom: 10px">Xin chào <span style="color: red">Giảng viên</span></p>
-				<a href="login.php" style="padding-left: 90px;">Thoát</a>
-			</div>
-		
+		<div class="logo">
+			<img style="height: 100px;" src="images/logoHK.png" alt="Logo">
+		</div>
+		<div class = "sub-header" style="float: right; padding-top:0">
+		 <?php 
+			$tentk = $_SESSION['TENTK'];
+			$sql1 = mysqli_query($conn,"SELECT * from login where TENTK = '$tentk'");
+			$row1=mysqli_fetch_assoc($sql1);   
+			$id = $row1['ID'];
+			$sql = mysqli_query($conn,"SELECT * from giangvien where MAGV = '$id'");
+        	$row=mysqli_fetch_assoc($sql);    
+		?> 
+			<p style="padding-bottom: 10px;">Xin chào <span style="color: red"> <?php echo"" .$row['HODEM']. " " .$row['TEN']. ""   ?></span></p>
+			<a href="logout.php" style="padding-left: 75px;">Thoát</a>
+		</div>
 	</header>
 
 	<main>
@@ -41,9 +47,7 @@
 					<form action="" method="post">
 						<div id = "menu" class="col-3">
 							<ul>
-								<li><a href="giangvien/nhapdanhsachsinhvien.php" target="iframe">Nhập danh sách sinh viên</a></li>
-								<li><a href="giangvien/thietlapdiem.php" target = "iframe">Thiết lập trọng số điểm</a></li>
-								<li><a href="giangvien/danhsachsinhvien.php" target="iframe">Danh sách sinh viên</a></li>
+								<li><a href="giangvien/capnhatthongtin.php" target="iframe">Cập nhật thông tin KHGD</a></li>
 							</ul>
 						</div>
 					</form>

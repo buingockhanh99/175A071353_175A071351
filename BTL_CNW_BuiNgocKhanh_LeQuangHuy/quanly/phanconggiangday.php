@@ -9,71 +9,78 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/dangky.css">
-    <link rel="stylesheet" href="../css/quantri1.css">
+    <link rel="stylesheet" href="../css/dangky2.css">
+
 </head>
 
 <body>
 
     <div class="register-photo">
+        <div>
+            
+        </div>
         <div class="form-container">
-            <div class="image-holder"></div>
             <form method="post">
-                <h2 class="text-center">Phân công giảng dạy</h2>
+                <h4 class="text-center">Phân công giảng dạy</h4>
+                <div class="form-group" style="padding-top: 20px">
+                        <div style="float: left;width: 20%">
+                            <p>Mã giảng viên</p>
+                        </div>
+                        <div style="float: right; width: 80%">
+                            <?php 
+                                $sql = mysqli_query($conn,"select * from giangvien") or die(myqli_error($conn));
+                                if (mysqli_num_rows($sql) > 0) {
+                                $i=0; 
+                            ?>   
+                            <select class="form-control" name = "txtMaGV">
+                            <?php while($row=mysqli_fetch_assoc($sql)) {
+                                $i++; ?>
+                                <option><?php echo $row['MAGV']; ?></option>
+                            <?php }}  ?>
+                            </select>
+                        </div>
+                </div>
                 <div class="form-group">
-                    <div style="padding-bottom: 10px"><h4>Mã giảng viên</h4></div>
-                    <div>
+                        <div style="float: left;width: 20%">
+                            <p>Môn học</p>
+                        </div>
+                        <div style="float: right; width: 80%">
                         <?php 
-                            $sql = mysqli_query($conn,"select * from giangvien") or die(myqli_error($conn));
+                            $sql = mysqli_query($conn,"select * from monhoc") or die(myqli_error($conn));
                             if (mysqli_num_rows($sql) > 0) {
                             $i=0; 
                         ?>   
-                        <select class="form-control" name = "txtMaGV">
+                        <select class="form-control" name = "txtMonHoc">
                         <?php while($row=mysqli_fetch_assoc($sql)) {
                             $i++; ?>
-                            <option><?php echo $row['MAGV']; ?></option>
+                            <option><?php echo $row['MONHOC']; ?></option>
                         <?php }}  ?>
                         </select>
-                    </div>
-                    
-                </div>
-                <div class="form-group">
-                    <div style="padding-bottom: 10px"><h4>Tên môn học</h4></div>
-                    <div>
-                    <?php 
-                        $sql = mysqli_query($conn,"select * from monhoc") or die(myqli_error($conn));
-                        if (mysqli_num_rows($sql) > 0) {
-                        $i=0; 
-                    ?>   
-                    <select class="form-control" name = "txtMonHoc">
-                    <?php while($row=mysqli_fetch_assoc($sql)) {
-                        $i++; ?>
-                        <option><?php echo $row['MONHOC']; ?></option>
-                    <?php }}  ?>
-                    </select>
-                    </div>
-                    
+                        </div>
                 </div>              
                 <div class="form-group">
-                    <div style="padding-bottom: 10px"><h4>Học kỳ bắt đầu</h4></div>
-                    <div>
-                    <?php 
-                        $sql = mysqli_query($conn,"select * from hockygiaidoan") or die(myqli_error($conn));
-                        if (mysqli_num_rows($sql) > 0) {
-                        $i=0; 
-                    ?>   
-                    <select class="form-control" name = "txtHocKy1">
-                    <?php while($row=mysqli_fetch_assoc($sql)) {
-                        $i++; ?>
-                        <option><?php echo $row['HOCKY']; ?></option>
-                    <?php }}  ?>
-                    </select>                 
-                    </div>
-                   
+                        <div style="float: left;width: 20%">
+                            <p>Giai đoạn bắt đầu</p>
+                        </div>
+                        <div style="float: right; width: 80%">
+                        <?php 
+                            $sql = mysqli_query($conn,"select * from hockygiaidoan") or die(myqli_error($conn));
+                            if (mysqli_num_rows($sql) > 0) {
+                            $i=0; 
+                        ?>   
+                        <select class="form-control" name = "txtHocKy1">
+                        <?php while($row=mysqli_fetch_assoc($sql)) {
+                            $i++; ?>
+                            <option><?php echo $row['HOCKY']; ?></option>
+                        <?php }}  ?>
+                        </select>                 
+                        </div>
                 </div>
                 <div class="form-group">
-                     <div style="padding-bottom: 10px"><h4>Học kỳ kết thúc</h4></div>
-                     <div>
+                     <div style="float: left;width: 20%">
+                        <p>Giai đoạn kết thúc</p>
+                    </div>
+                    <div style="float: right; width: 80%">
                     <?php 
                         $sql = mysqli_query($conn,"select * from hockygiaidoan") or die(myqli_error($conn));
                         if (mysqli_num_rows($sql) > 0) {
@@ -89,14 +96,18 @@
                     
                 </div>
                 <div class="form-group">
-                    <div style="padding-bottom: 10px"><h4>Địa điểm giảng dạy</h4></div>
-                    <div>
+                   <div style="float: left;width: 20%">
+                        <p>Địa điểm giảng dạy</p>
+                    </div>
+                    <div style="float: right; width: 80%">
                         <input class="form-control" type="text" name="txtDiadiem" placeholder="Địa điểm giảng dạy">
                     </div>
                 </div>
                 <div class="form-group">
-                    <div style="padding-bottom: 10px"><h4>Lớp</h4></div>
-                    <div>
+                   <div style="float: left;width: 20%">
+                        <p>Lớp dạy</p>
+                    </div>
+                    <div style="float: right; width: 80%">
                     <?php 
                         $sql = mysqli_query($conn,"select * from loptheonganhhoc") or die(myqli_error($conn));
                         if (mysqli_num_rows($sql) > 0) {
@@ -111,7 +122,7 @@
                     </div>
                 </div>
                 
-                <div class="form-group"><button name="signup" class="btn btn-primary btn-block" type="submit">Tạo tài khoản</button></div>
+                <div class="form-group"><button name="signup" class="btn btn-primary btn-block" type="submit">Phân công</button></div>
             </form>
         </div>
     </div>

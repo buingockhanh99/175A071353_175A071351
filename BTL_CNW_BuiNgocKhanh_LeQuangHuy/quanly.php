@@ -1,3 +1,8 @@
+<?php 
+session_start();
+include('connect.php');
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -7,7 +12,7 @@
 		<meta name="author" content="Ngọc Khánh Quang Huy">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 		<link rel="stylesheet" href="css/bootstrap.min.css" >
-		<link rel="stylesheet" media="screen" type="text/css" href="css/quantri.css">
+		<link rel="stylesheet" media="screen" type="text/css" href="css/quantri1.css">
 		<link rel="shortcut icon" href="images/fire.jpg">
 		<title>Quản lý</title>
 	</head>
@@ -18,8 +23,16 @@
 					<img style="height: 100px;" src="images/logoHK.png" alt="Logo">
 				</div>
 				<div class = "sub-header" style="float: right; padding-top:0">
-					<p style="padding-bottom: 10px;">Xin chào <span style="color: red">quản lý</span></p>
-					<a href="login.php" style="padding-left: 75px;">Thoát</a>
+				<?php 
+					$tentk = $_SESSION['TENTK'];
+					$sql1 = mysqli_query($conn,"SELECT * from login where TENTK = '$tentk'");
+					$row1=mysqli_fetch_assoc($sql1);   
+					$id = $row1['ID'];
+					$sql = mysqli_query($conn,"SELECT * from quanly where MAQL = '$id'");
+                	$row=mysqli_fetch_assoc($sql);    
+				?> 
+					<p style="padding-bottom: 10px;">Xin chào <span style="color: red"><?php echo $row['HOTEN']   ?> </span></p>
+					<a href="logout.php" style="padding-left: 75px;">Thoát</a>
 				</div>
 			</div>
 		</header>
@@ -33,6 +46,7 @@
 								<li><a href="quanly/monhoc.php" target="iframe">Tạo môn học</a></li>
 								<li><a href="quanly/LopHocTheoNganhHoc.php" target="iframe">Năm học - Lớp học phần</a></li>
 								<li><a href="quanly/hocky-giaidoan.php" target="iframe"> Học kỳ - Giai đoạn</a></li>
+								<li><a href="quanly/phanconggiangday.php" target="iframe">Phân công giảng dạy</a></li>
 							</ul>
 						</div>
 					</form>

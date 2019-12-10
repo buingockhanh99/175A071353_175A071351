@@ -1,0 +1,285 @@
+/*----------reset css-----------*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+ HTML5 display-role reset for older browsers
+ article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+	margin:  0 0 0 0;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote::before, blockquote::after,
+q::before, q::after {
+	content: '.';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+} 
+
+/*----------------header--------------------*/
+
+.head-top{
+	background: #56a4fe;
+	width: 100%;
+	height: 90px;
+}
+.head-top-left{
+	float: left;
+}
+.head-top-right{
+	float: right;
+	height: 27px;
+	width: 369px;	
+	background: white;
+	border-bottom-left-radius: 20px;
+}
+.head-top h1{
+	font-size: 18px;
+	color: white;
+	font-weight: bold;
+	padding-left: 10px;
+	padding-top: 35px;
+}
+
+.main-top{
+	background: white;
+	width: 100%;
+	height: 30px;
+	padding-top: 2px;
+	padding-bottom: 3px;
+}
+
+.left-top{
+	float: left;
+	width: 50%;
+	height: 30px;
+}
+
+.right-top{
+	float: right;
+	width: 50%;
+	height: 30px;
+}
+
+#menu{
+  background: #56a4fe;
+  height: 30px;
+  width: 310px;
+  border-radius: 5px;
+  float: right;
+  
+}
+#menu ul{
+  margin : 0px;
+  padding: 0px;
+}
+#menu ul li{
+  list-style: none; 
+  float : left; /* để cho thành hàng ngang*/
+}
+
+#menu ul li a{
+  text-decoration: none; /* xóa gạch chân*/
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 30px;
+  color: #ffffff;
+  padding: 0px 5px;
+  border-left : 1px solid #ccc;  /*Viền */
+}
+
+#menu ul li a:hover{
+	color: blue;
+}
+/*----------------main--------------------*/
+.main{
+	height: 1327px;
+}
+.top-dmc{
+	height: 180px;
+}
+.dmc{
+	background: #f9fafc;
+	height: 38px;
+}
+
+.dmc p {
+	line-height: 38px;
+	color: #848484;
+	font-size: 12px;
+}
+
+
+#menu1{
+  height: 30px;
+  width: 310px;
+  
+}
+#menu1 ul{
+  margin : 0;
+  padding: 0;	
+}
+
+#menu1 li {
+  line-height: 40px;
+}
+
+#menu1 li a{
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  display: block;
+/*   line-height: 30px; */
+}
+
+#menu1 ul li :hover{
+	background: #0072bc;
+}
+
+.lkhi{
+	color: white;
+	height: 300px;
+	border-radius: 5px;
+	border: 2px solid #56a4fe;
+	margin-bottom: 10px;
+	border-bottom-left-radius: 1px;
+
+}
+.p-lkhi
+{
+	line-height: 30px;
+	background-color: #56a4fe;
+	height: 30px;
+}
+
+.tdyk{
+	color: white;
+	height: 100px;
+	border-radius: 5px;
+	border: 2px solid #56a4fe;
+	margin-bottom: 10px;
+
+}
+
+.body-main{
+	color: white;
+	margin-bottom: 10px;
+}
+.p-lkhi{
+	border-radius: 5px;
+}
+
+.p-lkhi h1{
+	font-weight: bold;
+	padding-left: 10px;
+}
+
+.noidung{
+	padding-top: 25px;
+	font-size: 14px;
+	
+}
+.noidung h1{
+	color: red;
+	text-align: center;
+	font-weight: bold;
+	font-size: 12px;
+	padding-bottom: 15px;
+}
+
+.noidung ul li{
+	font-size: 14px;
+	color: blue;
+	padding-left: 20px;
+	padding-bottom: 20px;
+
+}
+.noidung ul li a{
+	text-decoration: none;
+}
+
+.noidung p:hover{
+	color: blueviolet;
+}
+
+
+.form{
+	position: relative;
+	font-size: 13px;
+	margin-left: 30%;
+	width: 487px;
+	height: 100px;
+	border-left: 3px solid #FEA700;
+	border-right: 3px solid #FEA700;
+}
+.form input {
+	height: 20px;
+	width: 137px;
+}
+.form button{
+	font-size: 12px;
+}
+.form a{
+	margin-left: 50px;
+}
+.main-login{
+	position: absolute;
+	margin-top: 17px;
+	margin-left: 120px;
+}
+.main-login label{
+	margin-top: -5px;
+	font-weight: bold;
+}
+#login{
+	margin-top: 169px;
+	font-size: 15px;
+	margin-bottom: 192px;
+}
+img{
+	margin-left: 30%;
+}
+/*----------------footer--------------------*/
+.footer{
+	height: 72px;
+	background-color: #56a4fe;
+}
+.footer-left{
+	color: #ffffff;
+	align-items: center;
+	padding-top: 20px;
+}
+.footer-right{
+	color: #ffffff;
+	align-items: center;
+	padding-top: 20px;
+	padding-right: 0px;
+}
