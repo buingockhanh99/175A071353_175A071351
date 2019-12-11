@@ -21,7 +21,8 @@
 		        		$row=mysqli_fetch_assoc($sql);    
 						echo "<div style='color:blue; padding:5px 30px;'>" .$row['HODEM']." ".$row['TEN']. "(".$id. ") <span style='color:#000'>Vai trò:</span> Giảng viên</div>";
 					}
-					else{
+					else if ($row1['LEVEL']==1)
+					{
 						echo "<div style='color:blue; padding:5px 30px;'>Xin chào admin</div>";
 					}
 				}

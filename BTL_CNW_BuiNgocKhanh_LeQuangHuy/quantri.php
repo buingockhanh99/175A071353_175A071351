@@ -1,3 +1,7 @@
+<?php 
+session_start();
+include('connect.php');
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -9,7 +13,7 @@
 
 
 		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" media="screen" type="text/css" href="css/quantri.css">
+		<link rel="stylesheet" media="screen" type="text/css" href="css/quantri1.css">
 
 
 		<script src="js/jquery-3.4.1.min.js"></script>
@@ -19,40 +23,17 @@
 <body>
 
 
-	<header>
-			<div class="head-top">
-				<div class="head-top-left"><h1>HỆ THÔNG ĐĂNG KÝ HỌC - ĐẠI HỌC THỦY LỢI</h1></div>
-				<div class="head-top-right">
-					<?php 
-					echo "<div style='color:blue; padding:5px 30px;'>Xin chào admin</div>";
-					?>
-				</div>
-			</div>
-			<div class="main-top">
-				<div class="left-top"></div>
-				<div class="right-top">
-					<div id="menu1">
-						<ul>
-							<li><a href="index.php" style="border-left: none">Trang chủ</a></li>
-							<li><a href="">Hỏi đáp</a></li>
-							<li><a href="#">Trợ giúp</a></li>
-							<li><a href="logout.php">Thoát</a></li>
-							<li style="line-height: 30px;">
-								<select name="">
-									<option value="">VN</option>
-								</select> 
-							</li>
-						</ul>
-					</div>
-					
-				</div>
-			</div>
-	</header>
+	<!-- phần đầu -->
+	<?php
+		include"header-index.php";
+	?>
+		
+	<!-- phần chính -->
 	<main>
 		<div class="container-fluid" >
 			<div class="row">
 				<form action="" method="post">
-					<div id = "menu" class="col-3">
+					<div id = "menu1" class="col-3">
 						<ul>
 							<li><a href="quantri/thongtintaikhoan.php" target="iframe">Quản lý tài khoản</a></li>
 							<li><a href="quantri/dangkytaikhoangiangvien.php" target = "iframe">Tạo tài khoản giảng viên</a></li>

@@ -83,7 +83,7 @@ table {
 	width: 50%;
 	height: 30px;
 }
-#menu1{
+#menu{
   background: #56a4fe;
   height: 30px;
   width: 310px;
@@ -91,15 +91,16 @@ table {
   float: right;
   
 }
-#menu1 ul{
+#menu ul{
   margin : 0px;
   padding: 0px;
 }
-#menu1 ul li{
+#menu ul li{
   list-style: none; 
   float : left; /* để cho thành hàng ngang*/
 }
-#menu1 ul li a{
+
+#menu ul li a{
   text-decoration: none; /* xóa gạch chân*/
   font-weight: bold;
   font-size: 13px;
@@ -108,7 +109,8 @@ table {
   padding: 0px 5px;
   border-left : 1px solid #ccc;  /*Viền */
 }
-#menu1 ul li a:hover{
+
+#menu ul li a:hover{
 	color: blue;
 }
 /*----------------------------------main---------------------------------------------*/
@@ -116,27 +118,27 @@ main{
 /* 	height: 1050px; */
 
 }
-#menu{
+#menu1{
 	padding-top: 50px;
 }
-#menu ul{
+#menu1 ul{
   background: #56a4fe;
   width: 250px;
   border-radius: 15px;
 }
-#menu ul li{
+#menu1 ul li{
   width: auto;
   height: 40px;
   line-height: 40px;
   border-bottom: 1px solid #e8e8e8;
   padding: 0 20px 10px;
 }
-#menu ul li a{
+#menu1 ul li a{
 	text-decoration: none;
 	display: block;
 	color: #fff;
 }
-#menu ul li a:hover{
+#menu1 ul li a:hover{
 	color: blue;
 }
 .input{
