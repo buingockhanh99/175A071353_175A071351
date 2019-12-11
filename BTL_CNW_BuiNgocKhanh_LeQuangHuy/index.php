@@ -16,6 +16,7 @@
 	<?php
 		include"header-index.php";
 	?>
+		
 	<!-- phần chính -->
 		<main class="main">
 		<div class="container-fluid" style="padding-top: 6px">
@@ -27,9 +28,31 @@
 						</div>
 						<div id="menu1">
 							<ul>
-								<li><a href="lichgiangday.php">Tra cứu lịch giảng dạy</a></li>
-								<li><a href="">Chương trình đào tạo</a></li>
-								<li><a href="">Giảng đường trực tuyến</a></li>
+								<?php
+
+								if(isset($_SESSION['TENTK']))
+								{	$id = $_SESSION['TENTK'];
+									$sql = mysqli_query($conn,"SELECT * from login where TENTK = '$id'");
+	                       			$row=mysqli_fetch_assoc($sql);
+	                       			if($row['LEVEL']==1) 
+	                       			{
+	                       				echo '<li><a href="quantri.php">Về trang quản trị</a></li>';
+	                       			}
+	                       			else if($row['LEVEL']==2)
+	                       			{
+	                       				echo '<li><a href="quanly.php">Về trang quản lý</a></li>';
+	                       			}
+	                       			else{
+	                       				echo '<li><a href="giangvien.php">Về trang giảng viên</a></li>';
+	                       			}    
+	                       		}
+	                       		else
+	                       		{
+	                       			echo '<li><a href="lichgiangday.php">Tra cứu lịch giảng dạy</a></li>';
+									echo '<li><a href="">Chương trình đào tạo</a></li>';
+									echo '<li><a href="">Giảng đường trực tuyến</a></li>';
+	                       		}             	
+	                            ?>
 							</ul>
 						</div>
 					</div>

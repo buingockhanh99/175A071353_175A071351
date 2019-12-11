@@ -42,9 +42,9 @@
 			<div class="right-top">
 				<div id="menu1">
 					<ul>
-						<li><a href="index1.php" style="border-left: none">Trang chủ</a></li>
+						<li><a href="index.php" style="border-left: none">Trang chủ</a></li>
 						<li><a href="">Hỏi đáp</a></li>
-						<li><a href="#">Trợ giúp</a></li>
+						<li><a href="">Trợ giúp</a></li>
 						<li><a href="logout.php">Thoát</a></li>
 						<li style="line-height: 30px;">
 							<select name="">
@@ -84,14 +84,7 @@
 				<p>0705.927.709</p>
 			</div>
 			<div class="col-6 footer-right">
-				<div id="menu1">
-					<ul>
-						<li><a href="index1.php" style="border-left: none">Trang chủ</a></li>
-						<li><a href="">Hỏi đáp</a></li>
-						<li><a href="#">Trợ giúp</a></li>
-						<li><a href="logout.php">Thoát</a></li>
-					</ul>
-				</div>
+				
 			</div>
 		</div>
 		
