@@ -18,7 +18,7 @@ include'../connect.php';
         if (mysqli_num_rows($sql) > 0) {
         $i=0;
         ?>
-        <table border="1px soid blue" style="text-align: center">
+        <table border="" style="text-align: center; border: 2px solid #56a4fe;">
 
           <tr class="col-6">
             <th width="300px">ID tài khoản</th>
@@ -42,6 +42,7 @@ include'../connect.php';
           </tr>
           <?php }}  ?>
         </table>
+
         </from>
       </div>
     </div>
