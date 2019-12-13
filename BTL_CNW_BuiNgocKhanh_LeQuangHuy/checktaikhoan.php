@@ -10,9 +10,9 @@
    		if($row['LEVEL']==1)
    		header("location: quantri.php");
    		else if ($row['LEVEL']==2)
-   		header("location: quanly.php");
+   		header("location: quanly/updateTT.php");
    		else
-   		header("location: giangvien/capnhatthongtin.php");
+   		header("location: giangvien/updateTT.php");
    }
    else{
    		if($row['LEVEL']==1)

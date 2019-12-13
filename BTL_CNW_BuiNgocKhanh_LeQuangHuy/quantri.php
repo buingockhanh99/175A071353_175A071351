@@ -37,8 +37,7 @@ include('connect.php');
 						<ul>
 							<li><a href="quantri/thongtintaikhoan.php" target="iframe">Quản lý tài khoản</a></li>
 							<li><a href="quantri/taotaikhoan.php" target = "iframe">Tạo tài khoản</a></li>
-							<li><a href="quantri/dangkytaikhoangiangvien.php" target = "iframe">Tạo tài khoản giảng viên</a></li>
-							<li><a href="quantri/dangkytaikhoanquanly.php" target="iframe">Tạo tài khoản quản lý</a></li>
+							
 						</ul>
 					</div>
 				</form>

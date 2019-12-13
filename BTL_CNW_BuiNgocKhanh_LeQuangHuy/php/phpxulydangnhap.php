@@ -30,11 +30,11 @@
                         $row=mysqli_fetch_assoc($sql);                      
                             if($row['LEVEL']==1)
                             {
-                                header("location: quantri.php");
+                                header("location: checktaikhoan.php");
                             }
                             else if($row['LEVEL']==2)
                             {
-                                header("location: quanly.php");
+                                header("location: checktaikhoan.php");
                             }
                             else
                             {

@@ -13,13 +13,13 @@
 					{
 						$sql = mysqli_query($conn,"SELECT * from quanly where MAQL = '$id'");
 			        	$row=mysqli_fetch_assoc($sql);
-			        	echo "<div style='color:blue; padding:5px 25px;'>" .$row['HOTEN']."(".$id. ") <span style='color:#000'>Vai trò:</span> Quản lý</div>";  
+			        	echo "<div style='color:blue; padding:5px 20px;'>" .$row['HOTEN']."(".$id. ") <span style='color:#000'>Vai trò:</span> Quản lý</div>";  
 					}
 					else if($row1['LEVEL']==3)
 					{
 						$sql = mysqli_query($conn,"SELECT * from giangvien where MAGV = '$id'");
 		        		$row=mysqli_fetch_assoc($sql);    
-						echo "<div style='color:blue; padding:5px 30px;'>" .$row['HODEM']." ".$row['TEN']. "(".$id. ") <span style='color:#000'>Vai trò:</span> Giảng viên</div>";
+						echo "<div style='color:blue; padding:5px 15px;'>" .$row['HODEM']." ".$row['TEN']. "(".$id. ") <span style='color:#000'>Vai trò:</span> Giảng viên</div>";
 					}
 					else if ($row1['LEVEL']==1)
 					{

@@ -32,7 +32,7 @@
 					<form action="" method="post">
 						<div id = "menu1" class="col-3">
 							<ul>
-								<li><a href="giangvien/capnhatthongtin.php" target="iframe">Cập nhật thông tin KHGD</a></li>
+								<li><a href="giangvien/updateKHGD.php" target="iframe">Cập nhật thông tin KHGD</a></li>
 							</ul>
 						</div>
 					</form>
