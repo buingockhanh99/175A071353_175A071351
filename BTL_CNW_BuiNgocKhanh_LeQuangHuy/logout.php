@@ -1,7 +1,7 @@
 <?php 
 session_start(); 
-if (isset($_SESSION['TENTK'])){
-    unset($_SESSION['TENTK']); // xóa session login
+if (isset($_SESSION['Username'])){
+    unset($_SESSION['Username']); // xóa session login
     header('location:index.php');
 }
 

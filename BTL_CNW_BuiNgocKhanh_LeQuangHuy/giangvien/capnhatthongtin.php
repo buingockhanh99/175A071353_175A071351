@@ -16,8 +16,8 @@
     <div class="register-photo">
         <div class="form-container">
             <?php 
-                $tentk = $_SESSION['TENTK'];
-                $sql1 = mysqli_query($conn,"SELECT * from login where TENTK = '$tentk'");
+                $tentk = $_SESSION['Username'];
+                $sql1 = mysqli_query($conn,"SELECT * from login where USERNAME = '$tentk'");
                 $row1=mysqli_fetch_assoc($sql1);   
                 $id = $row1['ID'];
 
@@ -154,10 +154,16 @@
     //Lưu thông tin thành viên vào bảng
     $add_pcgd = mysqli_query($conn, "
     UPDATE kehoachgiangday SET TENMONHOC='$monhoc',GIAIDOANBD='$hocky1',GIAIDOANKT='$hocky2',DIADIEM='$diadiem',LOPDAY='$lop' where MAGV='$magv'");
-                          
+    
+    $kichhoattaikhoan =mysqli_query($conn, "
+    UPDATE login SET STATUS='1'where MAGV='$magv'");               
     //Thông báo quá trình lưu
     if ($add_pcgd)
+    {
         echo "<div class='form-group' style='text-align:center;color:red;'>Cập nhật thành công.</div>";
+        header("location: ../giangvien.php");
+    }
+
     else
         echo "<div class='form-group' style='text-align:center;color:red;'> Có lỗi xảy ra trong quá trình đăng ký.</div>";
 ?>

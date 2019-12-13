@@ -30,9 +30,9 @@
 							<ul>
 								<?php
 
-								if(isset($_SESSION['TENTK']))
-								{	$id = $_SESSION['TENTK'];
-									$sql = mysqli_query($conn,"SELECT * from login where TENTK = '$id'");
+								if(isset($_SESSION['Username']))
+								{	$Username = $_SESSION['Username'];
+									$sql = mysqli_query($conn,"SELECT * from login where USERNAME = '$Username'");
 	                       			$row=mysqli_fetch_assoc($sql);
 	                       			if($row['LEVEL']==1) 
 	                       			{

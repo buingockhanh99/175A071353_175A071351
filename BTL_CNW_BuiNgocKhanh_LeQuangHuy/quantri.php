@@ -36,9 +36,9 @@ include('connect.php');
 					<div id = "menu1" class="col-3">
 						<ul>
 							<li><a href="quantri/thongtintaikhoan.php" target="iframe">Quản lý tài khoản</a></li>
+							<li><a href="quantri/taotaikhoan.php" target = "iframe">Tạo tài khoản</a></li>
 							<li><a href="quantri/dangkytaikhoangiangvien.php" target = "iframe">Tạo tài khoản giảng viên</a></li>
 							<li><a href="quantri/dangkytaikhoanquanly.php" target="iframe">Tạo tài khoản quản lý</a></li>
-							<li><a href="quantri/xoataikhoan.php" target="iframe">Xóa tài khoản</a></li>
 						</ul>
 					</div>
 				</form>

@@ -16,7 +16,7 @@
             </div>
             <form method="post">
                 <h2 class="text-center">Đăng ký</h2>
-                <div class="form-group"><input class="form-control" type="text" name="txtID" placeholder="Mã Giáo Viên"></div>
+                <div class="form-group"><input class="form-control" type="text" name="txtID" placeholder="Mã Quản Trị"></div>
                 <div class="form-group"><input class="form-control" type="text" name="txtUsername" placeholder="Tên tài khoản"></div>
                 <div class="form-group"><input class="form-control" type="password" name="txtPassword" placeholder="Password"></div>
                 <div class="form-group"><input class="form-control" type="text" name="txtHoTen" placeholder="Họ và Tên"></div>
@@ -69,7 +69,7 @@
         exit;
     }     
     //Kiểm tra tên đăng nhập này đã có người dùng chưa
-    if (mysqli_num_rows(mysqli_query($conn,"SELECT TENTK FROM login WHERE TENTK='$username'")) > 0)
+    if (mysqli_num_rows(mysqli_query($conn,"SELECT USERNAME FROM login WHERE USERNAME='$username'")) > 0)
     {
         echo "<div style='text-align:center;color:#000000;'>Tên đăng nhập này đã có người dùng. Vui lòng chọn tên đăng nhập khác. <a href='javascript: history.go(-1)'>Trở lại</a></div>";
         exit;
@@ -77,7 +77,7 @@
 
     //Lưu thông tin thành viên vào bảng
     $addlogin = mysqli_query($conn, "
-    INSERT INTO login (ID,TENTK,MATKHAU,LEVEL)
+    INSERT INTO login (ID,USERNAME,PASSWORD,LEVEL)
     VALUE ('$id','$username','$password','2')");
 
     $addql = mysqli_query($conn, " INSERT INTO quanly (MAQL,HOTEN,DIACHI,SDT)

@@ -3,10 +3,10 @@
 				<div class="head-top-left"><h1>HỆ THÔNG ĐĂNG KÝ HỌC - ĐẠI HỌC THỦY LỢI</h1></div>
 				<div class="head-top-right">
 				<?php
-				if(isset($_SESSION['TENTK']))
+				if(isset($_SESSION['Username']))
 				{
-					$tentk = $_SESSION['TENTK'];
-					$sql1 = mysqli_query($conn,"SELECT * from login where TENTK = '$tentk'");
+					$Username = $_SESSION['Username'];
+					$sql1 = mysqli_query($conn,"SELECT * from login where USERNAME = '$Username'");
 					$row1=mysqli_fetch_assoc($sql1);   
 					$id = $row1['ID'];
 					if($row1['LEVEL']==2)
@@ -40,7 +40,7 @@
 					<div id="menu">
 						<ul>
 							
-							<?php if(isset($_SESSION['TENTK'])){
+							<?php if(isset($_SESSION['Username'])){
 							echo '<li><a href="index.php" style="border-left: none">Trang chủ</a></li>';
 							echo '<li><a href="">Hỏi đáp</a></li>';
 							echo '<li><a href="">Trợ giúp</a></li>';

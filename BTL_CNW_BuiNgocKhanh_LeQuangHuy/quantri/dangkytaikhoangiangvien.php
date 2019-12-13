@@ -21,7 +21,6 @@
 
                 <div class="form-group"><input class="form-control" type="text" name="txtHoDem" placeholder="Họ + Tên Đệm"></div>
                 <div class="form-group"><input class="form-control" type="text" name="txtTen" placeholder="Tên"></div>
-                <div class="form-group"><input class="form-control" type="date" name="txtDate" placeholder=""></div>
                 <div class="form-group"><input class="form-control" type="text" name="txtDonvi" placeholder="Đơn vị"></div>
                 <div class="form-group"><input class="form-control" type="text" name="txtLienHe" placeholder="Email hoặc SDT"></div>
                 
@@ -52,13 +51,12 @@
     $password   = addslashes($_POST['txtPassword']);  
     $hodem      = addslashes($_POST['txtHoDem']);
     $ten        = addslashes($_POST['txtTen']);
-    $date       = addslashes($_POST['txtDate']);  
     $donvi      = addslashes($_POST['txtDonvi']);
     $lienhe     = addslashes($_POST['txtLienHe']);
     
           
     //Kiểm tra người dùng đã nhập liệu đầy đủ chưa
-    if (!$id || !$username || !$password ||!$hodem ||!$ten || !$date || !$donvi || !$lienhe)
+    if (!$id || !$username || !$password ||!$hodem ||!$ten || !$donvi || !$lienhe)
     {
         echo  "<div style='text-align:center;color:#000000;'>Vui lòng nhập đầy đủ thông tin. <a href='javascript: history.go(-1)'>Trở lại</a></div>";
         exit;
@@ -74,7 +72,7 @@
         exit;
     }     
     //Kiểm tra tên đăng nhập này đã có người dùng chưa
-    if (mysqli_num_rows(mysqli_query($conn,"SELECT TENTK FROM login WHERE TENTK='$username'")) > 0)
+    if (mysqli_num_rows(mysqli_query($conn,"SELECT USERNAME FROM login WHERE USERNAME='$username'")) > 0)
     {
         echo "<div style='text-align:center;color:#000000;'>Tên đăng nhập này đã có người dùng. Vui lòng chọn tên đăng nhập khác. <a href='javascript: history.go(-1)'>Trở lại</a></div>";
         exit;
@@ -82,11 +80,11 @@
 
     //Lưu thông tin thành viên vào bảng
     $addlogin = mysqli_query($conn, "
-    INSERT INTO login (ID,TENTK,MATKHAU,LEVEL)
+    INSERT INTO login (ID,USERNAME,PASSWORD,LEVEL)
     VALUE ('$id','$username','$password','3')");
 
-    $addql = mysqli_query($conn, " INSERT INTO giangvien (MAGV,HODEM,TEN,NAMSINH,DONVI,LIENHE)
-    VALUE ('$id','$hodem','$ten','$date','$donvi','$lienhe')");
+    $addql = mysqli_query($conn, " INSERT INTO giangvien (MAGV,HODEM,TEN,DONVI,LIENHE)
+    VALUE ('$id','$hodem','$ten','$donvi','$lienhe')");
     
                           
     //Thông báo quá trình lưu
