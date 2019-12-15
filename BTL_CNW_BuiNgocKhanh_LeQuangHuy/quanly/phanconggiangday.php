@@ -130,15 +130,11 @@
     <script src="../js/jquery.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
 <?php
- 
     // Nếu không phải là sự kiện đăng ký thì không xử lý
     if (!isset($_POST['signup'])){
         die('');
     }
-    else{
-        //Khai báo utf-8 để hiển thị được tiếng việt
-         header('Content-Type: text/html; charset=UTF-8');
-              
+    else{      
         //Lấy dữ liệu từ file dangky.php
         $magv         = $_POST['txtMaGV'];
         $monhoc       = $_POST['txtMonHoc'];
@@ -156,8 +152,7 @@
         else{
             //Lưu thông tin thành viên vào bảng
         $add_pcgd = mysqli_query($conn, "
-        INSERT INTO kehoachgiangday
-        VALUE ('$magv','$monhoc','$hocky1','$hocky2','$diadiem','$lop')");
+        UPDATE kehoachgiangday set TENMONHOC='$monhoc',GIAIDOANBD='$hocky1',GIAIDOANKT='$hocky2',DIADIEM='$diadiem',LOPDAY='$lop' where MAGV=''");
                               
         //Thông báo quá trình lưu
         if ($add_pcgd)

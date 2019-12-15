@@ -13,7 +13,7 @@
 
         <!-- khi mở tap ra có ở phần tiêu đề -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="css/quantri1.css">
+        <link rel="stylesheet" type="text/css" href="css/quantri.css">
         <title>Giảng viên</title>
 
     </head>

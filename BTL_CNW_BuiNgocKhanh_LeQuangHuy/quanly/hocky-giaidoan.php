@@ -16,8 +16,7 @@
             </div>
             <form method="post">
                 <h2 class="text-center">Học kỳ - Giai đoạn</h2>
-                <div class="form-group"><input class="form-control" type="text" name="txtHocky" placeholder="Học Kỳ (VD: 2019 - 2020)"></div>
-                <div class="form-group"><input class="form-control" type="text" name="txtGiaidoan" placeholder="Giai Đoạn (VD: 1 -2)"></div>
+                <div class="form-group"><input class="form-control" type="text" name="txtHocky" placeholder="Học Kỳ_GD (VD: 2019-2020_1)"></div>
                 <div class="form-group"><button name="signup" class="btn btn-primary btn-block" type="submit">Tạo tài khoản</button></div>
             </form>
         </div>
@@ -37,16 +36,15 @@
         //Khai báo utf-8 để hiển thị được tiếng việt
         header('Content-Type: text/html; charset=UTF-8');         
         $hocky      = $_POST['txtHocky'];
-        $giaidoan   = $_POST['txtGiaidoan'];     
         //Kiểm tra người dùng đã nhập liệu đầy đủ chưa
-        if (!$hocky || !$giaidoan )
+        if (!$hocky)
         {
             echo  "<div style='text-align:center;color:#000000;'>Vui lòng nhập đầy đủ thông tin. <a href='javascript: history.go(-1)'>Trở lại</a></div>";
             exit;
         }
         else
         {
-             if (mysqli_num_rows(mysqli_query($conn,"SELECT * FROM hockygiaidoan WHERE HOCKY='$hocky' and GIAIDOAN ='$giaidoan'")) > 0)
+             if (mysqli_num_rows(mysqli_query($conn,"SELECT * FROM hockygiaidoan WHERE HOCKY='$hocky'")) > 0)
             {
                 echo "<div style='text-align:center;color:#000000;'>Đã có học kỳ và giai đoạn này <a href='javascript: history.go(-1)'>Trở lại</a></div>";
                 exit;
@@ -56,7 +54,7 @@
                 //Lưu thông tin thành viên vào bảng
                 $add_hkgd = mysqli_query($conn, "
                 INSERT INTO hockygiaidoan 
-                VALUE ('$hocky','$giaidoan')");                     
+                VALUE ('$hocky')");                     
                 //Thông báo quá trình lưu
                 if ($add_hkgd)
                      echo "<div style='text-align:center;color:#000000;'>Quá trình đăng ký thành công.</div>";

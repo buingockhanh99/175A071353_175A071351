@@ -14,7 +14,7 @@ include('connect.php');
 
 
 		<link rel="stylesheet" href="css/bootstrap.min.css" >
-		<link rel="stylesheet" media="screen" type="text/css" href="css/quantri1.css">
+		<link rel="stylesheet" media="screen" type="text/css" href="css/quantri.css">
 
 		<title>Quản lý</title>
 	</head>
