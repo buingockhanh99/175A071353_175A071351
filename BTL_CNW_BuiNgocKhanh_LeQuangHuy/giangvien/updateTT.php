@@ -79,41 +79,42 @@
     // Nếu không phải là sự kiện đăng ký thì không xử lý
     if (!isset($_POST['update'])){
         die('');
-    }      
-    //Khai báo utf-8 để hiển thị được tiếng việt
-    header('Content-Type: text/html; charset=UTF-8');
-          
-    //Lấy dữ liệu từ file dangky.php
-    $magv         = $_POST['txtMGV'];
-    $hodem       = $_POST['txtHD'];
-    $ten       = $_POST['txtTen'];  
-    $donvi       = $_POST['txtDV'];
-    $lienhe      = $_POST['txtLH'];
-   
-    
-          
-    //Kiểm tra người dùng đã nhập liệu đầy đủ chưa
-    if (!$magv || !$hodem || !$ten ||!$donvi ||!$lienhe)
-    {
-        echo  "<div class='form-group' style='text-align:center;color:red;'>Vui lòng nhập đầy đủ thông tin. <a href='javascript: history.go(-1)'>Trở lại</a></div>";
-        exit;
     }
-          
-    //Lưu thông tin thành viên vào bảng
-    $add_pcgd = mysqli_query($conn, "
-    UPDATE giangvien SET HODEM='$hodem',TEN='$ten',DONVI='$donvi',LIENHE='$lienhe'where MAGV='$magv'");
-    
-    $kichhoattaikhoan =mysqli_query($conn, "
-    UPDATE login SET STATUS='1'where ID ='$magv'");               
-    //Thông báo quá trình lưu
-    if ($add_pcgd)
-    {
-        echo "<div class='form-group' style='text-align:center;color:red;'>Cập nhật thành công.</div>";
-        header("location: ../giangvien.php");
-    }
-
     else
-        echo "<div class='form-group' style='text-align:center;color:red;'> Có lỗi xảy ra trong quá trình đăng ký.</div>";
+    {  
+        //Khai báo utf-8 để hiển thị được tiếng việt
+        header('Content-Type: text/html; charset=UTF-8'); 
+        //Lấy dữ liệu từ file dangky.php
+        $magv         = $_POST['txtMGV'];
+        $hodem       = $_POST['txtHD'];
+        $ten       = $_POST['txtTen'];  
+        $donvi       = $_POST['txtDV'];
+        $lienhe      = $_POST['txtLH']; 
+        //Kiểm tra người dùng đã nhập liệu đầy đủ chưa
+        if (!$magv || !$hodem || !$ten ||!$donvi ||!$lienhe)
+        {
+            echo  "<div class='form-group' style='text-align:center;color:red;'>Vui lòng nhập đầy đủ thông tin. <a href='javascript: history.go(-1)'>Trở lại</a></div>";
+            exit;
+        }
+        else
+        {    
+            //Lưu thông tin thành viên vào bảng
+            $add_pcgd = mysqli_query($conn, "
+            UPDATE giangvien SET HODEM='$hodem',TEN='$ten',DONVI='$donvi',LIENHE='$lienhe'where MAGV='$magv'");
+            
+            $kichhoattaikhoan =mysqli_query($conn, "
+            UPDATE login SET STATUS='1'where ID ='$magv'");               
+            //Thông báo quá trình lưu
+            if ($add_pcgd)
+            {
+                echo "<div class='form-group' style='text-align:center;color:red;'>Cập nhật thành công.</div>";
+                header("location: ../giangvien.php");
+            }
+
+            else
+                echo "<div class='form-group' style='text-align:center;color:red;'> Có lỗi xảy ra trong quá trình đăng ký.</div>";
+        }
+    }
 ?>
 
 

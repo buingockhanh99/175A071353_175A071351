@@ -68,62 +68,66 @@
     if (!isset($_POST['signup'])){
         die('');
     }
-     
-    //Nhúng file kết nối với database
-    include('../connect.php');
-          
-    //Khai báo utf-8 để hiển thị được tiếng việt
-    header('Content-Type: text/html; charset=UTF-8');
-          
-    $id         = $_POST['txtID'];
-    $username   = $_POST['txtUsername'];
-    $password   = $_POST['txtPassword'];  
-    $level      = $_POST['txtLevel'];
-    //Kiểm tra người dùng đã nhập liệu đầy đủ chưa
-    if (!$id || !$username || !$password ||!$level)
-    {
-        echo  "<div style='text-align:center;color:#000000;'>Vui lòng nhập đầy đủ thông tin. <a href='javascript: history.go(-1)'>Trở lại</a></div>";
-        exit;
-    }
-          
-    // Mã khóa mật khẩu
-    $password = md5($password);
-    
-    //Kiểm tra id có trùng hay không
-    if (mysqli_num_rows(mysqli_query($conn,"SELECT ID FROM login WHERE ID='$id'")) > 0)
-    {
-        echo "<div style='text-align:center;color:#000000;'>ID trùng. Vui lòng chọn lại ID khác. <a href='javascript: history.go(-1)'>Trở lại</a></div>";
-        exit;
-    }     
-    //Kiểm tra tên đăng nhập này đã có người dùng chưa
-    if (mysqli_num_rows(mysqli_query($conn,"SELECT USERNAME FROM login WHERE USERNAME='$username'")) > 0)
-    {
-        echo "<div style='text-align:center;color:#000000;'>Tên đăng nhập này đã có người dùng. Vui lòng chọn tên đăng nhập khác. <a href='javascript: history.go(-1)'>Trở lại</a></div>";
-        exit;
-    }
-
-    //Lưu thông tin thành viên vào bảng
-   
-        $addlogin = mysqli_query($conn, "
-        INSERT INTO login (ID,USERNAME,PASSWORD,LEVEL,STATUS)
-        VALUE ('$id','$username','$password','$level','0')");  
-        
-        if($level =="2")
-        {
-            $addqt = mysqli_query($conn, "
-            INSERT INTO quanly (MAQL) VALUE ('$id')");
-        }
-        else{
-            $addgv1 = mysqli_query($conn, "
-            INSERT INTO giangvien (MAGV) VALUE ('$id')");
-            $addgv2 = mysqli_query($conn, "
-            INSERT INTO kehoachgiangday (MAGV) VALUE ('$id')");
-        }
-    //Thông báo quá trình lưu
-    if ($addlogin)
-        echo "<div style='text-align:center;color:#000000;'>Đăng ký thành công.</div>";
     else
-        echo "<div style='text-align:center;color:#000000;'> Có lỗi xảy ra trong quá trình đăng ký.</div>";
+    { 
+        //Nhúng file kết nối với database
+        include('../connect.php');       
+        //Khai báo utf-8 để hiển thị được tiếng việt
+        header('Content-Type: text/html; charset=UTF-8');     
+        $id         = $_POST['txtID'];
+        $username   = $_POST['txtUsername'];
+        $password   = $_POST['txtPassword'];  
+        $level      = $_POST['txtLevel'];
+        //Kiểm tra người dùng đã nhập liệu đầy đủ chưa
+        if (!$id || !$username || !$password ||!$level)
+        {
+            echo  "<div style='text-align:center;color:#000000;'>Vui lòng nhập đầy đủ thông tin. <a href='javascript: history.go(-1)'>Trở lại</a></div>";
+            exit;
+        }
+        else
+        {  
+            // Mã khóa mật khẩu
+            $password = md5($password);
+            //Kiểm tra id có trùng hay không
+            if (mysqli_num_rows(mysqli_query($conn,"SELECT ID FROM login WHERE ID='$id'")) > 0)
+            {
+                echo "<div style='text-align:center;color:red;'>ID trùng. Vui lòng chọn lại ID khác. <a href='javascript: history.go(-1)'>Trở lại</a></div>";
+            }
+            else
+            {     
+                //Kiểm tra tên đăng nhập này đã có người dùng chưa
+                if (mysqli_num_rows(mysqli_query($conn,"SELECT USERNAME FROM login WHERE USERNAME='$username'")) > 0)
+                {
+                    echo "<div style='text-align:center;color:#000000;'>Tên đăng nhập này đã có người dùng. Vui lòng chọn tên đăng nhập khác. <a href='javascript: history.go(-1)'>Trở lại</a></div>";
+                    exit;
+                }
+                else
+                {
+                        //Lưu thông tin thành viên vào bảng
+                        $addlogin = mysqli_query($conn, "
+                        INSERT INTO login (ID,USERNAME,PASSWORD,LEVEL,STATUS)
+                        VALUE ('$id','$username','$password','$level','0')");  
+                        
+                        if($level =="2")
+                        {
+                            $addqt = mysqli_query($conn, "
+                            INSERT INTO quanly (MAQL) VALUE ('$id')");
+                        }
+                        else{
+                            $addgv1 = mysqli_query($conn, "
+                            INSERT INTO giangvien (MAGV) VALUE ('$id')");
+                            $addgv2 = mysqli_query($conn, "
+                            INSERT INTO kehoachgiangday (MAGV) VALUE ('$id')");
+                        }
+                        //Thông báo quá trình lưu
+                        if ($addlogin)
+                            echo "<div style='text-align:center;color:red;'>Đăng ký thành công.</div>";
+                        else
+                            echo "<div style='text-align:center;color:red;'> Có lỗi xảy ra trong quá trình đăng ký.</div>";
+                }
+            }
+        }
+    }
 ?>
 </body>
 

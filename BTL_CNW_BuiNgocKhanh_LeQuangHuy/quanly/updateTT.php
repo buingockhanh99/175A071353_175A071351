@@ -88,22 +88,25 @@
         echo  "<div class='form-group' style='text-align:center;color:red;'>Vui lòng nhập đầy đủ thông tin. <a href='javascript: history.go(-1)'>Trở lại</a></div>";
         exit;
     }
-          
-    //Lưu thông tin thành viên vào bảng
-    $add_pcgd = mysqli_query($conn, "
-    UPDATE quanly SET HOTEN='$ten',DIACHI='$diachi',LIENHE='$lienhe'where MAQL='$maql'");
-    
-    $kichhoattaikhoan =mysqli_query($conn, "
-    UPDATE login SET STATUS='1'where ID ='$maql'");               
-    //Thông báo quá trình lưu
-    if ($add_pcgd)
-    {
-        echo "<div class='form-group' style='text-align:center;color:red;'>Cập nhật thành công.</div>";
-        header("location: ../quanly.php");
-    }
+    else{
+        //Lưu thông tin thành viên vào bảng
+        $add_pcgd = mysqli_query($conn, "
+        UPDATE quanly SET HOTEN='$ten',DIACHI='$diachi',LIENHE='$lienhe'where MAQL='$maql'");
+        
+        $kichhoattaikhoan =mysqli_query($conn, "
+        UPDATE login SET STATUS='1'where ID ='$maql'");               
+        //Thông báo quá trình lưu
+        if ($add_pcgd)
+        {
+            echo "<div class='form-group' style='text-align:center;color:red;'>Cập nhật thành công.</div>";
+            header("location: ../quanly.php");
+        }
 
-    else
-        echo "<div class='form-group' style='text-align:center;color:red;'> Có lỗi xảy ra trong quá trình đăng ký.</div>";
+        else
+            echo "<div class='form-group' style='text-align:center;color:red;'> Có lỗi xảy ra trong quá trình đăng ký.</div>";
+
+    }   
+    
 ?>
 
 

@@ -134,37 +134,40 @@
     // Nếu không phải là sự kiện đăng ký thì không xử lý
     if (!isset($_POST['signup'])){
         die('');
-    }      
-    //Khai báo utf-8 để hiển thị được tiếng việt
-    header('Content-Type: text/html; charset=UTF-8');
-          
-    //Lấy dữ liệu từ file dangky.php
-    $magv         = $_POST['txtMaGV'];
-    $monhoc       = $_POST['txtMonHoc'];
-    $hocky1       = $_POST['txtHocKy1'];  
-    $hocky2       = $_POST['txtHocKy2'];
-    $diadiem      = $_POST['txtDiadiem'];
-    $lop          = $_POST['txtlop'];  
-   
-    
-          
-    //Kiểm tra người dùng đã nhập liệu đầy đủ chưa
-    if (!$magv || !$monhoc || !$hocky1 ||!$hocky2 ||!$diadiem || !$lop)
-    {
-        echo  "<div style='text-align:center;color:#000000;'>Vui lòng nhập đầy đủ thông tin. <a href='javascript: history.go(-1)'>Trở lại</a></div>";
-        exit;
     }
-          
-    //Lưu thông tin thành viên vào bảng
-    $add_pcgd = mysqli_query($conn, "
-    INSERT INTO kehoachgiangday
-    VALUE ('$magv','$monhoc','$hocky1','$hocky2','$diadiem','$lop')");
-                          
-    //Thông báo quá trình lưu
-    if ($add_pcgd)
-        echo "<div style='text-align:center;color:#000000;'>Quá trình đăng ký thành công.</div>";
-    else
-        echo "<div style='text-align:center;color:#000000;'> Có lỗi xảy ra trong quá trình đăng ký.</div>";
+    else{
+        //Khai báo utf-8 để hiển thị được tiếng việt
+         header('Content-Type: text/html; charset=UTF-8');
+              
+        //Lấy dữ liệu từ file dangky.php
+        $magv         = $_POST['txtMaGV'];
+        $monhoc       = $_POST['txtMonHoc'];
+        $hocky1       = $_POST['txtHocKy1'];  
+        $hocky2       = $_POST['txtHocKy2'];
+        $diadiem      = $_POST['txtDiadiem'];
+        $lop          = $_POST['txtlop'];  
+        
+        //Kiểm tra người dùng đã nhập liệu đầy đủ chưa
+        if (!$magv || !$monhoc || !$hocky1 ||!$hocky2 ||!$diadiem || !$lop)
+        {
+            echo  "<div style='text-align:center;color:#000000;'>Vui lòng nhập đầy đủ thông tin. <a href='javascript: history.go(-1)'>Trở lại</a></div>";
+            exit;
+        }
+        else{
+            //Lưu thông tin thành viên vào bảng
+        $add_pcgd = mysqli_query($conn, "
+        INSERT INTO kehoachgiangday
+        VALUE ('$magv','$monhoc','$hocky1','$hocky2','$diadiem','$lop')");
+                              
+        //Thông báo quá trình lưu
+        if ($add_pcgd)
+            echo "<div style='text-align:center;color:#000000;'>Quá trình đăng ký thành công.</div>";
+        else
+            echo "<div style='text-align:center;color:#000000;'> Có lỗi xảy ra trong quá trình đăng ký.</div>";
+        }
+        
+    }      
+    
 ?>
 </body>
 

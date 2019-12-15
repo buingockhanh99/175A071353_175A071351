@@ -13,7 +13,7 @@ include('connect.php');
 
 
 		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" media="screen" type="text/css" href="css/quantri1.css">
+		<link rel="stylesheet" media="screen" type="text/css" href="css/quantri.css">
 
 
 		<script src="js/jquery-3.4.1.min.js"></script>
@@ -35,7 +35,7 @@ include('connect.php');
 				<form action="" method="post">
 					<div id = "menu1" class="col-3">
 						<ul>
-							<li><a href="quantri/thongtintaikhoan.php" target="iframe">Quản lý tài khoản</a></li>
+							<li><a href="quantri/thongtintaikhoan.php" target = "iframe" >Quản lý tài khoản</a></li>
 							<li><a href="quantri/taotaikhoan.php" target = "iframe">Tạo tài khoản</a></li>
 							
 						</ul>
