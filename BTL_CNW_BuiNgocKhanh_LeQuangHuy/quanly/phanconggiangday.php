@@ -28,7 +28,7 @@
                         </div>
                         <div style="float: right; width: 80%">
                             <?php 
-                                $sql = mysqli_query($conn,"select * from giangvien") or die(myqli_error($conn));
+                                $sql = mysqli_query($conn,"select * from giangvien");
                                 if (mysqli_num_rows($sql) > 0) {
                                 $i=0; 
                             ?>   
@@ -152,7 +152,7 @@
         else{
             //Lưu thông tin thành viên vào bảng
         $add_pcgd = mysqli_query($conn, "
-        UPDATE kehoachgiangday set TENMONHOC='$monhoc',GIAIDOANBD='$hocky1',GIAIDOANKT='$hocky2',DIADIEM='$diadiem',LOPDAY='$lop' where MAGV=''");
+        UPDATE kehoachgiangday set TENMONHOC='$monhoc',GIAIDOANBD='$hocky1',GIAIDOANKT='$hocky2',DIADIEM='$diadiem',LOPDAY='$lop' where MAGV='$magv'");
                               
         //Thông báo quá trình lưu
         if ($add_pcgd)
