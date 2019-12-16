@@ -43,18 +43,14 @@ include'connect.php';
 				<tr>
 					<?php
 						$sql = mysqli_query($conn,"SELECT * from kehoachgiangday where MAGV = '$_GET[magv]'");
-						
+						$row=mysqli_fetch_assoc($sql)
 					?>
 					<td><?php echo "$_GET[magv]" ?></td>
-					<?php while($row=mysqli_fetch_assoc($sql)) 
-		            {
-		            ?>
-					<td><? echo $row['TENMONHOC']; ?></td>
-					<td><? echo $row['GIAIDOANBD']; ?></td>
-					<td><? echo $row['GIAIDOANKT']; ?></td>
-					<td><? echo $row['DIADIEM']; ?></td>
-					<td><? echo $row['LOPDAY']; ?></td>
-				<?php } ?>
+					<td><?php echo $row['TENMONHOC']; ?></td>
+					<td><?php echo $row['GIAIDOANBD']; ?></td>
+					<td><?php echo $row['GIAIDOANKT']; ?></td>
+					<td><?php echo $row['DIADIEM']; ?></td>
+					<td><?php echo $row['LOPDAY']; ?></td>
 				</tr>
 			</table>
 		</div>

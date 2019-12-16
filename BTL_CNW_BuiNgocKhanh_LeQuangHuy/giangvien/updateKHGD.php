@@ -152,15 +152,11 @@
         {    
             //Lưu thông tin thành viên vào bảng
             $add_pcgd = mysqli_query($conn, "
-            UPDATE kehoachgiangday SET TENMONHOC='$monhoc',GIAIDOANBD='$hocky1',GIAIDOANKT='$hocky2',DIADIEM='$diadiem',LOPDAY='$lop' where MAGV='$magv'");
-            
-            $kichhoattaikhoan =mysqli_query($conn, "
-            UPDATE login SET STATUS='1'where MAGV='$magv'");               
+            UPDATE kehoachgiangday SET TENMONHOC='$monhoc',GIAIDOANBD='$hocky1',GIAIDOANKT='$hocky2',DIADIEM='$diadiem',LOPDAY='$lop' where MAGV='$magv'");   
             //Thông báo quá trình lưu
             if ($add_pcgd)
             {
                 echo "<div class='form-group' style='text-align:center;color:red;'>Cập nhật thành công.</div>";
-                header("location: ../giangvien.php");
             }
 
             else
