@@ -25,7 +25,11 @@ include('connect.php');
 	?>
 		
 	<!-- phần chính -->
-		<main>
+	<?php
+	if(isset($_SESSION['Username']))
+	{
+	?>
+	<main>
 			<div class="container-fluid" >
 				<div class="row">
 					<form action="" method="post">
@@ -47,20 +51,17 @@ include('connect.php');
 			</div>
 			
 		</main>
-	<footer>
-		<div class="container-fluid">
-			<div class="row footer">
-				<div class="col-6 footer-left">
-					<p>Đường dây nóng</p>
-					<p>0705.927.709</p>
-				</div>
-				<div class="col-6 footer-right">
-					
-				</div>
-			</div>
-			
-		</div>
-	</footer>
+	<?php 
+	} 
+	else
+		{echo "<div style='color:red; text-align:center;height:500px;line-height:500px;font-size:50px '> Vui lòng đăng nhập </div>";}
+		
+	?>  	
+	
+	<!-- phần cuối -->	
+	<?php
+		include"footer-index.php";
+	?>
 		
 	</body>
 </html>

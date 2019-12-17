@@ -56,10 +56,10 @@
                 </div>
                 <div class="form-group" style="padding-bottom: 40px;">
                     <div style="float: left;width: 20%">
-                        <p>Liên hệ</p>
+                        <p>Email</p>
                     </div>
                     <div style="float: right; width: 80%">
-                        <input class="form-control" type="text" placeholder="VD: email hoặc sdt" name="txtLH">
+                        <input class="form-control" type="email" placeholder="VD: abc@gmail.com" name="txtLH">
                     </div>
                 </div>
 
