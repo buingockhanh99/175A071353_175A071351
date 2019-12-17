@@ -150,6 +150,14 @@ main{
 .input:hover{
 	background-color: blue;
 }
+.btn{
+	background-color: #56a4fe;
+	width: 250px;
+	color: white;
+}
+.btn-a{
+	width: 250px;
+}
 
 /*--------------------------------footer---------------------------------------------*/
 .footer{

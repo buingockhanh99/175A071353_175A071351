@@ -10,29 +10,9 @@ include'../connect.php';
   </head>
   <body>
     <div class="container">
-        <div style="padding-bottom: 20px;">
-          <form method="POST">
-            <div style="padding-bottom: 40px">
-              <div style="float: left;">Chọn kiểu hiển thị: </div>
-              <div style="float: left; padding-left: 20px" ><input type="radio" name="quyen" value="2" id="ql" checked> Quản lý</div>
-              <div style="float: left; padding-left: 20px"><input type="radio" name="quyen" value="3" id="gv"> Giảng viên</div>
-              <div style="float: left; padding-left: 20px"><button name="select" class="btn btn-primary" type="submit" style="height: 30px; line-height: 12px">Hiển thị</button></div>
-            </div>
-
-          </form>
-        </div>
-        <?php
-        if (!isset($_POST['select']))
-        {
-          die('');
-        }
-        else
-        {
-        ?>
           <from method="get">
           <?php
-
-          $sql = mysqli_query($conn,"SELECT * from login WHERE LEVEL = '$_POST[quyen]'");
+          $sql = mysqli_query($conn,"SELECT * from login WHERE LEVEL = '$_GET[quyen]'");
           ?>
           <h2 style="text-align: center">Thông tin tài khoản</h2>
           <br>
@@ -116,7 +96,7 @@ include'../connect.php';
         }
         }
         }
-      }
+      
       ?>
     </div>
   </body>

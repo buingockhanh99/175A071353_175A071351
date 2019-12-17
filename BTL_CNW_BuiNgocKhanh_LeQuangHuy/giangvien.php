@@ -13,7 +13,7 @@
 
         <!-- khi mở tap ra có ở phần tiêu đề -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="css/quantri.css">
+        <link rel="stylesheet" type="text/css" href="css/quantri1.css">
         <title>Giảng viên</title>
 
     </head>
@@ -55,6 +55,7 @@
 	<?php
 		include"footer-index.php";
 	?>
-	
+	<script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.min.js"></script>	
 </body>
 </html>
