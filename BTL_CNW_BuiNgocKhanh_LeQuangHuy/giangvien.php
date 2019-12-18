@@ -9,7 +9,7 @@
         <meta name="description" content="Đại học Thủy Lợi">
         <meta name="keywords" content="TLU,WRU, Đại học Thủy Lợi">
         <meta name="author" content="Ngọc Khánh Quang Huy">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- khi mở tap ra có ở phần tiêu đề -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -54,6 +54,8 @@
 	<!-- phần cuối -->
 	<?php
 		include"footer-index.php";
+		// Ngắt kết nối
+		mysqli_close($conn);
 	?>
 	<script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.min.js"></script>	

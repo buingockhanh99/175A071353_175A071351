@@ -85,6 +85,8 @@ include'connect.php';
   <!-- phần cuối -->
   <?php
     include"footer-index.php";
+    // Ngắt kết nối
+	mysqli_close($conn);
   ?>
 
 

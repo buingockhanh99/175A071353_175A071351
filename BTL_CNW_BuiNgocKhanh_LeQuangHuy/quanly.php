@@ -10,7 +10,7 @@ include('connect.php');
 		<meta name="description" content="Đại học Thủy Lợi">
 		<meta name="keywords" content="TLU,WRU, Đại học Thủy Lợi">
 		<meta name="author" content="Ngọc Khánh Quang Huy">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 
 		<link rel="stylesheet" href="css/bootstrap.min.css" >
@@ -55,6 +55,8 @@ include('connect.php');
 	} 
 	else
 		{echo "<div style='color:red; text-align:center;height:500px;line-height:500px;font-size:50px '> Vui lòng đăng nhập </div>";}
+	// Ngắt kết nối
+	mysqli_close($conn);
 		
 	?>  	
 	
