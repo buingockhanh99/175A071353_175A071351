@@ -70,7 +70,7 @@ CREATE TABLE `kehoachgiangday` (
 CREATE TABLE `login` (
   `ID` char(25) COLLATE utf8_unicode_ci NOT NULL,
   `USERNAME` char(50) COLLATE utf8_unicode_ci NOT NULL,
-  `PASSWORD` char(50) COLLATE utf8_unicode_ci NOT NULL,
+  `PASSWORD` char(255) COLLATE utf8_unicode_ci NOT NULL,
   `LEVEL` int(11) NOT NULL,
   `STATUS` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -200,6 +200,8 @@ ALTER TABLE `monhoc`
 ALTER TABLE `quanly`
   ADD CONSTRAINT `quanly_ibfk_1` FOREIGN KEY (`MAQL`) REFERENCES `login` (`ID`);
 COMMIT;
+
+INSERT INTO `login` (`ID`, `USERNAME`, `PASSWORD`, `LEVEL`, `STATUS`) VALUES ('175A071353', 'admin', '$2y$10$mrvflc8LsmUwDWVKN7Td5e4/oGyiT6sKZn40tMaB.lrj9ZaIBQ8MG', '1', '1');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

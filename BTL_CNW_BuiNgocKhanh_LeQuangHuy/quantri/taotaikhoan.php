@@ -87,7 +87,8 @@
         else
         {  
             // Mã khóa mật khẩu
-            $password = md5($password);
+            
+            $password = password_hash($password,PASSWORD_DEFAULT);
             //Kiểm tra id có trùng hay không
             if (mysqli_num_rows(mysqli_query($conn,"SELECT ID FROM login WHERE ID='$id'")) > 0)
             {

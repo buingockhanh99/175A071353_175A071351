@@ -35,7 +35,7 @@ include('connect.php');
 
 		<div class="container-fluid" >
 			<div class="row">
-				<form action="" method="post">
+				<form  method="get">
 					<div id = "menu1" class="col-3">
 							<div class="dropdown" style="padding-bottom: 10px;">
 							  <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" style="border-radius: 15px;">Quản lý tài khoản</button>

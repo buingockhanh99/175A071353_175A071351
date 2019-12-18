@@ -12,8 +12,6 @@
             echo "<p style='text-align:center;color:red;'>Vui lòng nhập đầy đủ tên đăng nhập và mật khẩu.</p>";
         }
         else{
-                // mã hóa pasword
-                $password = md5($password);
                 //Kiểm tra tên đăng nhập có tồn tại không
                 $query = mysqli_query($conn,"SELECT USERNAME, PASSWORD FROM login WHERE USERNAME='$username'");
                 if (mysqli_num_rows($query) == 0) {
@@ -21,10 +19,14 @@
                 }
                 else
                 {
-                    //Lấy mật khẩu trong database ra
                     $row = mysqli_fetch_array($query);
-                     //So sánh 2 mật khẩu có trùng khớp hay không
-                    if ($password == $row['PASSWORD']) {
+                     //So sánh mât khâủ
+                    //Ưu điểm của password_verify()
+                    //Sử dụng các phương thức so sánh password không an toàn, như toán tử == (toán tử chỉ so sánh giá trị bằng nhau, ví dụ khi so sánh 0 với 0x123 sẽ trả vể true)
+                    #2: So sánh password trực tiếp bằng câu lệnh SELECT trên SQL, vd: SELECT * FROM users WHERE email = $email, password = $password (rất dễ bị SQL Injection)
+
+                    
+                    if (password_verify($password, $row['PASSWORD'])) {
                     {
                        $sql = mysqli_query($conn,"SELECT * from login where USERNAME = '$username'");
                         $row=mysqli_fetch_assoc($sql);                      
