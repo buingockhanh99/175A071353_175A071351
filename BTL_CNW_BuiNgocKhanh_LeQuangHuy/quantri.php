@@ -40,8 +40,8 @@ require('connect.php');
 							<div class="dropdown" style="padding-bottom: 10px;">
 							  <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" style="border-radius: 15px;">Quản lý tài khoản</button>
 							  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-							    <a class="dropdown-item btn-a" href="quantri/thongtintaikhoan.php?quyen=2" target = "iframe" >Quản lý tài khoản quản lý</a>
-							    <a class="dropdown-item btn-a" href="quantri/thongtintaikhoan.php?quyen=3" target = "iframe" >Quản lý tài khoản giảng viên</a>
+							    <a class="dropdown-item btn-a" href="quantri/thongtintaikhoanql.php" target = "iframe" >Quản lý tài khoản quản lý</a>
+							    <a class="dropdown-item btn-a" href="quantri/thongtintaikhoangv.php" target = "iframe" >Quản lý tài khoản giảng viên</a>
 							  </div>
 							</div>
 							<ul>
@@ -68,10 +68,8 @@ require('connect.php');
 
 		
 	// Ngắt kết nối
-	bool mysqli_close(resource $conn);
+	 mysqli_close($conn);
 	//Tự động thực thi khi kết thúc mã lệnh nhờ cơ chế tự động thu rác (garbage collector) - PHP4,5
-
-  
 	?> 
 	 	
 	<!-- phần cuối -->

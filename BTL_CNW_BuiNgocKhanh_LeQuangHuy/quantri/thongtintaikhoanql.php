@@ -1,7 +1,7 @@
 <?php
 ob_start();
 session_start();
-require'../connect.php';
+require('../connect.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +13,7 @@ require'../connect.php';
     <div class="container">
           <from method="get">
           <?php
-          $sql = mysqli_query($conn,"SELECT * from login WHERE LEVEL = '$_GET[quyen]'");
+          $sql = mysqli_query($conn,"SELECT * from login WHERE LEVEL = '2'");
           ?>
           <h2 style="text-align: center">Thông tin tài khoản</h2>
           <br>
@@ -54,7 +54,7 @@ require'../connect.php';
               function xoa(){
               var r=confirm("Bạn chắc chắn muốn xóa tài khoản này!!")
               if(r==true){
-              window.location="thongtintaikhoan.php?id=<?php echo $id;?>&key=xoa";
+              window.location="xulyDelete.php?id=<?php echo $id;?>&key=xoa";
               }
               }
               </script>
@@ -62,46 +62,7 @@ require'../connect.php';
             <?php }  ?>
           </table>
           </from>
-        <?php
-        if (isset($_GET['key'])&&($_GET['key']!=''))
-        {
-        if ($_GET['key']=='xoa')
-        {
-        $sql = mysqli_query($conn,"SELECT LEVEL from login where ID = '$_GET[id]'");
-        $row=mysqli_fetch_assoc($sql);
-        if($row['LEVEL']==3)
-        {
-        $delete2 = mysqli_query($conn, " DELETE FROM kehoachgiangday where MAGV='$_GET[id]'");
-        $delete = mysqli_query($conn, " DELETE FROM giangvien where MAGV='$_GET[id]'");
-        $delete1 = mysqli_query($conn, " DELETE FROM login where ID='$_GET[id]'");
-        if ($delete1)
-        {
-        echo header("refresh:0");
-        }
-        else
-        echo "<div style='text-align:center;color:red;'> Xóa không thành công</div>";
-        }
-        else if ($row['LEVEL']==2)
-        {
-        $delete = mysqli_query($conn, " DELETE FROM quanly where MAQL='$_GET[id]'");
-        $delete1 = mysqli_query($conn, " DELETE FROM login where ID='$_GET[id]'");
-        if ($delete1){
-        echo header("refresh:0");
-        }
-        else
-        { echo "<div style='text-align:center;color:red;'> Xóa không thành công.</div>";}
-        }
-        else if($row['LEVEL']==1)
-        {
-        echo "<div style='text-align:center;color:red;'>Không thể xóa tài khoản này.</div>";
-        }
-        }
-        }
-      
 
-      // Ngắt kết nối
-      mysqli_close($conn);
-      ?>
     </div>
   </body>
 </html>
