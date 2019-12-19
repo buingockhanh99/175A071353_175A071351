@@ -1,6 +1,6 @@
 <?php 
 session_start();
-include('connect.php');
+require('connect.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -68,7 +68,10 @@ include('connect.php');
 
 		
 	// Ngắt kết nối
-	mysqli_close($conn);
+	bool mysqli_close(resource $conn);
+	//Tự động thực thi khi kết thúc mã lệnh nhờ cơ chế tự động thu rác (garbage collector) - PHP4,5
+
+  
 	?> 
 	 	
 	<!-- phần cuối -->

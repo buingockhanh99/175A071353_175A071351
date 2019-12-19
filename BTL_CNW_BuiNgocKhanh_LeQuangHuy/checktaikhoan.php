@@ -1,6 +1,6 @@
 <?php
    session_start();	
-   include'connect.php';
+require'connect.php';
 
    $Username = $_SESSION['Username'];
    $sql = mysqli_query($conn,"SELECT * from login where USERNAME = '$Username'");

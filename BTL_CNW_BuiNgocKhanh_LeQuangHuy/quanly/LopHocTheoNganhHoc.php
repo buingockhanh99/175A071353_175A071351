@@ -1,6 +1,6 @@
 <?php 
 //Nhúng file kết nối với database
-    include('../connect.php');
+    require('../connect.php');
 ?>
 <!DOCTYPE html>
 <html>

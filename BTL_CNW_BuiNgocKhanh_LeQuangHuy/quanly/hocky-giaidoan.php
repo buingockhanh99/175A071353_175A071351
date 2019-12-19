@@ -32,7 +32,7 @@
     else
     {
         //Nhúng file kết nối với database
-        include('../connect.php');    
+        require('../connect.php');    
         //Khai báo utf-8 để hiển thị được tiếng việt
         header('Content-Type: text/html; charset=UTF-8');         
         $hocky      = $_POST['txtHocky'];

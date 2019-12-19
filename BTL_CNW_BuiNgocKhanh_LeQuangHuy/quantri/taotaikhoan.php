@@ -71,9 +71,10 @@
     else
     { 
         //Nhúng file kết nối với database
-        include('../connect.php');       
+        require('../connect.php');       
         //Khai báo utf-8 để hiển thị được tiếng việt
-        header('Content-Type: text/html; charset=UTF-8');     
+        header('Content-Type: text/html; charset=UTF-8');  
+
         $id         = $_POST['txtID'];
         $username   = $_POST['txtUsername'];
         $password   = $_POST['txtPassword'];  
