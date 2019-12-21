@@ -44,6 +44,15 @@
 
                 <div class="form-group" style="padding-bottom: 40px;">
                     <div style="float: left;width: 20%">
+                            <p>Email</p>
+                    </div>
+                    <div style="float: right; width: 80%">
+                        <input class="form-control" type="email" name="email" placeholder="Gmail">
+                    </div>
+                </div>
+
+                <div class="form-group" style="padding-bottom: 40px;">
+                    <div style="float: left;width: 20%">
                         <p>Quyền tài khoản</p>
                     </div>
                     <div style="float: right; width: 80%">
@@ -77,10 +86,12 @@
 
         $id         = $_POST['txtID'];
         $username   = $_POST['txtUsername'];
-        $password   = $_POST['txtPassword'];  
+        $password   = $_POST['txtPassword']; 
+        $password1   = $_POST['txtPassword']; 
         $level      = $_POST['txtLevel'];
+        $email      = $_POST['email'];
         //Kiểm tra người dùng đã nhập liệu đầy đủ chưa
-        if (!$id || !$username || !$password ||!$level)
+        if (!$id || !$username || !$password ||!$level ||!$email)
         {
             echo  "<div style='text-align:center;color:#000000;'>Vui lòng nhập đầy đủ thông tin. <a href='javascript: history.go(-1)'>Trở lại</a></div>";
             exit;
@@ -88,7 +99,6 @@
         else
         {  
             // Mã khóa mật khẩu
-            
             $password = password_hash($password,PASSWORD_DEFAULT);
             //Kiểm tra id có trùng hay không
             if (mysqli_num_rows(mysqli_query($conn,"SELECT ID FROM login WHERE ID='$id'")) > 0)
@@ -109,21 +119,27 @@
                         $addlogin = mysqli_query($conn, "
                         INSERT INTO login (ID,USERNAME,PASSWORD,LEVEL,STATUS)
                         VALUE ('$id','$username','$password','$level','0')");  
-                        
+                       
+
                         if($level =="2")
                         {
-                            $addqt = mysqli_query($conn, "
-                            INSERT INTO quanly (MAQL) VALUE ('$id')");
+                            $add = mysqli_query($conn, "
+                            INSERT INTO quanly (MAQL,LIENHE) VALUE ('$id','$email')");
                         }
                         else{
-                            $addgv1 = mysqli_query($conn, "
-                            INSERT INTO giangvien (MAGV) VALUE ('$id')");
-                            $addgv2 = mysqli_query($conn, "
+                            $add1 = mysqli_query($conn, "
+                            INSERT INTO giangvien (MAGV,LIENHE) VALUE ('$id','$email')");
+                            $add = mysqli_query($conn, "
                             INSERT INTO kehoachgiangday (MAGV) VALUE ('$id')");
                         }
+                        //Nhũng xử lý gửi gmail
+                        include('../php/guimail.php');
                         //Thông báo quá trình lưu
-                        if ($addlogin)
+                        if ($add)
+                        {
                             echo "<div style='text-align:center;color:red;'>Đăng ký thành công.</div>";
+                            
+                        }
                         else
                             echo "<div style='text-align:center;color:red;'> Có lỗi xảy ra trong quá trình đăng ký.</div>";
                 }

@@ -27,7 +27,7 @@
             ?> 
 
             <form method="post">
-                <h2 class="text-center">Tài khoản của bạn chưa kích hoạt vui lòng cập nhật để kích hoạt</h2>
+                <h2 class="text-center">Vui lòng cập nhật thông tin</h2>
 
                 <div class="form-group" style="padding-bottom: 40px;">
                     <div style="float: left;width: 20%;">
@@ -54,14 +54,16 @@
                             <input class="form-control" type="text" placeholder="VD: 175 Tây Sơn - Đống Đa - Hà Nội" name="txtDC">
                          </div>
                 </div>
+
                 <div class="form-group" style="padding-bottom: 40px;">
                     <div style="float: left;width: 20%">
-                        <p>Email</p>
+                        <p>Mật khẩu mới</p>
                     </div>
                     <div style="float: right; width: 80%">
-                        <input class="form-control" type="email" placeholder="VD: abc@gmail.com" name="txtLH">
+                        <input class="form-control" type="password" name="txtPassword" placeholder="Password">
                     </div>
                 </div>
+                
 
                 <div class="form-group"><button name="update" class="btn btn-primary btn-block" type="submit">Cập nhật</button></div>
            
@@ -78,20 +80,27 @@
     $maql         = $_POST['txtMQL'];
     $ten          = $_POST['txtTen'];  
     $diachi       = $_POST['txtDC'];
-    $lienhe       = $_POST['txtLH'];
+    $password   = $_POST['txtPassword'];
    
     
           
     //Kiểm tra người dùng đã nhập liệu đầy đủ chưa
-    if (!$maql || !$ten || !$diachi ||!$lienhe)
+    if (!$maql || !$ten || !$diachi||!$password)
     {
         echo  "<div class='form-group' style='text-align:center;color:red;'>Vui lòng nhập đầy đủ thông tin. <a href='javascript: history.go(-1)'>Trở lại</a></div>";
         exit;
     }
     else{
+
+        // Mã khóa mật khẩu
+        $password = password_hash($password,PASSWORD_DEFAULT);
+        //Lưu thông tin thành viên vào bảng
+        $doimk = mysqli_query($conn, "
+        UPDATE login SET PASSWORD='$password'where ID='$maql'");
+
         //Lưu thông tin thành viên vào bảng
         $add_pcgd = mysqli_query($conn, "
-        UPDATE quanly SET HOTEN='$ten',DIACHI='$diachi',LIENHE='$lienhe'where MAQL='$maql'");
+        UPDATE quanly SET HOTEN='$ten',DIACHI='$diachi'where MAQL='$maql'");
         
         $kichhoattaikhoan =mysqli_query($conn, "
         UPDATE login SET STATUS='1'where ID ='$maql'");               
