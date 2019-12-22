@@ -44,6 +44,8 @@ table {
 	border-spacing: 0;
 } 
 
+
+
 /*----------------header--------------------*/
 
 .head-top{
@@ -53,11 +55,12 @@ table {
 }
 .head-top-left{
 	float: left;
+	width: 75%;
 }
 .head-top-right{
 	float: right;
 	height: 27px;
-	width: 369px;	
+	width: 25%;	
 	background: white;
 	border-bottom-left-radius: 20px;
 }
@@ -91,7 +94,7 @@ table {
 #menu{
   background: #56a4fe;
   height: 30px;
-  width: 310px;
+  width: 40%;
   border-radius: 5px;
   float: right;
   
@@ -139,7 +142,7 @@ table {
 
 #menu1{
   height: 30px;
-  width: 310px;
+  width: 100%;
   
 }
 #menu1 ul{
@@ -282,3 +285,10 @@ img{
 	padding-top: 20px;
 	padding-right: 0px;
 }
+
+
+
+
+
+
+ 

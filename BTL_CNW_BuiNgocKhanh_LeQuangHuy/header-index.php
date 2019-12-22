@@ -1,7 +1,9 @@
 <header>
+	<div class="container-fluid">
+		<div class="row">
 			<div class="head-top">
-				<div class="head-top-left"><h1>HỆ THÔNG ĐĂNG KÝ HỌC - ĐẠI HỌC THỦY LỢI</h1></div>
-				<div class="head-top-right">
+				<div class="head-top-left col-md-9"><h1>HỆ THÔNG ĐĂNG KÝ HỌC - ĐẠI HỌC THỦY LỢI</h1></div>
+				<div class="head-top-right col-md-3">
 				<?php
 				if(isset($_SESSION['Username']))
 				{
@@ -19,20 +21,23 @@
 					{
 						$sql = mysqli_query($conn,"SELECT * from giangvien where MAGV = '$id'");
 		        		$row=mysqli_fetch_assoc($sql);    
-						echo "<div style='color:blue; padding:5px 15px;'>" .$row['HODEM']." ".$row['TEN']. "(".$id. ") <span style='color:#000'>Vai trò:</span> Giảng viên</div>";
+						echo "<div style='color:blue; padding:5px 0px;'>" .$row['HODEM']." ".$row['TEN']. "(".$id. ") <span style='color:#000'>Vai trò:</span> Giảng viên</div>";
 					}
 					else if ($row1['LEVEL']==1)
 					{
-						echo "<div style='color:blue; padding:5px 30px;'>Xin chào admin</div>";
+						echo "<div style='color:blue; padding:5px 0px;'>Xin chào admin</div>";
 					}
 				}
 				else
-					{echo "<div style='color:blue; padding:5px 30px;'> Khách </div>";}
+					{echo "<div style='color:blue; padding:5px 0px;'> Khách </div>";}
 					
 				?> 
 
 				</div>
 			</div>
+		</div>
+	</div>
+			
 			<div class="main-top">
 				<div class="left-top">
 				</div>

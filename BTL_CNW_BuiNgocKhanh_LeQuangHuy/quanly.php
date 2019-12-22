@@ -33,7 +33,7 @@ require('connect.php');
 			<div class="container-fluid" >
 				<div class="row">
 					<form action="" method="post">
-						<div id = "menu1" class="col-3">
+						<div id = "menu1" class="col-lg-3 col-xs-3">
 							<ul>
 								<li><a href="quanly/NganhHoc.php" target="iframe">Tạo nghành học</a></li>
 								<li><a href="quanly/monhoc.php" target="iframe">Tạo môn học</a></li>
@@ -43,7 +43,7 @@ require('connect.php');
 							</ul>
 						</div>
 					</form>
-					<iframe src="" name = "iframe" class="col-9">
+					<iframe src="" name = "iframe" class="col-lg-9 col-xs-9">
 					
 					</iframe>
 					
@@ -54,7 +54,7 @@ require('connect.php');
 	<?php 
 	} 
 	else
-		{echo "<div style='color:red; text-align:center;height:500px;line-height:500px;font-size:50px '> Vui lòng đăng nhập </div>";}
+		{header("location: dangnhap.php");}
 	// Ngắt kết nối
 	mysqli_close($conn);
 		

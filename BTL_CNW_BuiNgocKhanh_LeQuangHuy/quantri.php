@@ -36,7 +36,7 @@ require('connect.php');
 		<div class="container-fluid" >
 			<div class="row">
 				<form  method="get">
-					<div id = "menu1" class="col-3">
+					<div id = "menu1" class="col-lg-3 col-xs-3">
 							<div class="dropdown" style="padding-bottom: 10px;">
 							  <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" style="border-radius: 15px;">Quản lý tài khoản</button>
 							  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -52,7 +52,7 @@ require('connect.php');
 					</div>
 				</form>
 				
-				<iframe src="" name = "iframe" class="col-9">
+				<iframe src="" name = "iframe" class="col-lg-9 col-xs-9">
 				
 				</iframe>
 				
@@ -63,7 +63,7 @@ require('connect.php');
 	} 
 	else
 		{
-			echo "<div style='color:red; text-align:center;height:500px;line-height:500px;font-size:50px '> Vui lòng đăng nhập </div>";
+			 header("location: dangnhap.php");
 		}
 
 		

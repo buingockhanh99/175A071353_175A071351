@@ -22,7 +22,7 @@
 		<main class="main">
 		<div class="container-fluid" style="padding-top: 6px">
 			<div class="row">
-				<div class="col-3">
+				<div class="col-lg-3 col-xs-3">
 					<div class="top-dmc">
 						<div class="dmc">
 							<p>DANH MỤC CHÍNH</p> 
@@ -83,7 +83,7 @@
 					</div>
 				</div>
 
-				<div class="col-9">
+				<div class="col-lg-9 col-xs-9">
 					<div class="body-main" style="height: 337px">
 						<div class="p-lkhi">
 							<h1>LIÊN THÔNG</h1>
