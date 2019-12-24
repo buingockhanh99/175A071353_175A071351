@@ -39,6 +39,10 @@
                     <button name="dangnhap" type="submit">Đăng nhập</button>
                     <button name="trangchu" type="submit">Về trang chủ</button>
                   </div>
+
+                  <div style="margin-left:-50px ">
+                    <a href="quenmatkhau.php">Quên mật khẩu</a>
+                  </div>
                   <?php 
                     if (isset($_POST['trangchu'])) {
                         header("location: index.php");

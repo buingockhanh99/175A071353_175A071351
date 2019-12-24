@@ -119,6 +119,8 @@
                         if ($add)
                         {
                              //Nhũng xử lý gửi gmail
+                            $body = 'Vui lòng truy cập <a href="https://khanhbn72.000webhostapp.com/dangnhap.php">tại đây</a> để đăng nhập <br> 
+                            Đăng nhập với <label style="color:red">username:</label> '.$username. '    <label style="color:red">password:</label>   '.$password1. '';
                             include('../php/guimail.php');
                             echo "<div style='text-align:center;color:red;'>Đăng ký thành công.</div>";
                            
