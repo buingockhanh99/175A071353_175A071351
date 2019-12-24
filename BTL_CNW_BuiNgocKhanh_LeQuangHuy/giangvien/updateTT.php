@@ -7,6 +7,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../css/bootstrap.min.css">
         <link rel="stylesheet" href="../css/dangky.css">
         <title>Cập nhật thông tin</title>
@@ -56,11 +57,21 @@
                 </div>
                 <div class="form-group" style="padding-bottom: 40px;">
                         <div style="float: left;width: 20%">
-                                <p>Đơn vị</p>
+                                <p>Ngành giảng dạy</p>
                         </div>
                         <div style="float: right; width: 80%">
-                            <input class="form-control" type="text" placeholder="VD: Khoa công nghệ thông tin" name="txtDV">
-                         </div>
+                        <?php 
+                            $sql = mysqli_query($conn,"select * from nganhhoc") or die(myqli_error($conn));
+                            if (mysqli_num_rows($sql) > 0) {
+                            $i=0; 
+                        ?>   
+                            <select class="form-control" name = "txtNganh">
+                                <?php while($row=mysqli_fetch_assoc($sql)) {
+                                $i++; ?>
+                                <option><?php echo $row['NGANHHOC']; ?></option>
+                              <?php }}  ?>
+                            </select>
+                        </div>
                 </div>
 
                 <div class="form-group" style="padding-bottom: 40px;">
@@ -89,7 +100,7 @@
         $magv         = $_POST['txtMGV'];
         $hodem       = $_POST['txtHD'];
         $ten       = $_POST['txtTen'];  
-        $donvi       = $_POST['txtDV'];
+        $donvi       = $_POST['txtNganh'];
         $password   = $_POST['txtPassword'];
         //Kiểm tra người dùng đã nhập liệu đầy đủ chưa
         if (!$magv || !$hodem || !$ten ||!$donvi||!$password)

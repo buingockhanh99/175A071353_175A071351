@@ -10,6 +10,8 @@ require('connect.php');
 		<meta name="description" content="Đại học Thủy Lợi">
 		<meta name="keywords" content="TLU,WRU, Đại học Thủy Lợi">
 		<meta name="author" content="Ngọc Khánh Quang Huy">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
 
 		<link rel="stylesheet" href="css/bootstrap.min.css" >
 		<link rel="stylesheet" media="screen" type="text/css" href="css/quantri1.css">
@@ -35,7 +37,7 @@ require('connect.php');
 							<ul>
 								<li><a href="quanly/NganhHoc.php" target="iframe">Tạo nghành học</a></li>
 								<li><a href="quanly/monhoc.php" target="iframe">Tạo môn học</a></li>
-								<li><a href="quanly/LopHocTheoNganhHoc.php" target="iframe">Năm học - Lớp học phần</a></li>
+								<li><a href="quanly/LopHocTheoNganhHoc.php" target="iframe">Lớp học phần</a></li>
 								<li><a href="quanly/hocky-giaidoan.php" target="iframe"> Học kỳ - Giai đoạn</a></li>
 								<li><a href="quanly/phanconggiangday.php" target="iframe">Phân công giảng dạy</a></li>
 							</ul>

@@ -7,6 +7,7 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/dangky.css">
 
@@ -27,14 +28,14 @@
                         </div>
                         <div style="float: right; width: 80%">
                             <?php 
-                                $sql = mysqli_query($conn,"select * from giangvien");
+                                $sql = mysqli_query($conn,"SELECT * from giangvien ,login WHERE giangvien.MAGV = login.ID AND login.STATUS = 1");
                                 if (mysqli_num_rows($sql) > 0) {
                                 $i=0; 
-                            ?>   
+                            ?> 
                             <select class="form-control" name = "txtMaGV">
                             <?php while($row=mysqli_fetch_assoc($sql)) {
                                 $i++; ?>
-                                <option><?php echo $row['MAGV']; ?></option>
+                                <option><?php echo $row['MAGV']; ?></a>
                             <?php }}  ?>
                             </select>
                         </div>
@@ -46,6 +47,7 @@
                         <div style="float: right; width: 80%">
                         <?php 
                             $sql = mysqli_query($conn,"select * from monhoc") or die(myqli_error($conn));
+                          //  $sql = mysqli_query($conn,"select * from monhoc where NGANHHOC =(select DONVI from giangvien where MAGV ='".$_POST['txtMaGV']."')") or die(myqli_error($conn));
                             if (mysqli_num_rows($sql) > 0) {
                             $i=0; 
                         ?>   

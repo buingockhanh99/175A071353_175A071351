@@ -7,6 +7,7 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/dangky.css">
 </head>
@@ -60,16 +61,14 @@
         if (!$lophoc)
         {
             echo  "<div style='text-align:center;color:#000000;'>Vui lòng nhập đầy đủ thông tin. <a href='javascript: history.go(-1)'>Trở lại</a></div>";
-            exit;
+           
         }
         else
         {
-        
         //Kiểm tra xem có lớp học này chưa ?
         if (mysqli_num_rows(mysqli_query($conn,"SELECT LOP FROM loptheonganhhoc WHERE LOP='$lophoc'")) > 0)
         {
             echo "<div style='text-align:center;color:#000000;'>Đã có nghành học này. <a href='javascript: history.go(-1)'>Trở lại</a></div>";
-            exit;
         } 
         else{  
         //Lưu thông tin thành viên vào bảng

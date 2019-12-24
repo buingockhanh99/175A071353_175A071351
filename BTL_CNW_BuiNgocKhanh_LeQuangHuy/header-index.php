@@ -15,7 +15,7 @@
 					{
 						$sql = mysqli_query($conn,"SELECT * from quanly where MAQL = '$id'");
 			        	$row=mysqli_fetch_assoc($sql);
-			        	echo "<div style='color:blue; padding:5px 20px;'>" .$row['HOTEN']."(".$id. ") <span style='color:#000'>Vai trò:</span> Quản lý</div>";  
+			        	echo "<div style='color:blue; padding:5px 0px;'>" .$row['HOTEN']."(".$id. ") <span style='color:#000'>Vai trò:</span> Quản lý</div>";  
 					}
 					else if($row1['LEVEL']==3)
 					{

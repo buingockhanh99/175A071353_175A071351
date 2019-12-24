@@ -4,6 +4,7 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/dangky.css">
 </head>
@@ -28,25 +29,7 @@
                             <p>Tên đăng nhập</p>
                     </div>
                     <div style="float: right; width: 80%">
-                        <input class="form-control" type="text" name="txtUsername" placeholder="Tên đăng nhập">
-                    </div>
-                </div>
-
-                <div class="form-group" style="padding-bottom: 40px;">
-                    <div style="float: left;width: 20%">
-                        <p>Mật khẩu</p>
-                    </div>
-                    <div style="float: right; width: 80%">
-                        <input class="form-control" type="password" name="txtPassword" placeholder="Password">
-                    </div>
-                </div>
-
-                <div class="form-group" style="padding-bottom: 40px;">
-                    <div style="float: left;width: 20%">
-                            <p>Email</p>
-                    </div>
-                    <div style="float: right; width: 80%">
-                        <input class="form-control" type="email" name="email" placeholder="Gmail">
+                        <input class="form-control" type="email" name="txtUsername" placeholder="Tên đăng nhập">
                     </div>
                 </div>
 
@@ -62,7 +45,6 @@
                         </select>
                     </div>
                 </div>
-                
                 <div class="form-group"><button name="signup" class="btn btn-primary btn-block" type="submit">Tạo tài khoản</button></div>
             </form>
         </div>
@@ -85,12 +67,13 @@
 
         $id         = $_POST['txtID'];
         $username   = $_POST['txtUsername'];
-        $password   = $_POST['txtPassword']; 
-        $password1   = $_POST['txtPassword']; 
+        $password   = '12345678';
+        $password1  = '12345678';
         $level      = $_POST['txtLevel'];
-        $email      = $_POST['email'];
+        $email      = $_POST['txtUsername'];
+
         //Kiểm tra người dùng đã nhập liệu đầy đủ chưa
-        if (!$id || !$username || !$password ||!$level ||!$email)
+        if (!$id || !$username || !$password ||!$level)
         {
             echo  "<div style='text-align:center;color:#000000;'>Vui lòng nhập đầy đủ thông tin. <a href='javascript: history.go(-1)'>Trở lại</a></div>";
             exit;
@@ -131,12 +114,14 @@
                             $add = mysqli_query($conn, "
                             INSERT INTO kehoachgiangday (MAGV) VALUE ('$id')");
                         }
-                        //Nhũng xử lý gửi gmail
-                        include('../php/guimail.php');
+                        
                         //Thông báo quá trình lưu
                         if ($add)
                         {
+                             //Nhũng xử lý gửi gmail
+                            include('../php/guimail.php');
                             echo "<div style='text-align:center;color:red;'>Đăng ký thành công.</div>";
+                           
                             
                         }
                         else
