@@ -2,10 +2,10 @@
 -- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Dec 17, 2019 at 02:29 AM
--- Server version: 10.4.6-MariaDB
--- PHP Version: 7.1.32
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th12 24, 2019 lúc 02:42 PM
+-- Phiên bản máy phục vụ: 10.4.6-MariaDB
+-- Phiên bản PHP: 7.1.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `qlltgd`
+-- Cơ sở dữ liệu: `qlltgd`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `giangvien`
+-- Cấu trúc bảng cho bảng `giangvien`
 --
 
 CREATE TABLE `giangvien` (
@@ -39,7 +39,7 @@ CREATE TABLE `giangvien` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `hockygiaidoan`
+-- Cấu trúc bảng cho bảng `hockygiaidoan`
 --
 
 CREATE TABLE `hockygiaidoan` (
@@ -49,7 +49,7 @@ CREATE TABLE `hockygiaidoan` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kehoachgiangday`
+-- Cấu trúc bảng cho bảng `kehoachgiangday`
 --
 
 CREATE TABLE `kehoachgiangday` (
@@ -64,7 +64,7 @@ CREATE TABLE `kehoachgiangday` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `login`
+-- Cấu trúc bảng cho bảng `login`
 --
 
 CREATE TABLE `login` (
@@ -75,21 +75,28 @@ CREATE TABLE `login` (
   `STATUS` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `login`
+--
+
+INSERT INTO `login` (`ID`, `USERNAME`, `PASSWORD`, `LEVEL`, `STATUS`) VALUES
+('1', 'admin', '$2y$10$mrvflc8LsmUwDWVKN7Td5e4/oGyiT6sKZn40tMaB.lrj9ZaIBQ8MG', 1, 1);
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `loptheonganhhoc`
+-- Cấu trúc bảng cho bảng `loptheonganhhoc`
 --
 
 CREATE TABLE `loptheonganhhoc` (
   `NGANHHOC` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `MONHOC` varchar(50) COLLATE utf8_unicode_ci NOT NULL
+  `LOP` varchar(50) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `monhoc`
+-- Cấu trúc bảng cho bảng `monhoc`
 --
 
 CREATE TABLE `monhoc` (
@@ -100,7 +107,7 @@ CREATE TABLE `monhoc` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `nganhhoc`
+-- Cấu trúc bảng cho bảng `nganhhoc`
 --
 
 CREATE TABLE `nganhhoc` (
@@ -110,7 +117,7 @@ CREATE TABLE `nganhhoc` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `quanly`
+-- Cấu trúc bảng cho bảng `quanly`
 --
 
 CREATE TABLE `quanly` (
@@ -120,88 +127,103 @@ CREATE TABLE `quanly` (
   `LIENHE` char(50) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+-- --------------------------------------------------------
+
 --
--- Indexes for dumped tables
+-- Cấu trúc bảng cho bảng `quenmatkhau`
+--
+
+CREATE TABLE `quenmatkhau` (
+  `maxn` char(100) COLLATE utf8_unicode_ci NOT NULL,
+  `email` char(100) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `giangvien`
+-- Chỉ mục cho bảng `giangvien`
 --
 ALTER TABLE `giangvien`
   ADD KEY `MAGV` (`MAGV`);
 
 --
--- Indexes for table `kehoachgiangday`
+-- Chỉ mục cho bảng `kehoachgiangday`
 --
 ALTER TABLE `kehoachgiangday`
   ADD KEY `MAGV` (`MAGV`);
 
 --
--- Indexes for table `login`
+-- Chỉ mục cho bảng `login`
 --
 ALTER TABLE `login`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indexes for table `loptheonganhhoc`
+-- Chỉ mục cho bảng `loptheonganhhoc`
 --
 ALTER TABLE `loptheonganhhoc`
   ADD KEY `NGANHHOC` (`NGANHHOC`);
 
 --
--- Indexes for table `monhoc`
+-- Chỉ mục cho bảng `monhoc`
 --
 ALTER TABLE `monhoc`
   ADD KEY `NGANHHOC` (`NGANHHOC`);
 
 --
--- Indexes for table `nganhhoc`
+-- Chỉ mục cho bảng `nganhhoc`
 --
 ALTER TABLE `nganhhoc`
   ADD PRIMARY KEY (`NGANHHOC`);
 
 --
--- Indexes for table `quanly`
+-- Chỉ mục cho bảng `quanly`
 --
 ALTER TABLE `quanly`
   ADD KEY `MAQL` (`MAQL`);
 
 --
--- Constraints for dumped tables
+-- Chỉ mục cho bảng `quenmatkhau`
+--
+ALTER TABLE `quenmatkhau`
+  ADD PRIMARY KEY (`email`);
+
+--
+-- Các ràng buộc cho các bảng đã đổ
 --
 
 --
--- Constraints for table `giangvien`
+-- Các ràng buộc cho bảng `giangvien`
 --
 ALTER TABLE `giangvien`
   ADD CONSTRAINT `giangvien_ibfk_1` FOREIGN KEY (`MAGV`) REFERENCES `login` (`ID`);
 
 --
--- Constraints for table `kehoachgiangday`
+-- Các ràng buộc cho bảng `kehoachgiangday`
 --
 ALTER TABLE `kehoachgiangday`
   ADD CONSTRAINT `kehoachgiangday_ibfk_1` FOREIGN KEY (`MAGV`) REFERENCES `giangvien` (`MAGV`);
 
 --
--- Constraints for table `loptheonganhhoc`
+-- Các ràng buộc cho bảng `loptheonganhhoc`
 --
 ALTER TABLE `loptheonganhhoc`
   ADD CONSTRAINT `loptheonganhhoc_ibfk_1` FOREIGN KEY (`NGANHHOC`) REFERENCES `nganhhoc` (`NGANHHOC`);
 
 --
--- Constraints for table `monhoc`
+-- Các ràng buộc cho bảng `monhoc`
 --
 ALTER TABLE `monhoc`
   ADD CONSTRAINT `monhoc_ibfk_1` FOREIGN KEY (`NGANHHOC`) REFERENCES `nganhhoc` (`NGANHHOC`);
 
 --
--- Constraints for table `quanly`
+-- Các ràng buộc cho bảng `quanly`
 --
 ALTER TABLE `quanly`
   ADD CONSTRAINT `quanly_ibfk_1` FOREIGN KEY (`MAQL`) REFERENCES `login` (`ID`);
 COMMIT;
-
-INSERT INTO `login` (`ID`, `USERNAME`, `PASSWORD`, `LEVEL`, `STATUS`) VALUES ('1', 'admin', '$2y$10$mrvflc8LsmUwDWVKN7Td5e4/oGyiT6sKZn40tMaB.lrj9ZaIBQ8MG', '1', '1');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
