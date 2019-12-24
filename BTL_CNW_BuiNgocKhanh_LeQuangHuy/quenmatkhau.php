@@ -78,7 +78,7 @@
           echo "<div style='text-align:center;color:red;'>Vui lòng nhập đầy đủ thông tin</div></div>";
         }
         else{
-          if($ma == $row['maxn'] )
+          if($ma == $row['maxn'] and $email = $row['email'] )
           {
             $update = mysqli_query($conn,"UPDATE login SET PASSWORD = '$password' where USERNAME = '$email'");
             if($update)
