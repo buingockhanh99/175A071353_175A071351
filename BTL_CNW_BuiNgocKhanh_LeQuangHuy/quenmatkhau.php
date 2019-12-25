@@ -67,18 +67,19 @@
         die('');
       } 
       else{
-        $sql = mysqli_query($conn,"SELECT * from quenmatkhau");
+        $email = $_POST['email'];
+        $sql = mysqli_query($conn,"SELECT * from quenmatkhau WHERE email = '$email'");
         $row = mysqli_fetch_assoc($sql);
         $ma = $_POST['maxacnhan'];
         $password = $_POST['password'];
         $password = password_hash($password,PASSWORD_DEFAULT);
-        $email = $_POST['email'];
+        
         if(!$ma || !$password)
         {
           echo "<div style='text-align:center;color:red;'>Vui lòng nhập đầy đủ thông tin</div></div>";
         }
         else{
-          if($ma == $row['maxn'] and $email = $row['email'] )
+          if($ma == $row['maxn'] )
           {
             $update = mysqli_query($conn,"UPDATE login SET PASSWORD = '$password' where USERNAME = '$email'");
             if($update)
