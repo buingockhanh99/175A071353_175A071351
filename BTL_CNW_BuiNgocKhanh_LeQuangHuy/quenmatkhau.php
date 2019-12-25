@@ -49,45 +49,7 @@
         }
          else
          echo "<div style='text-align:center;color:red;'>Không có tài khoản này</div></div>";
-              
-<<<<<<< HEAD
-=======
         }
-      ?>
-      <?php
-      if (!isset($_POST['send1'])){
-        die('');
-      } 
-      else{
-        $email = $_POST['email'];
-        $sql = mysqli_query($conn,"SELECT * from quenmatkhau WHERE email = '$email'");
-        $row = mysqli_fetch_assoc($sql);
-        $ma = $_POST['maxacnhan'];
-        $password = $_POST['password'];
-        $password = password_hash($password,PASSWORD_DEFAULT);
-        
-        if(!$ma || !$password)
-        {
-          echo "<div style='text-align:center;color:red;'>Vui lòng nhập đầy đủ thông tin</div></div>";
-        }
-        else{
-          if($ma == $row['maxn'] )
-          {
-            $update = mysqli_query($conn,"UPDATE login SET PASSWORD = '$password' where USERNAME = '$email'");
-            if($update)
-            {echo "<div style='text-align:center;color:red;'>Thay đổi mật khẩu thành công</div></div>";
-             $delte = mysqli_query($conn,"DELETE from quenmatkhau where email = '$email'"); }
-            else
-            {echo "<div style='text-align:center;color:red;'>Thay đổi mật khẩu không thành công</div></div>";}
-          }
-          else{
-           echo "<div style='text-align:center;color:red;'>Mã xác thực không đúng</div></div>";
-          }
-        }
->>>>>>> 706b8a3a372a6ff5943aa6ad85cd34af8d46b40a
-      }
-
-
       ?>
 
     </main>
