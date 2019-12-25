@@ -41,7 +41,7 @@ $mail->setFrom('xacthucemail123@gmail.com', 'BTL_CNW');
 $mail->addReplyTo('xacthucemail123@gmail.com', 'Feedback');
 
 
-$mail->addAddress($email, 'Xác thực tài khoản');
+$mail->addAddress($email, '');
 
 
 $mail->Subject = 'account information';
