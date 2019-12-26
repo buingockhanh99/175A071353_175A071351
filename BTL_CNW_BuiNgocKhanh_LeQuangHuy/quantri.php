@@ -45,6 +45,7 @@ require('connect.php');
 							</div>
 							<ul>
 								<li><a href="quantri/taotaikhoan.php" target = "iframe" style="padding-left: 40px;">Tạo tài khoản</a></li>
+								<li><a href="quantri/taotkexcel.php" target = "iframe" style="padding-left: 40px;">TTK bằng file Excel</a></li>
 							</ul>
 								
 					
