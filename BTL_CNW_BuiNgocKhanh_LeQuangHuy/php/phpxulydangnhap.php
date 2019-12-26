@@ -26,7 +26,7 @@
                     #2: So sánh password trực tiếp bằng câu lệnh SELECT trên SQL, vd: SELECT * FROM users WHERE email = $email, password = $password (rất dễ bị SQL Injection)
 
                     
-                    if (password_verify($password, $row['PASSWORD'])) {
+                    if (password_verify($password, $row['PASSWORD'])) 
                     {
                        $sql = mysqli_query($conn,"SELECT * from login where USERNAME = '$username'");
                         $row=mysqli_fetch_assoc($sql);                      
@@ -41,11 +41,11 @@
                             else
                             {
                                 header("location: checktaikhoan.php");
-                                // ob_enf_fluck();
+                               
                             }   
                         
                     }
-                    }
+                    
                     else{
                         echo "<div style='text-align:center;color:red;'>Mật khẩu không đúng. Vui lòng nhập lại.</div>";      
                     }

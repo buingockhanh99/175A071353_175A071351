@@ -76,6 +76,6 @@ require('connect.php');
 		include"footer-index.php";
 	?>
 	<script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.min.js"></script>	s
+    <script src="js/jquery.min.js"></script>	
 	</body>
 </html>

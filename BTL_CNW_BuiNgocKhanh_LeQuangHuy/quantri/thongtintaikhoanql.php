@@ -13,6 +13,7 @@ require('../connect.php');
           <from method="get">
           <?php
           $sql = mysqli_query($conn,"SELECT * from login WHERE LEVEL = '2'");
+
           ?>
           <h2 style="text-align: center">Thông tin tài khoản</h2>
           <br>
@@ -30,14 +31,7 @@ require('../connect.php');
             <tr>
               <td><?php echo $id; ?></td>
               <td ><?php echo $row['USERNAME']; ?></td>
-              <td ><?php
-                if($row['LEVEL']==1)
-                echo 'Quản trị';
-                else if ($row['LEVEL']==2)
-                echo 'Quản lý';
-                else
-                echo 'Giảng viên'
-                ?>
+              <td ><?php echo 'Quản lý';?>
               </td>
               <td>
                 <?php
@@ -47,13 +41,12 @@ require('../connect.php');
                 echo "<div style='color:red'>Đã kích hoạt</div>";
                 ?>
               </td>
-              <td><a href='#' onclick='xoa()'>Xóa</a></td>
-
+              <td><a href='xulyDelete.php?id=<?php echo $id ?>&key=xoa' onclick='xoa()'>Xóa</a></td>
               <script type="text/javascript">
               function xoa(){
               var r=confirm("Bạn chắc chắn muốn xóa tài khoản này!!")
               if(r==true){
-              window.location="xulyDelete.php?id=<?php echo $id;?>&key=xoa";
+              window.location="";
               }
               }
               </script>
