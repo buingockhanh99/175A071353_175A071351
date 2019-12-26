@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 24, 2019 lúc 02:42 PM
+-- Thời gian đã tạo: Th12 26, 2019 lúc 02:12 AM
 -- Phiên bản máy phục vụ: 10.4.6-MariaDB
 -- Phiên bản PHP: 7.1.32
 
@@ -45,6 +45,16 @@ CREATE TABLE `giangvien` (
 CREATE TABLE `hockygiaidoan` (
   `HOCKY` char(50) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `hockygiaidoan`
+--
+
+INSERT INTO `hockygiaidoan` (`HOCKY`) VALUES
+('2018-2019_1'),
+('2018-2019_2'),
+('2019-2020_1'),
+('2019-2020_2');
 
 -- --------------------------------------------------------
 
@@ -93,6 +103,15 @@ CREATE TABLE `loptheonganhhoc` (
   `LOP` varchar(50) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `loptheonganhhoc`
+--
+
+INSERT INTO `loptheonganhhoc` (`NGANHHOC`, `LOP`) VALUES
+('Công nghệ thông tin', '59TH1'),
+('Công nghệ thông tin', '59TH2'),
+('Công nghệ thông tin', '59TH3');
+
 -- --------------------------------------------------------
 
 --
@@ -104,6 +123,15 @@ CREATE TABLE `monhoc` (
   `MONHOC` varchar(50) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `monhoc`
+--
+
+INSERT INTO `monhoc` (`NGANHHOC`, `MONHOC`) VALUES
+('Công nghệ thông tin', 'Toán rời rạc'),
+('Công nghệ thông tin', 'Ngôn ngữ lập trình'),
+('Công nghệ thông tin', 'Lập trình nâng cao');
+
 -- --------------------------------------------------------
 
 --
@@ -113,6 +141,15 @@ CREATE TABLE `monhoc` (
 CREATE TABLE `nganhhoc` (
   `NGANHHOC` varchar(50) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `nganhhoc`
+--
+
+INSERT INTO `nganhhoc` (`NGANHHOC`) VALUES
+('Công nghệ thông tin'),
+('Kế toán'),
+('Kinh tế');
 
 -- --------------------------------------------------------
 

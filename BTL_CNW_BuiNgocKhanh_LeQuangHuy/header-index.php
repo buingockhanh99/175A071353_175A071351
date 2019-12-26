@@ -47,8 +47,8 @@
 							
 							<?php if(isset($_SESSION['Username'])){
 							echo '<li><a href="index.php" style="border-left: none">Trang chủ</a></li>';
-							echo '<li><a href="">Hỏi đáp</a></li>';
-							echo '<li><a href="">Trợ giúp</a></li>';
+							echo '<li><a href="#!">Hỏi đáp</a></li>';
+							echo '<li><a href="#">Trợ giúp</a></li>';
 							echo '<li><a href="logout.php">Thoát</a></li>';
 							} 
 							else{

@@ -40,13 +40,13 @@ require('../connect.php');
                 echo "<div style='color:red'>Đã kích hoạt</div>";
                 ?>
               </td>
-              <td><a href='#' onclick='xoa()'>Xóa</a></td>
+              <td><a href='xulyDelete.php?id=<?php echo $id;?>&key=xoa' onclick='xoa()'>Xóa</a></td>
 
               <script type="text/javascript">
               function xoa(){
               var r=confirm("Bạn chắc chắn muốn xóa tài khoản này!!")
               if(r==true){
-              window.location="xulyDelete.php?id=<?php echo $id;?>&key=xoa";
+              window.location="";
               }
               }
               </script>
@@ -54,30 +54,7 @@ require('../connect.php');
             <?php }  ?>
           </table>
           </from>
-        <?php
-        if (isset($_GET['key'])&&($_GET['key']!=''))
-        {
-          if ($_GET['key']=='xoa')
-          {
-            $sql = mysqli_query($conn,"SELECT LEVEL from login where ID = '$_GET[id]'");
-            $row=mysqli_fetch_assoc($sql);
-           
-              $delete1 = mysqli_query($conn, " DELETE FROM kehoachgiangday where MAGV='$_GET[id]'");
-              $delete2 = mysqli_query($conn, " DELETE FROM giangvien where MAGV='$_GET[id]'");
-              $delete3 = mysqli_query($conn, " DELETE FROM login where ID='$_GET[id]'");
-              if ($delete3)
-              {
-              echo header("refresh:0");
-              exit();
-              }
-              else
-              echo "<div style='text-align:center;color:red;'> Xóa không thành công</div>";
-            
-          }
-        }
-      
 
-      ?>
     </div>
   </body>
 </html>
