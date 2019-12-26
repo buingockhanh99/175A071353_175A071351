@@ -49,7 +49,7 @@ require('../Class_phpEX/PHPExcel.php');
 					$password1 = $sheetData[$row]['C'];
 					$level = $sheetData[$row]['D'];
 					$email = $sheetData[$row]['B'];
-
+					include('../php/guimail2.php');
 
 					$password = password_hash($password,PASSWORD_DEFAULT);
 
