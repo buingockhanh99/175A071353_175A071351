@@ -57,26 +57,26 @@
 						</div>
 					</div>
 
-					<div class="lkhi">
-						<div class="p-lkhi">
+					<div class="tt_tin">
+						<div class="td">
 							<p>Liên kết hữu ích</p>
 						</div>
 						
 					</div>
 					<div class="tdyk">
-						<div class="p-lkhi">
+						<div class="td">
 							<p>Thăm dò ý kiến</p>
 						</div>
 						
 					</div>
-					<div class="lkhi">
-						<div class="p-lkhi">
+					<div class="tt_tin">
+						<div class="td">
 							<p>Hỏi đáp</p>
 						</div>
 						
 					</div>
 					<div class="tdyk">
-						<div class="p-lkhi">
+						<div class="td">
 							<p>Điều tra việc làm</p>
 						</div>
 					</div>
@@ -84,7 +84,7 @@
 
 				<div class="col-lg-9 col-xs-9">
 					<div class="body-main" style="height: 337px">
-						<div class="p-lkhi">
+						<div class="td">
 							<h1>LIÊN THÔNG</h1>
 						</div>
 						<div class="noidung" style="height: 100px">
@@ -99,7 +99,7 @@
 						</div>
 					</div>
 					<div class="body-main" style="height: 337px">
-						<<div class="p-lkhi">
+						<<div class="td">
 							<h1>CAO HỌC</h1>
 						</div>
 						<div class="noidung" style="height: 196px">
@@ -117,7 +117,7 @@
 						</div>
 					</div>
 					<div class="body-main" style="height: 550px">
-						<div class="p-lkhi">
+						<div class="td">
 							<h1>ĐẠI HỌC CHÍNH QUY</h1>
 						</div>
 						<div class="noidung" style="height: 196px">
