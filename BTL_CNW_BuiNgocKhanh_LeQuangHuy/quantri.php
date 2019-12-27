@@ -36,7 +36,7 @@ require('connect.php');
 			<div class="row">
 				<form  method="get">
 					<div id = "menu1" class="col-lg-3 col-xs-3">
-							<div class="dropdown" style="padding-bottom: 10px;">
+							<div class="dropdown" style="padding-bottom: 1px;">
 							  <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" style="border-radius: 15px;">Quản lý tài khoản</button>
 							  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 							    <a class="dropdown-item btn-a" href="quantri/thongtintaikhoanql.php" target = "iframe" >Quản lý tài khoản quản lý</a>

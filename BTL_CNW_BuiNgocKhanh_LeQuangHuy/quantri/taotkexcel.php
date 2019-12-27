@@ -52,18 +52,39 @@ require('../Class_phpEX/PHPExcel.php');
 
 
 					$password = password_hash($password,PASSWORD_DEFAULT);
+					if (mysqli_num_rows(mysqli_query($conn,"SELECT USERNAME FROM login WHERE USERNAME='$username'")) > 0)
+	                {
+	                    echo "<div style='text-align:center;color:#000000;'>Tên đăng nhập này đã có người dùng. Vui lòng chọn tên đăng nhập khác.</div>";
+	                    exit;
+	                }
+	                else{
 
 					$sql = mysqli_query($conn, "INSERT INTO login (ID,USERNAME,PASSWORD,LEVEL,STATUS)
 			        VALUE ('$id','$username','$password','$level','0')");
+			        
+	                    if($level =="2")
+	                    {
+	                        $add = mysqli_query($conn, "
+	                        INSERT INTO quanly (MAQL,LIENHE) VALUE ('$id','$email')");
+	                    }
+	                    else{
+	                        $add1 = mysqli_query($conn, "
+	                        INSERT INTO giangvien (MAGV,LIENHE) VALUE ('$id','$email')");
+	                        $add = mysqli_query($conn, "
+	                        INSERT INTO kehoachgiangday (MAGV) VALUE ('$id')");
+	                    }
+
+					}
+
 
 				}
 				if($sql)
 				{
-			    	echo  "<div style='text-align:center;color:red;'>Import thành công</div></div>";
+			    	echo  "<div style='text-align:center;color:#4285f4;'>Import thành công</div></div>";
 			    	$body = 'Vui lòng truy cập <a href="https://khanhbn72.000webhostapp.com/dangnhap.php">tại đây</a> để đăng nhập <br> 
                             Đăng nhập với <label style="color:red">username:</label> '.$username. '    <label style="color:red">password:</label>   '.$password1. '';
                             
-			    	include('../php/guimail.php');
+			    	include('../php/guimail2.php');
 				}
 			    else
 			    	echo "Thất bại";
