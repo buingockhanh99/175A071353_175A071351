@@ -54,8 +54,8 @@ require('../Class_phpEX/PHPExcel.php');
 					$password = password_hash($password,PASSWORD_DEFAULT);
 					if (mysqli_num_rows(mysqli_query($conn,"SELECT USERNAME FROM login WHERE USERNAME='$username'")) > 0)
 	                {
-	                    echo "<div style='text-align:center;color:#000000;'>Tên đăng nhập này đã có người dùng. Vui lòng chọn tên đăng nhập khác.</div>";
-	                    exit;
+	                    echo "<div style='text-align:center;color:#000000;'>Tên đăng nhập ".$username. " đã có người dùng. Vui lòng chọn tên đăng nhập khác.</div>";
+	                    
 	                }
 	                else{
 
@@ -79,8 +79,8 @@ require('../Class_phpEX/PHPExcel.php');
 
 				}
 				if($sql)
-				{
-			    	echo  "<div style='text-align:center;color:#4285f4;'>Import thành công</div></div>";
+				{	
+			    	echo  "<div style='text-align:center;color:#4285f4;'>Import thành công tài khoản </div></div>";
 			    	$body = 'Vui lòng truy cập <a href="https://khanhbn72.000webhostapp.com/dangnhap.php">tại đây</a> để đăng nhập <br> 
                             Đăng nhập với <label style="color:red">username:</label> '.$username. '    <label style="color:red">password:</label>   '.$password1. '';
                             
