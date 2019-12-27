@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 26, 2019 lúc 02:12 AM
+-- Thời gian đã tạo: Th12 27, 2019 lúc 04:15 AM
 -- Phiên bản máy phục vụ: 10.4.6-MariaDB
 -- Phiên bản PHP: 7.1.32
 
@@ -35,6 +35,13 @@ CREATE TABLE `giangvien` (
   `DONVI` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `LIENHE` varchar(50) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `giangvien`
+--
+
+INSERT INTO `giangvien` (`MAGV`, `HODEM`, `TEN`, `DONVI`, `LIENHE`) VALUES
+('3', 'Bùi Ngọc', 'Khánh', 'Công nghệ thông tin', 'giangvien@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -71,6 +78,13 @@ CREATE TABLE `kehoachgiangday` (
   `LOPDAY` char(25) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `kehoachgiangday`
+--
+
+INSERT INTO `kehoachgiangday` (`MAGV`, `TENMONHOC`, `GIAIDOANBD`, `GIAIDOANKT`, `DIADIEM`, `LOPDAY`) VALUES
+('3', 'Ngôn ngữ lập trình', '2019-2020_1', '2019-2020_2', 'Quận Đống Đa', '59TH2');
+
 -- --------------------------------------------------------
 
 --
@@ -90,7 +104,9 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`ID`, `USERNAME`, `PASSWORD`, `LEVEL`, `STATUS`) VALUES
-('1', 'admin', '$2y$10$mrvflc8LsmUwDWVKN7Td5e4/oGyiT6sKZn40tMaB.lrj9ZaIBQ8MG', 1, 1);
+('1', 'admin', '$2y$10$mrvflc8LsmUwDWVKN7Td5e4/oGyiT6sKZn40tMaB.lrj9ZaIBQ8MG', 1, 1),
+('2', 'quanly@gmail.com', '$2y$10$GZebDtrfD3SLRMfxUDM.mesNFfmdkuFXjQ4NzoEtoPmERDqFtcSqS', 2, 1),
+('3', 'giangvien@gmail.com', '$2y$10$Y.2n93uNdxR8bJSwoxNhZOmCwySCkRXOJHV0MluE0SegODJertahW', 3, 1);
 
 -- --------------------------------------------------------
 
@@ -164,6 +180,13 @@ CREATE TABLE `quanly` (
   `LIENHE` char(50) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `quanly`
+--
+
+INSERT INTO `quanly` (`MAQL`, `HOTEN`, `DIACHI`, `LIENHE`) VALUES
+('2', 'Bùi Ngọc Khánh', '175 Tây Sơn', 'quanly@gmail.com');
+
 -- --------------------------------------------------------
 
 --
@@ -174,6 +197,13 @@ CREATE TABLE `quenmatkhau` (
   `maxn` char(100) COLLATE utf8_unicode_ci NOT NULL,
   `email` char(100) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `quenmatkhau`
+--
+
+INSERT INTO `quenmatkhau` (`maxn`, `email`) VALUES
+('860546478', 'khanhthanhvh@gmail.com');
 
 --
 -- Chỉ mục cho các bảng đã đổ

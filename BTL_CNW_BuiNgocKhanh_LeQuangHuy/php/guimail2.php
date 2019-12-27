@@ -41,7 +41,7 @@ $mail->setFrom('xacthucemail123@gmail.com', 'BTL_CNW');
 $mail->addReplyTo('xacthucemail123@gmail.com', 'Feedback');
 
 
-$mail->addAddress($email, '');
+$mail->addAddress($email,'');
 
 
 $mail->Subject = 'account information';
@@ -52,7 +52,7 @@ $mail->msgHTML('Vui lòng truy cập <a href="https://khanhbn72.000webhostapp.co
 
 
 if (!$mail->send()) {
-    echo "Mailer Error: " . $mail->ErrorInfo;
+    echo "" ;
 } else {
     echo "";
 

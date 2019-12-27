@@ -132,8 +132,6 @@
     }
     else
     {   
-        //Khai báo utf-8 để hiển thị được tiếng việt
-        header('Content-Type: text/html; charset=UTF-8');   
         //Lấy dữ liệu từ file dangky.php
         $magv         = $_POST['txtMGV'];
         $monhoc       = $_POST['txtMonHoc'];
