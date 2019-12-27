@@ -75,16 +75,16 @@ require('../Class_phpEX/PHPExcel.php');
 	                    }
 
 					}
-
+					include('../php/guimail2.php');
 
 				}
 				if($sql)
-				{	
-			    	echo  "<div style='text-align:center;color:#4285f4;'>Import thành công tài khoản </div></div>";
+				{
+			    	echo  "<div style='text-align:center;color:#4285f4;'>Import tài khoản thành công  </div></div>";
 			    	$body = 'Vui lòng truy cập <a href="https://khanhbn72.000webhostapp.com/dangnhap.php">tại đây</a> để đăng nhập <br> 
                             Đăng nhập với <label style="color:red">username:</label> '.$username. '    <label style="color:red">password:</label>   '.$password1. '';
                             
-			    	include('../php/guimail2.php');
+			    	
 				}
 			    else
 			    	echo "Thất bại";
