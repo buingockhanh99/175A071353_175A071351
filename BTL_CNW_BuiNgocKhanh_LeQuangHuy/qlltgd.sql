@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 27, 2019 lúc 04:15 AM
+-- Thời gian đã tạo: Th12 29, 2019 lúc 05:38 AM
 -- Phiên bản máy phục vụ: 10.4.6-MariaDB
 -- Phiên bản PHP: 7.1.32
 
@@ -70,11 +70,13 @@ INSERT INTO `hockygiaidoan` (`HOCKY`) VALUES
 --
 
 CREATE TABLE `kehoachgiangday` (
+  `ID` int(11) NOT NULL,
   `MAGV` char(25) COLLATE utf8_unicode_ci NOT NULL,
   `TENMONHOC` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `GIAIDOANBD` char(50) COLLATE utf8_unicode_ci NOT NULL,
   `GIAIDOANKT` char(50) COLLATE utf8_unicode_ci NOT NULL,
   `DIADIEM` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
+  `THOIGIAN` char(15) COLLATE utf8_unicode_ci NOT NULL,
   `LOPDAY` char(25) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -82,8 +84,9 @@ CREATE TABLE `kehoachgiangday` (
 -- Đang đổ dữ liệu cho bảng `kehoachgiangday`
 --
 
-INSERT INTO `kehoachgiangday` (`MAGV`, `TENMONHOC`, `GIAIDOANBD`, `GIAIDOANKT`, `DIADIEM`, `LOPDAY`) VALUES
-('3', 'Ngôn ngữ lập trình', '2019-2020_1', '2019-2020_2', 'Quận Đống Đa', '59TH2');
+INSERT INTO `kehoachgiangday` (`ID`, `MAGV`, `TENMONHOC`, `GIAIDOANBD`, `GIAIDOANKT`, `DIADIEM`, `THOIGIAN`, `LOPDAY`) VALUES
+(1, '3', 'Lập trình nâng cao', '2018-2019_1', '2018-2019_2', 'Khánh hòa', '1,2,3', '59TH1'),
+(4, '3', 'Ngôn ngữ lập trình', '2018-2019_1', '2018-2019_1', 'quy nhơn', '1,2,3', '59TH2');
 
 -- --------------------------------------------------------
 
@@ -115,7 +118,6 @@ INSERT INTO `login` (`ID`, `USERNAME`, `PASSWORD`, `LEVEL`, `STATUS`) VALUES
 --
 
 CREATE TABLE `loptheonganhhoc` (
-  `NGANHHOC` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `LOP` varchar(50) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -123,10 +125,11 @@ CREATE TABLE `loptheonganhhoc` (
 -- Đang đổ dữ liệu cho bảng `loptheonganhhoc`
 --
 
-INSERT INTO `loptheonganhhoc` (`NGANHHOC`, `LOP`) VALUES
-('Công nghệ thông tin', '59TH1'),
-('Công nghệ thông tin', '59TH2'),
-('Công nghệ thông tin', '59TH3');
+INSERT INTO `loptheonganhhoc` (`LOP`) VALUES
+('59TH1'),
+('59TH2'),
+('59TH3'),
+('59TH4');
 
 -- --------------------------------------------------------
 
@@ -135,7 +138,6 @@ INSERT INTO `loptheonganhhoc` (`NGANHHOC`, `LOP`) VALUES
 --
 
 CREATE TABLE `monhoc` (
-  `NGANHHOC` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `MONHOC` varchar(50) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -143,29 +145,10 @@ CREATE TABLE `monhoc` (
 -- Đang đổ dữ liệu cho bảng `monhoc`
 --
 
-INSERT INTO `monhoc` (`NGANHHOC`, `MONHOC`) VALUES
-('Công nghệ thông tin', 'Toán rời rạc'),
-('Công nghệ thông tin', 'Ngôn ngữ lập trình'),
-('Công nghệ thông tin', 'Lập trình nâng cao');
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `nganhhoc`
---
-
-CREATE TABLE `nganhhoc` (
-  `NGANHHOC` varchar(50) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Đang đổ dữ liệu cho bảng `nganhhoc`
---
-
-INSERT INTO `nganhhoc` (`NGANHHOC`) VALUES
-('Công nghệ thông tin'),
-('Kế toán'),
-('Kinh tế');
+INSERT INTO `monhoc` (`MONHOC`) VALUES
+('Lập trình nâng cao'),
+('Ngôn ngữ lập trình'),
+('Toán rời rạc');
 
 -- --------------------------------------------------------
 
@@ -195,15 +178,8 @@ INSERT INTO `quanly` (`MAQL`, `HOTEN`, `DIACHI`, `LIENHE`) VALUES
 
 CREATE TABLE `quenmatkhau` (
   `maxn` char(100) COLLATE utf8_unicode_ci NOT NULL,
-  `email` char(100) COLLATE utf8_unicode_ci NOT NULL
+  `email` char(50) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Đang đổ dữ liệu cho bảng `quenmatkhau`
---
-
-INSERT INTO `quenmatkhau` (`maxn`, `email`) VALUES
-('860546478', 'khanhthanhvh@gmail.com');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -213,13 +189,16 @@ INSERT INTO `quenmatkhau` (`maxn`, `email`) VALUES
 -- Chỉ mục cho bảng `giangvien`
 --
 ALTER TABLE `giangvien`
+  ADD PRIMARY KEY (`LIENHE`),
   ADD KEY `MAGV` (`MAGV`);
 
 --
 -- Chỉ mục cho bảng `kehoachgiangday`
 --
 ALTER TABLE `kehoachgiangday`
-  ADD KEY `MAGV` (`MAGV`);
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `MAGV` (`MAGV`),
+  ADD KEY `TENMONHOC` (`TENMONHOC`);
 
 --
 -- Chỉ mục cho bảng `login`
@@ -228,34 +207,33 @@ ALTER TABLE `login`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Chỉ mục cho bảng `loptheonganhhoc`
---
-ALTER TABLE `loptheonganhhoc`
-  ADD KEY `NGANHHOC` (`NGANHHOC`);
-
---
 -- Chỉ mục cho bảng `monhoc`
 --
 ALTER TABLE `monhoc`
-  ADD KEY `NGANHHOC` (`NGANHHOC`);
-
---
--- Chỉ mục cho bảng `nganhhoc`
---
-ALTER TABLE `nganhhoc`
-  ADD PRIMARY KEY (`NGANHHOC`);
+  ADD PRIMARY KEY (`MONHOC`);
 
 --
 -- Chỉ mục cho bảng `quanly`
 --
 ALTER TABLE `quanly`
+  ADD PRIMARY KEY (`LIENHE`),
   ADD KEY `MAQL` (`MAQL`);
 
 --
 -- Chỉ mục cho bảng `quenmatkhau`
 --
 ALTER TABLE `quenmatkhau`
-  ADD PRIMARY KEY (`email`);
+  ADD KEY `email` (`email`);
+
+--
+-- AUTO_INCREMENT cho các bảng đã đổ
+--
+
+--
+-- AUTO_INCREMENT cho bảng `kehoachgiangday`
+--
+ALTER TABLE `kehoachgiangday`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
@@ -271,25 +249,21 @@ ALTER TABLE `giangvien`
 -- Các ràng buộc cho bảng `kehoachgiangday`
 --
 ALTER TABLE `kehoachgiangday`
-  ADD CONSTRAINT `kehoachgiangday_ibfk_1` FOREIGN KEY (`MAGV`) REFERENCES `giangvien` (`MAGV`);
-
---
--- Các ràng buộc cho bảng `loptheonganhhoc`
---
-ALTER TABLE `loptheonganhhoc`
-  ADD CONSTRAINT `loptheonganhhoc_ibfk_1` FOREIGN KEY (`NGANHHOC`) REFERENCES `nganhhoc` (`NGANHHOC`);
-
---
--- Các ràng buộc cho bảng `monhoc`
---
-ALTER TABLE `monhoc`
-  ADD CONSTRAINT `monhoc_ibfk_1` FOREIGN KEY (`NGANHHOC`) REFERENCES `nganhhoc` (`NGANHHOC`);
+  ADD CONSTRAINT `kehoachgiangday_ibfk_1` FOREIGN KEY (`MAGV`) REFERENCES `giangvien` (`MAGV`),
+  ADD CONSTRAINT `kehoachgiangday_ibfk_2` FOREIGN KEY (`TENMONHOC`) REFERENCES `monhoc` (`MONHOC`);
 
 --
 -- Các ràng buộc cho bảng `quanly`
 --
 ALTER TABLE `quanly`
   ADD CONSTRAINT `quanly_ibfk_1` FOREIGN KEY (`MAQL`) REFERENCES `login` (`ID`);
+
+--
+-- Các ràng buộc cho bảng `quenmatkhau`
+--
+ALTER TABLE `quenmatkhau`
+  ADD CONSTRAINT `quenmatkhau_ibfk_1` FOREIGN KEY (`email`) REFERENCES `giangvien` (`LIENHE`),
+  ADD CONSTRAINT `quenmatkhau_ibfk_2` FOREIGN KEY (`email`) REFERENCES `quanly` (`LIENHE`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

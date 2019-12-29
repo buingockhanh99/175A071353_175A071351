@@ -18,18 +18,8 @@
         <div class="form-container">
             <div class="image-holder">  
             </div>
-                <?php 
-                    $sql = mysqli_query($conn,"select * from nganhhoc");          
-                ?>   
             <form method="post">
                 <h2 class="text-center">Tạo Lớp</h2>
-                <div class="form-group">
-                    <select class="form-control" name = "txtNganhhoc">
-                    <?php while($row=mysqli_fetch_assoc($sql)) {?>
-                        <option><?php echo $row['NGANHHOC']; ?></option>
-                    <?php } ?>
-                    </select>
-                </div>
                 <div class="form-group"><input class="form-control" type="text" name="txtLophoc" placeholder="Lớp học"></div>
                 <div class="form-group"><button name="signup" class="btn btn-primary btn-block" type="submit">Tạo tài khoản</button></div>
             </form>
@@ -52,13 +42,12 @@
         header('Content-Type: text/html; charset=UTF-8');
               
         //Lấy dữ liệu từ file dangky.php
-        $nganhhoc    = addslashes($_POST['txtNganhhoc']);
         $lophoc    = addslashes($_POST['txtLophoc']);
               
         //Kiểm tra người dùng đã nhập liệu đầy đủ chưa
         if (!$lophoc)
         {
-            echo  "<div style='text-align:center;color:#000000;'>Vui lòng nhập đầy đủ thông tin. <a href='javascript: history.go(-1)'>Trở lại</a></div>";
+            echo  "<div style='text-align:center;color:red;'>Vui lòng nhập đầy đủ thông tin. <a href='javascript: history.go(-1)'>Trở lại</a></div>";
            
         }
         else
@@ -66,20 +55,20 @@
         //Kiểm tra xem có lớp học này chưa ?
         if (mysqli_num_rows(mysqli_query($conn,"SELECT LOP FROM loptheonganhhoc WHERE LOP='$lophoc'")) > 0)
         {
-            echo "<div style='text-align:center;color:#000000;'>Đã có nghành học này. <a href='javascript: history.go(-1)'>Trở lại</a></div>";
+            echo "<div style='text-align:center;color:red;'>Đã có nghành học này. <a href='javascript: history.go(-1)'>Trở lại</a></div>";
         } 
         else{  
         //Lưu thông tin thành viên vào bảng
         $add_lophoc = mysqli_query($conn, "
         INSERT INTO loptheonganhhoc 
-        VALUE ('$nganhhoc','$lophoc')");
+        VALUE ('$lophoc')");
         
                               
         //Thông báo quá trình lưu
         if ($add_lophoc)
-            echo "<div style='text-align:center;color:#000000;'>Quá trình đăng ký thành công.</div>";
+            echo "<div style='text-align:center;color:red;'>Quá trình đăng ký thành công.</div>";
         else
-            echo "<div style='text-align:center;color:#000000;'> Có lỗi xảy ra trong quá trình đăng ký.</div>";
+            echo "<div style='text-align:center;color:red;'> Có lỗi xảy ra trong quá trình đăng ký.</div>";
             }
         }
     }

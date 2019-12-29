@@ -1,4 +1,5 @@
 <?php
+        ob_start();
         require('../connect.php');
 
         if (isset($_GET['key'])&&($_GET['key']!=''))

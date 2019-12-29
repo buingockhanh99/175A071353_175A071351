@@ -106,6 +106,14 @@
                 </div>
                 <div class="form-group" style="padding-bottom: 40px;">
                    <div style="float: left;width: 20%">
+                        <p>Tiết dạy</p>
+                    </div>
+                    <div style="float: right; width: 80%">
+                        <input class="form-control" type="text" name="txtThoigian" placeholder="VD: 1,2,3">
+                    </div>
+                </div>
+                <div class="form-group" style="padding-bottom: 40px;">
+                   <div style="float: left;width: 20%">
                         <p>Lớp dạy</p>
                     </div>
                     <div style="float: right; width: 80%">
@@ -142,24 +150,25 @@
         $hocky1       = $_POST['txtHocKy1'];  
         $hocky2       = $_POST['txtHocKy2'];
         $diadiem      = $_POST['txtDiadiem'];
+        $thoigian     = $_POST['txtThoigian'];
         $lop          = $_POST['txtlop'];  
         
         //Kiểm tra người dùng đã nhập liệu đầy đủ chưa
-        if (!$magv || !$monhoc || !$hocky1 ||!$hocky2 ||!$diadiem || !$lop)
+        if (!$magv || !$monhoc || !$hocky1 ||!$hocky2 ||!$diadiem||!$thoigian || !$lop)
         {
-            echo  "<div style='text-align:center;color:#000000;'>Vui lòng nhập đầy đủ thông tin. <a href='javascript: history.go(-1)'>Trở lại</a></div>";
+            echo  "<div style='text-align:center;color:red;'>Vui lòng nhập đầy đủ thông tin. <a href='javascript: history.go(-1)'>Trở lại</a></div>";
             exit;
         }
         else{
             //Lưu thông tin thành viên vào bảng
-        $add_pcgd = mysqli_query($conn, "
-        UPDATE kehoachgiangday set TENMONHOC='$monhoc',GIAIDOANBD='$hocky1',GIAIDOANKT='$hocky2',DIADIEM='$diadiem',LOPDAY='$lop' where MAGV='$magv'");
+            
+        $add_pcgd = mysqli_query($conn, " INSERT INTO `kehoachgiangday` VALUES ('','$magv','$monhoc','$hocky1','$hocky2','$diadiem','$thoigian','$lop')");
                               
         //Thông báo quá trình lưu
         if ($add_pcgd)
-            echo "<div style='text-align:center;color:#000000;'>Quá trình đăng ký thành công.</div>";
+            echo "<div style='text-align:center;color:red;'>Quá trình đăng ký thành công.</div>";
         else
-            echo "<div style='text-align:center;color:#000000;'> Có lỗi xảy ra trong quá trình đăng ký.</div>";
+            echo "<div style='text-align:center;color:red;'> Có lỗi xảy ra trong quá trình đăng ký.</div>";
         }
         
     }      

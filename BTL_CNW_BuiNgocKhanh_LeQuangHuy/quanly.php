@@ -1,4 +1,5 @@
 <?php 
+    ob_start();
 session_start();
 require('connect.php');
 ?>
@@ -35,11 +36,12 @@ require('connect.php');
 					<form action="" method="post">
 						<div id = "menu1" class="col-lg-3 col-xs-3">
 							<ul>
-								<li><a href="quanly/NganhHoc.php" target="iframe">Tạo nghành học</a></li>
 								<li><a href="quanly/monhoc.php" target="iframe">Tạo môn học</a></li>
 								<li><a href="quanly/LopHocTheoNganhHoc.php" target="iframe">Lớp học phần</a></li>
 								<li><a href="quanly/hocky-giaidoan.php" target="iframe"> Học kỳ - Giai đoạn</a></li>
 								<li><a href="quanly/phanconggiangday.php" target="iframe">Phân công giảng dạy</a></li>
+								<li><a href="quanly/danhsachmonhoc.php" target="iframe">Danh sách môn học</a></li>
+								<li><a href="quanly/danhsachlophoc.php" target="iframe">Danh sách lớp học</a></li>
 							</ul>
 						</div>
 					</form>

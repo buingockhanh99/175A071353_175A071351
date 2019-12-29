@@ -19,19 +19,6 @@
             <div class="image-holder"></div>
             <form method="post">
                 <h2 class="text-center">Tạo môn học</h2>
-                <div class="form-group">
-                     <?php 
-                    $sql = mysqli_query($conn,"select * from nganhhoc") or die(myqli_error($conn));
-                    if (mysqli_num_rows($sql) > 0) {
-                    $i=0; 
-                    ?>   
-                    <select class="form-control" name = "txtNganhhoc">
-                        <?php while($row=mysqli_fetch_assoc($sql)) {
-                        $i++; ?>
-                        <option><?php echo $row['NGANHHOC']; ?></option>
-                      <?php }}  ?>
-                    </select>
-                </div>
                 <div class="form-group"><input class="form-control" type="text" name="txtMonhoc" placeholder="Môn học"></div>
                 <div class="form-group"><button name="signup" class="btn btn-primary btn-block" type="submit">Tạo</button></div>
             </form>
@@ -52,7 +39,6 @@
         header('Content-Type: text/html; charset=UTF-8');
               
         //Lấy dữ liệu từ file dangky.php
-        $nganhhoc    = $_POST['txtNganhhoc'];
         $monhoc      = $_POST['txtMonhoc'];
               
         //Kiểm tra người dùng đã nhập liệu đầy đủ chưa
@@ -72,7 +58,7 @@
                 //Lưu thông tin thành viên vào bảng
                 $add_monhoc = mysqli_query($conn,"
                 INSERT INTO monhoc 
-                VALUE ('$nganhhoc','$monhoc')");
+                VALUE ('$monhoc')");
                 
                                       
                 //Thông báo quá trình lưu

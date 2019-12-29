@@ -1,4 +1,5 @@
 <?php 
+    ob_start();
     session_start(); 
     require('../connect.php');
 
@@ -19,22 +20,16 @@
                 $sql1 = mysqli_query($conn,"SELECT * from login where USERNAME = '$tentk'");
                 $row1=mysqli_fetch_assoc($sql1);   
                 $id = $row1['ID'];
-
-                $sql = mysqli_query($conn,"SELECT * from kehoachgiangday where MAGV = '$id'");
+               // $id1 = $_GET[id];
+                $sql = mysqli_query($conn,"SELECT * from kehoachgiangday where MAGV = '$id' and ID = '$_GET[id]'");
                 $row = mysqli_fetch_assoc($sql);
             ?> 
 
             <form method="post">
                 <h2 class="text-center">Cập nhật kế hoạch giảng dạy</h2>
 
-                <div class="form-group" style="padding-bottom: 40px;">
-                    <div style="float: left;width: 20%;">
-                        <p>Mã giảng viên</p>
-                    </div>
-                    <div style="float: right; width: 80%">
-                    <input class="form-control" type="text" name="txtMGV" placeholder="" value="<?php echo $id?>" readonly>
-                    </div>
-                </div>
+                    <input class="form-control" type="hidden" name="txtMGV" placeholder="" value="<?php echo $id?>" readonly>
+                  
 
                 <div class="form-group" style="padding-bottom: 40px;">
                        <div style="float: left;width: 20%">
@@ -149,11 +144,13 @@
         {    
             //Lưu thông tin thành viên vào bảng
             $add_pcgd = mysqli_query($conn, "
-            UPDATE kehoachgiangday SET TENMONHOC='$monhoc',GIAIDOANBD='$hocky1',GIAIDOANKT='$hocky2',DIADIEM='$diadiem',LOPDAY='$lop' where MAGV='$magv'");   
+            UPDATE kehoachgiangday SET TENMONHOC='$monhoc',GIAIDOANBD='$hocky1',GIAIDOANKT='$hocky2',DIADIEM='$diadiem',LOPDAY='$lop' where MAGV='$magv' and ID = '$_GET[id]'");   
+            header("location: lichtrinhphancong.php");
             //Thông báo quá trình lưu
             if ($add_pcgd)
             {
                 echo "<div class='form-group' style='text-align:center;color:red;'>Cập nhật thành công.</div>";
+
             }
 
             else

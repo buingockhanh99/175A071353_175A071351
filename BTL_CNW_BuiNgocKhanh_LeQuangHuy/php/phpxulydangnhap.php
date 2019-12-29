@@ -1,4 +1,5 @@
 <?php 
+    ob_start();
     //Xử lý đăng nhập
     if (isset($_POST['dangnhap'])){
 

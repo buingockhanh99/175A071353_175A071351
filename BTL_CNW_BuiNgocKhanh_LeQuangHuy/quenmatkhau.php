@@ -1,4 +1,5 @@
 <?php
+    ob_start();
   require'connect.php';
   session_start();
 ?>

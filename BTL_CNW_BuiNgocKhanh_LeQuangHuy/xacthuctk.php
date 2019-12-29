@@ -1,4 +1,5 @@
 <?php
+    ob_start();
   require'connect.php';
     session_start();
 ?>
@@ -52,7 +53,9 @@
              $delte = mysqli_query($conn,"DELETE from quenmatkhau where email = '$email'"); 
             unset($_SESSION['email']);}
             else
-            {echo "<div style='text-align:center;color:red;'>Thay đổi mật khẩu không thành công.</div></div>";}
+            {echo "<div style='text-align:center;color:red;'>Thay đổi mật khẩu không thành công.</div></div>";
+              header("location: dangnhap.php");
+              }
           }
           else{
            echo "<div style='text-align:center;color:red;'>Mã xác thực không đúng! Vui lòng nhập lại</div></div>";

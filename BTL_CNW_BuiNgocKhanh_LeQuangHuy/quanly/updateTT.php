@@ -1,4 +1,5 @@
 <?php 
+    ob_start();
     session_start(); 
     require('../connect.php');
 
@@ -28,14 +29,8 @@
             <form method="post">
                 <h2 class="text-center">Vui lòng cập nhật thông tin</h2>
 
-                <div class="form-group" style="padding-bottom: 40px;">
-                    <div style="float: left;width: 20%;">
-                        <p>Mã quản lý</p>
-                    </div>
-                    <div style="float: right; width: 80%">
-                    <input class="form-control" type="text" name="txtMQL" placeholder="" value="<?php echo $id?>" readonly>
-                    </div>
-                </div>
+                    <input class="form-control" type="hidden" name="txtMQL" placeholder="" value="<?php echo $id?>" readonly>
+       
 
                  <div class="form-group" style="padding-bottom: 40px;">
                         <div style="float: left;width: 20%">

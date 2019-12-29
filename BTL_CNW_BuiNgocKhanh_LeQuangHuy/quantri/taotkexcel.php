@@ -32,7 +32,11 @@ require('../Class_phpEX/PHPExcel.php');
 				$file = $_FILES['file']['tmp_name'];
 				
 				$objReader =PHPExcel_IOFactory::createReaderForFile($file);
+		
+
 				$objReader -> setLoadSheetsOnly('Sheet1');
+				
+
 
 				$objEX = $objReader->load($file);
 				$sheetData = $objEX -> getActiveSheet()->toArray('null',true,true,true);
@@ -40,6 +44,7 @@ require('../Class_phpEX/PHPExcel.php');
 				//print_r($sheetData);
 				$highRow = $objEX->setActiveSheetIndex()-> getHighestRow();
 				//echo $highRow;
+
 
 				for($row =2; $row <= $highRow; $row++ )
 				{
@@ -70,8 +75,6 @@ require('../Class_phpEX/PHPExcel.php');
 	                    else{
 	                        $add1 = mysqli_query($conn, "
 	                        INSERT INTO giangvien (MAGV,LIENHE) VALUE ('$id','$email')");
-	                        $add = mysqli_query($conn, "
-	                        INSERT INTO kehoachgiangday (MAGV) VALUE ('$id')");
 	                    }
 
 					}
@@ -91,6 +94,7 @@ require('../Class_phpEX/PHPExcel.php');
 			catch(Exception $e) {
     		  echo  "<div style='text-align:center;color:red;'>Chưa có dữ liệu</div></div>";
 			}
+
 	} 
 ?>
 

@@ -1,4 +1,6 @@
-
+<?php 
+    ob_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -108,10 +110,8 @@
                             INSERT INTO quanly (MAQL,LIENHE) VALUE ('$id','$email')");
                         }
                         else{
-                            $add1 = mysqli_query($conn, "
-                            INSERT INTO giangvien (MAGV,LIENHE) VALUE ('$id','$email')");
                             $add = mysqli_query($conn, "
-                            INSERT INTO kehoachgiangday (MAGV) VALUE ('$id')");
+                            INSERT INTO giangvien (MAGV,LIENHE) VALUE ('$id','$email')");
                         }
                         
                         //Thông báo quá trình lưu
