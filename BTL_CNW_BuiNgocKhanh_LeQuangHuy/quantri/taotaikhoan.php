@@ -118,7 +118,8 @@
                         if ($add)
                         {
                              //Nhũng xử lý gửi gmail
-                            $body = 'Vui lòng truy cập <a href="http://localhost/175A071353_175A071351/BTL_CNW_BuiNgocKhanh_LeQuangHuy/index.php"';
+                           $body = '<div>Vui lòng truy cập <a href="http://localhost/175A071353_175A071351/BTL_CNW_BuiNgocKhanh_LeQuangHuy/dangnhap.php"</a> tại đây.</div> 
+                            <div><label style="color:red"> username: </label>'.$username.' <label style="color:red"> password: </label>'.$password1.'</div>';
                             include('../php/guimail.php');
                             echo "<div style='text-align:center;color:red;'>Đăng ký thành công.</div>";
                            

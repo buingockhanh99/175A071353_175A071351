@@ -46,8 +46,7 @@ $mail->addAddress($email,'');
 
 $mail->Subject = 'account information';
 
-
-$mail->msgHTML('Vui lòng truy cập <a href="https://khanhbn72.000webhostapp.com/dangnhap.php">tại đây</a> để đăng nhập <br> 
+$mail->msgHTML('Vui lòng truy cập <a href="http://localhost/175A071353_175A071351/BTL_CNW_BuiNgocKhanh_LeQuangHuy/dangnhap.php"</a> để đăng nhập <br> 
                             Đăng nhập với <label style="color:red">username:</label> '.$username. '    <label style="color:red">password:</label>   '.$password1. '');
 
 
