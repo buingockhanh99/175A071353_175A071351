@@ -41,7 +41,7 @@ require('../connect.php');
                 <td><?php echo $row['DIADIEM']; ?></td>
                 <td><?php echo $row['THOIGIAN']; ?></td>
                 <td><?php echo $row['LOPDAY']; ?></td>
-                <td><a href='xulyDelete.php?id=<?php echo $id;?>&key=xoa' onclick='xoa()'>Xóa</a></td>
+                <td><a href="xulydelete.php?id=<?php echo $id; ?>&key=xoa">Xóa</a></td>
 
                 <script type="text/javascript">
                 function xoa(){
