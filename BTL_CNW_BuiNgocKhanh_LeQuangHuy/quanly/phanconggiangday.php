@@ -165,10 +165,17 @@
         $add_pcgd = mysqli_query($conn, " INSERT INTO `kehoachgiangday` VALUES ('','$magv','$monhoc','$hocky1','$hocky2','$diadiem','$thoigian','$lop')");
                               
         //Thông báo quá trình lưu
-        if ($add_pcgd)
-            echo "<div style='text-align:center;color:red;'>Quá trình đăng ký thành công.</div>";
-        else
+        if ($add_pcgd){
+            $sql = mysqli_query($conn,"SELECT * from login where ID = '$magv'");
+            $row = mysqli_fetch_assoc($sql);
+            $body = '<div>Tài khoản của bạn đã được phân công giảng dạy.</div> 
+                    <div>Vui lòng vào tài khoản để xem và cập nhật thông tin. </div>';
+            $email = $row['USERNAME'];
+            include('../php/guimail.php');
+            echo "<div style='text-align:center;color:red;'>Đăng ký thành công.</div>";}
+        else{
             echo "<div style='text-align:center;color:red;'> Có lỗi xảy ra trong quá trình đăng ký.</div>";
+        }
         }
         
     }      
