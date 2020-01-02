@@ -84,7 +84,6 @@ require('../Class_phpEX/PHPExcel.php');
 				if($sql)
 				{
 			    	echo  "<div style='text-align:center;color:#4285f4;'>Import tài khoản thành công  </div></div>";
-			    	$body = 'Vui lòng truy cập <a href="http://localhost/175A071353_175A071351/BTL_CNW_BuiNgocKhanh_LeQuangHuy/index.php"';
                             
 			    	
 				}
