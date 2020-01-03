@@ -40,8 +40,8 @@ require('connect.php');
 								<li><a href="quanly/LopHocTheoNganhHoc.php" target="iframe">Lớp học phần</a></li>
 								<li><a href="quanly/hocky-giaidoan.php" target="iframe"> Học kỳ - Giai đoạn</a></li>
 								<li><a href="quanly/phanconggiangday.php" target="iframe">Phân công giảng dạy</a></li>
-								<li><a href="quanly/danhsachmonhoc.php" target="iframe">Danh sách môn học</a></li>
 								<li><a href="quanly/dsphanconggiangday.php" target="iframe">Danh sách phân công giảng dạy</a></li>
+								<li><a href="quanly/danhsachmonhoc.php" target="iframe">Danh sách môn học</a></li>
 								<li><a href="quanly/danhsachlophoc.php" target="iframe">Danh sách lớp học</a></li>
 							</ul>
 						</div>

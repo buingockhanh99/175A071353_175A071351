@@ -18,7 +18,6 @@ require('../connect.php');
           <br>
           <table border="" style="text-align: center; border: 2px solid #56a4fe;">
               <tr>
-                <th width="400px">ID</th>
                 <th width="750px">Mã giáo viên</th>
                 <th width="750px">Tên môn học</th>
                 <th width="550px">Giai đoạn BĐ</th>
@@ -33,7 +32,6 @@ require('../connect.php');
                   $id = $row['ID'];
                 ?>
                 <tr>
-                <td><?php echo $row['ID']; ?></td>
                 <td><?php echo $row['MAGV']; ?></td>
                 <td><?php echo $row['TENMONHOC']; ?></td>
                 <td><?php echo $row['GIAIDOANBD']; ?></td>
@@ -43,14 +41,6 @@ require('../connect.php');
                 <td><?php echo $row['LOPDAY']; ?></td>
                 <td><a href="xulydelete.php?id=<?php echo $id; ?>&key=xoa">Xóa</a></td>
 
-                <script type="text/javascript">
-                function xoa(){
-                var r=confirm("Bạn chắc chắn muốn xóa!!")
-                if(r==true){
-                window.location="";
-                }
-                }
-                </script>
                 
               </tr>
             <?php }  ?>

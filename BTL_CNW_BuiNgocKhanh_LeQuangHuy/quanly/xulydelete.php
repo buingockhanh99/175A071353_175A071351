@@ -2,7 +2,7 @@
         ob_start();
         require('../connect.php');
 
-        if (isset($_GET['key'])&&($_GET['key']!=''))
+        if (isset($_GET['key']))
         {
             if ($_GET['key']=='xoa')
             {
