@@ -38,6 +38,7 @@ require'connect.php';
 					<th width="200px">Giai đoạn kết thúc</th>
 					<th width="200px">Địa điểm</th>
 					<th width="200px">Tiết dạy</th>
+					<th width="200px">Ngày dạy dạy</th>
 					<th width="200px">Lớp dạy</th>
 				</tr>
 					<?php
@@ -51,6 +52,7 @@ require'connect.php';
 					<td><?php echo $row['GIAIDOANKT']; ?></td>
 					<td><?php echo $row['DIADIEM']; ?></td>
 					<td><?php echo $row['THOIGIAN']; ?></td>
+					<td><?php echo $row['DAY']; ?></td>
 					<td><?php echo $row['LOPDAY']; ?></td>
 				</tr>
 			<?php } ?>

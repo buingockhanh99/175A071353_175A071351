@@ -18,14 +18,15 @@ require('../connect.php');
           <br>
           <table border="" style="text-align: center; border: 2px solid #56a4fe;">
               <tr>
-                <th width="750px">Mã giáo viên</th>
-                <th width="750px">Tên môn học</th>
-                <th width="550px">Giai đoạn BĐ</th>
-                <th width="550px">Giai đoạn KT</th>
-                <th width="550px">Địa điểm</th>
-                <th width="400px">Tiết dạy</th>
-                <th width="400px">Lớp dạy</th>
-                <th width="550px">Xóa lịch trình</th>
+                <th width="200px">Mã giáo viên</th>
+                <th width="300px">Tên môn học</th>
+                <th width="200px">Giai đoạn BĐ</th>
+                <th width="200px">Giai đoạn KT</th>
+                <th width="200px">Địa điểm</th>
+                <th width="200px">Tiết dạy</th>
+                <th width="400px">Ngày dạy</th>
+                <th width="200px">Lớp dạy</th>
+                <th width="200px">Xóa lịch trình</th>
               </tr>
                 <?php
                   while($row=mysqli_fetch_assoc($sql)) {
@@ -38,6 +39,7 @@ require('../connect.php');
                 <td><?php echo $row['GIAIDOANKT']; ?></td>
                 <td><?php echo $row['DIADIEM']; ?></td>
                 <td><?php echo $row['THOIGIAN']; ?></td>
+                <td><?php echo $row['DAY']; ?></td>
                 <td><?php echo $row['LOPDAY']; ?></td>
                 <td><a href="xulydelete.php?id=<?php echo $id; ?>&key=xoa">Xóa</a></td>
 

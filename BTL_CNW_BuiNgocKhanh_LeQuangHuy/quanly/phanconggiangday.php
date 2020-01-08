@@ -22,7 +22,7 @@
         <div class="form-container">
             <form method="post">
                 <h4 class="text-center">Phân công giảng dạy</h4>
-                <div class="form-group" style="padding-bottom: 40px;">
+                <div class="form-group" style="padding-bottom: 40px; ma">
                         <div style="float: left;width: 20%">
                             <p>Mã giảng viên</p>
                         </div>
@@ -114,6 +114,14 @@
                 </div>
                 <div class="form-group" style="padding-bottom: 40px;">
                    <div style="float: left;width: 20%">
+                        <p>Các ngày dạy</p>
+                    </div>
+                    <div style="float: right; width: 80%">
+                        <input class="form-control" type="text" name="txtDay" placeholder="VD: Thứ 2 -> Thứ 7">
+                    </div>
+                </div>
+                <div class="form-group" style="padding-bottom: 40px;">
+                   <div style="float: left;width: 20%">
                         <p>Lớp dạy</p>
                     </div>
                     <div style="float: right; width: 80%">
@@ -151,28 +159,29 @@
         $hocky2       = $_POST['txtHocKy2'];
         $diadiem      = $_POST['txtDiadiem'];
         $thoigian     = $_POST['txtThoigian'];
+        $day          = $_POST['txtDay'];
         $lop          = $_POST['txtlop'];  
         
         //Kiểm tra người dùng đã nhập liệu đầy đủ chưa
-        if (!$magv || !$monhoc || !$hocky1 ||!$hocky2 ||!$diadiem||!$thoigian || !$lop)
+        if (!$magv || !$monhoc || !$hocky1 ||!$hocky2 ||!$diadiem||!$thoigian || !$lop ||!$day)
         {
             echo  "<div style='text-align:center;color:red;'>Vui lòng nhập đầy đủ thông tin. <a href='javascript: history.go(-1)'>Trở lại</a></div>";
             exit;
         }
         else{
-            //Lưu thông tin thành viên vào bảng
-            
-        $add_pcgd = mysqli_query($conn, " INSERT INTO `kehoachgiangday` VALUES ('','$magv','$monhoc','$hocky1','$hocky2','$diadiem','$thoigian','$lop')");
+        //Lưu thông tin thành viên vào bảng
+        $add_pcgd = mysqli_query($conn, " INSERT INTO `kehoachgiangday` VALUES ('','$magv','$monhoc','$hocky1','$hocky2','$diadiem','$thoigian','$day','$lop')");
                               
         //Thông báo quá trình lưu
         if ($add_pcgd){
+
             $sql = mysqli_query($conn,"SELECT * from login where ID = '$magv'");
             $row = mysqli_fetch_assoc($sql);
             $body = '<div>Tài khoản của bạn đã được phân công giảng dạy.</div> 
                     <div>Vui lòng vào tài khoản để xem và cập nhật thông tin. </div>';
             $email = $row['USERNAME'];
             include('../php/guimail.php');
-            echo "<div style='text-align:center;color:red;'>Đăng ký thành công.</div>";}
+            echo "<div style='text-align:center;color:red;'>Phân công thành công.</div>";}
         else{
             echo "<div style='text-align:center;color:red;'> Có lỗi xảy ra trong quá trình đăng ký.</div>";
         }
