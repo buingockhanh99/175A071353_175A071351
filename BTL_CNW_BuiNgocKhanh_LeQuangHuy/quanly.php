@@ -43,6 +43,7 @@ require('connect.php');
 								<li><a href="quanly/dsphanconggiangday.php" target="iframe">Danh sách phân công giảng dạy</a></li>
 								<li><a href="quanly/danhsachmonhoc.php" target="iframe">Danh sách môn học</a></li>
 								<li><a href="quanly/danhsachlophoc.php" target="iframe">Danh sách lớp học</a></li>
+								<li><a href="quanly/tintuc.php" target="iframe">Thêm tin tức</a></li>
 							</ul>
 						</div>
 					</form>
