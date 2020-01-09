@@ -116,6 +116,14 @@
                     </select>
                     </div>
                 </div>
+                <div class="form-group" style="padding-bottom: 40px;">
+                    <div style="float: left;width: 20%">
+                        <p>Ngày dạy</p>
+                    </div>
+                    <div style="float: right; width: 80%">
+                    <input class="form-control" type="text" name="txtday"  value="<?php echo $row['DAY']; ?>">
+                    </div>
+                </div>
 
                 <div class="form-group"><button name="update" class="btn btn-primary btn-block" type="submit">Cập nhật</button></div>
            
@@ -133,9 +141,10 @@
         $hocky1       = $_POST['txtHocKy1'];  
         $hocky2       = $_POST['txtHocKy2'];
         $diadiem      = $_POST['txtDiadiem'];
-        $lop          = $_POST['txtlop'];     
+        $lop          = $_POST['txtlop'];
+        $day          = $_POST['txtday'];     
         //Kiểm tra người dùng đã nhập liệu đầy đủ chưa
-        if (!$magv || !$monhoc || !$hocky1 ||!$hocky2 ||!$diadiem || !$lop)
+        if (!$magv || !$monhoc || !$hocky1 ||!$hocky2 ||!$diadiem || !$lop ||!$day)
         {
             echo  "<div class='form-group' style='text-align:center;color:red;'>Vui lòng nhập đầy đủ thông tin. <a href='javascript: history.go(-1)'>Trở lại</a></div>";
             exit;
@@ -144,7 +153,7 @@
         {    
             //Lưu thông tin thành viên vào bảng
             $add_pcgd = mysqli_query($conn, "
-            UPDATE kehoachgiangday SET TENMONHOC='$monhoc',GIAIDOANBD='$hocky1',GIAIDOANKT='$hocky2',DIADIEM='$diadiem',LOPDAY='$lop' where MAGV='$magv' and ID = '$_GET[id]'");   
+            UPDATE kehoachgiangday SET TENMONHOC='$monhoc',GIAIDOANBD='$hocky1',GIAIDOANKT='$hocky2',DIADIEM='$diadiem',LOPDAY='$lop', DAY='$day' where MAGV='$magv' and ID = '$_GET[id]'");   
             header("location: lichtrinhphancong.php");
             //Thông báo quá trình lưu
             if ($add_pcgd)
