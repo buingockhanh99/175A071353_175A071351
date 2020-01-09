@@ -83,7 +83,8 @@
 					</div>
 				</div>
 				<?php
-					$sql = mysqli_query($conn,"SELECT * from tintuc");
+					$sql = mysqli_query($conn,"SELECT * from tintuc where IDTINTUC = '$_GET[id]' ");
+					$row = mysqli_fetch_assoc($sql);
 				?>
 				<div class="col-lg-9 col-xs-9">
 					<div class="body-main" style="height: 337px">
@@ -93,12 +94,7 @@
 						<div class="noidung" style="height: 100px">
 							<h1>[THÔNG TIN ĐÁNG CHÚ Ý]</h1>
 							<ul>
-								<?php 
-								while($row = mysqli_fetch_assoc($sql)) 
-								{ $id = $row['IDTINTUC'];?>
-								<li><a href="index2.php?id=<?php echo $id; ?>"> ><?php echo $row['TIEUDE']; ?></a></li>
-								<?php } ?>
-							
+								<li style="color: #000"><?php echo $row['NOIDUNG']; ?></li>
 							</ul>
 						</div>
 					</div>

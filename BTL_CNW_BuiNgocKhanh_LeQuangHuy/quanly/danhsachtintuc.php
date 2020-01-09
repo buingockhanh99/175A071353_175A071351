@@ -29,8 +29,8 @@ require('../connect.php');
             <tr>
               <td><?php echo $id; ?></td>
               <td ><?php echo $row['TIEUDE']; ?></td>
-              <td><a href=".php?id=<?php echo $id; ?>&key=xoa">Sửa</a></td>
-              <td><a href="xulydelete.php?id=<?php echo $id; ?>&key=xoa">Xóa</a></td>
+              <td><a href="updatetintuc.php?id=<?php echo $id; ?>">Sửa</a></td>
+              <td><a href="xulydelete.php?id1=<?php echo $id; ?>&key1=xoa1">Xóa</a></td>
             </tr>
             <?php }  ?>
           </table>

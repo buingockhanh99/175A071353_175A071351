@@ -15,5 +15,21 @@
                 }
             }
         }
+
+
+
+        if (isset($_GET['key1']))
+        {
+            if ($_GET['key1']=='xoa1')
+            {
+                $delete1=mysqli_query($conn,"DELETE FROM tintuc where IDTINTUC = '$_GET[id1]'");
+                if($delete1){
+                     header("location: danhsachtintuc.php");
+                }
+                else{
+                    echo "Xóa không thành công";
+                }
+            }
+        }
       
-      ?>
+?>
