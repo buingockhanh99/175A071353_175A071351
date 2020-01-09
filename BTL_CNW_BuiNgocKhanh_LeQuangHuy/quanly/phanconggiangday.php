@@ -22,7 +22,7 @@
         <div class="form-container">
             <form method="post">
                 <h4 class="text-center">Phân công giảng dạy</h4>
-                <div class="form-group" style="padding-bottom: 40px; ma">
+                <div class="form-group" style="padding-bottom: 40px; ">
                         <div style="float: left;width: 20%">
                             <p>Mã giảng viên</p>
                         </div>
