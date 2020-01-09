@@ -30,6 +30,7 @@ require'../connect.php';
 			<table>
 				<tr>
 					<th width="200px">Tên môn học</th>
+					<th width="200px">Xóa</th>
 				</tr>
 					<?php
 						$sql = mysqli_query($conn,"SELECT * from monhoc ");
@@ -37,8 +38,8 @@ require'../connect.php';
 					?>
 					<tr>
 					<td><?php echo $row['MONHOC']; ?></td>
-					
-				</tr>
+					<td><a href="xulydelete.php?monhoc=<?php echo $row['MONHOC']; ?>&key2=xoamon">Xóa</a></td>
+					</tr>
 			<?php } ?>
 			</table>
 		</div>

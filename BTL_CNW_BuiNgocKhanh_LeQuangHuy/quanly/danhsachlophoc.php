@@ -30,15 +30,16 @@ require'../connect.php';
 			<table>
 				<tr>
 					<th width="200px">Tên lớp</th>
+					<th width="200px">Xóa</th>
 				</tr>
 					<?php
 						$sql = mysqli_query($conn,"SELECT * from loptheonganhhoc ");
 						while($row=mysqli_fetch_assoc($sql)){
 					?>
 					<tr>
-					<td><?php echo $row['LOP']; ?></td>
-					
-				</tr>
+						<td><?php echo $row['LOP']; ?></td>
+						<td><a href="xulydelete.php?lophoc=<?php echo $row['LOP']; ?>&key3=xoalop">Xóa</a></td>
+					</tr>
 			<?php } ?>
 			</table>
 		</div>

@@ -18,7 +18,7 @@
 
 
 
-        if (isset($_GET['key1']))
+        else if (isset($_GET['key1']))
         {
             if ($_GET['key1']=='xoa1')
             {
@@ -30,6 +30,32 @@
                     echo "Xóa không thành công";
                 }
             }
+        }
+
+        else if (isset($_GET['key2']))
+        {
+            if ($_GET['key2']=='xoamon')
+            {
+                $delete1=mysqli_query($conn,"DELETE FROM kehoachgiangday where TENMONHOC = '$_GET[monhoc]'");
+                $delete2=mysqli_query($conn,"DELETE FROM monhoc where MONHOC = '$_GET[monhoc]'");
+                if($delete2){
+                     header("location: danhsachmonhoc.php");
+                }
+                else{
+                    echo "Xóa không thành công";
+                }
+            }
+        }
+
+        else{
+                $delete1=mysqli_query($conn,"DELETE FROM kehoachgiangday where LOPDAY = '$_GET[lophoc]'");
+                $delete2=mysqli_query($conn,"DELETE FROM loptheonganhhoc where LOP = '$_GET[lophoc]'");
+                if($delete2){
+                     header("location: danhsachlophoc.php");
+                }
+                else{
+                    echo "Xóa không thành công";
+                }
         }
       
 ?>
