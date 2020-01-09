@@ -37,6 +37,7 @@
 							<div id = "menu1" class="col-lg-3 col-xs-3">
 								<ul>
 									<li><a href="giangvien/lichtrinhphancong.php" target="iframe">Xem lịch trình được phân công</a></li>
+									<li><a href="doimk.php" target="iframe">Đổi mật khẩu</a></li>
 									<!-- <li><a href="giangvien/updateKHGD.php" target="iframe">Cập nhật thông tin KHGD</a></li> -->
 								</ul>
 							</div>

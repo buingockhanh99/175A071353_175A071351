@@ -47,8 +47,6 @@ require'connect.php';
 				{
 				   $search = $_POST['search'];
 				   $sql = mysqli_query($conn,"SELECT * from giangvien where HODEM like '$search%' or TEN like '$search%'");
-				    if (mysqli_num_rows($sql) > 0)
-		          	$i=0;
 		          ?>
 		          <p style="text-align: center; font-weight: bold; font-size: 20px">Kết quả tìm kiếm</p>
 		          <br>
