@@ -28,13 +28,13 @@
                         </div>
                         <div style="float: right; width: 80%">
                             <?php 
-                                $sql = mysqli_query($conn,"SELECT * from giangvien ,login WHERE giangvien.MAGV = login.ID AND login.STATUS = 1");
+                                $sql = mysqli_query($conn,"SELECT * from giangvien ,login WHERE giangvien.MAGV = login.ID ");
                                 if (mysqli_num_rows($sql) > 0) {
-                                $i=0; 
+                               
                             ?> 
                             <select class="form-control" name = "txtMaGV">
                             <?php while($row=mysqli_fetch_assoc($sql)) {
-                                $i++; ?>
+                                 ?>
                                 <option><?php echo $row['MAGV']; ?></a>
                             <?php }}  ?>
                             </select>
